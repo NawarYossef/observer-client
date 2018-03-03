@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {CLIENT_ORIGIN} from "./config"
 
 class App extends Component {
+
+  componentDidMount() {
+    fetch(`api/${CLIENT_ORIGIN}`)
+    // .then(res => res.json())
+    .then(json => console.log(json))
+    .catch( error => console.log(error))
+  }
+
   render() {
     return (
       <div className="App">
