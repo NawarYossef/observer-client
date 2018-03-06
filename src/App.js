@@ -6,7 +6,7 @@ import {CLIENT_ORIGIN} from "./config"
 class App extends Component {
 
   componentDidMount() {
-    fetch(`api/${CLIENT_ORIGIN}`)
+    fetch(`api/user/${CLIENT_ORIGIN}`)
     // .then(res => res.json())
     .then(json => console.log(json))
     .catch( error => console.log(error))
