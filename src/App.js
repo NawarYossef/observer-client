@@ -7,7 +7,6 @@ class App extends Component {
 
   componentDidMount() {
     fetch(`api/user/${CLIENT_ORIGIN}`)
-    // .then(res => res.json())
     .then(json => console.log(json))
     .catch( error => console.log(error))
   }
