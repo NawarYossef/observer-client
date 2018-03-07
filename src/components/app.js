@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
-import './app.css';
+import { connect } from "react-redux";
+import { Route, withRouter } from "react-router-dom";
+
 import {CLIENT_ORIGIN} from "../config"
+import  HeaderNavbar  from "./header-navbar"
+import LandingPage from "./pages/landing-page";
+import {Dashboard} from "./pages/dashboard";
+import Expenses from "./pages/expenses";
+import {History} from "./pages/history";
+import Budget from "./pages/budget";
+
+import './app.css';
+
 
 class App extends Component {
 
@@ -13,11 +24,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-    
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        
+        <HeaderNavbar /> 
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/budget" component={Budget} />
+        <Route exact path="/history" component={History} />
+        <Route exact path="/expenses" component={Expenses} />
       </div>
     );
   }
