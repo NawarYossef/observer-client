@@ -7,15 +7,12 @@ export default function HeaderNavbar() {
     <Link to="/dashboard" className="">
       DASHBOARD
     </Link>,
-    <Link to="/expenses" className="">
-      EXPENSES
+    <Link to="/jobs" className="">
+      JOBS
     </Link>,
-    <Link to="/history" className="">
-      HISTORY
+    <Link to="/activities" className="">
+      ACTIVITIES
     </Link>,
-    <Link to="/budget" className="">
-      BUDGET
-    </Link>
   ];
   return (
     <div className="App">

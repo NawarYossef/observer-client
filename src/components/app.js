@@ -6,9 +6,8 @@ import {CLIENT_ORIGIN} from "../config"
 import  HeaderNavbar  from "./header-navbar"
 import LandingPage from "./pages/landing-page";
 import {Dashboard} from "./pages/dashboard";
-import Expenses from "./pages/expenses";
-import {History} from "./pages/history";
-import Budget from "./pages/budget";
+import Jobs from "./pages/jobs";
+import {Activities} from "./pages/activities";
 
 import './app.css';
 
@@ -27,9 +26,8 @@ class App extends Component {
         <HeaderNavbar /> 
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/budget" component={Budget} />
-        <Route exact path="/history" component={History} />
-        <Route exact path="/expenses" component={Expenses} />
+        <Route exact path="/activities" component={Activities} />
+        <Route exact path="/jobs" component={Jobs} />
       </div>
     );
   }
