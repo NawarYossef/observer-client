@@ -1,48 +1,79 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import "./styles/new-job.css";
+import "./styles/new-jobs.css";
 
-export default function NewJob() {
-  return (
-    <div className="applications-container">
-      <form>
-        <label for="date">
-          Date
-          <input type="date" name="date-and-time" />
-        </label>
+export class NewJob extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-        <label for="name">
-          Company Name
-          <input type="text" name="company-name" />
-        </label>
+  render() {
+    return (
+      <section className="new-job-container">
+        <form>
+          <label for="date">
+            Date
+            <input type="date" name="date-and-time" />
+          </label>
 
-        <label for="website">
-          Company Website
-          <input type="url" name="company-website" />
-        </label>
+          <label for="jobs-status">
+            <h3>Job Status</h3>
 
-        <label for="position">
-          Position Title
-          <input type="text" name="company-position" />
-        </label>
+            <label>
+              <input type="radio" name="applied" />
+              <span>Applied</span>
+            </label>
 
-        <label for="contact">
-          Company Contact Title
-          <input type="text" name="company-contact" />
-        </label>
+            <label>
+              <span>interview</span>
+              <input type="radio" name="interview" />
+            </label>
 
-        <label for="email">
-          Company Contact Email
-          <input type="email" name="company-email" />
-        </label>
+            <label>
+              <span>Interested</span>
+              <input type="radio" name="interested" />
+            </label>
 
-        <label for="description">
-          Description
-          <input type="text" name="name" />
-        </label>
+            <label>
+              <span>Offer</span>
+              <input type="radio" name="offer" />
+            </label>
+          </label>
 
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
-  );
+          <label for="name">
+            Company Name
+            <input type="text" name="company-name" />
+          </label>
+
+          <label for="website">
+            Company Website
+            <input type="url" name="company-website" />
+          </label>
+
+          <label for="position">
+            Position Title
+            <input type="text" name="company-position" />
+          </label>
+
+          <label for="contact">
+            Company Contact Title
+            <input type="text" name="company-contact" />
+          </label>
+
+          <label for="email">
+            Company Contact Email
+            <input type="email" name="company-email" />
+          </label>
+
+          <label for="description">
+            Description
+            <textarea rows="4" cols="50" />
+          </label>
+
+          <input type="submit" value="Add Job" />
+          <input type="submit" value="Cancel" />
+        </form>
+      </section>
+    );
+  }
 }
