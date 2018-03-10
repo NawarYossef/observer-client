@@ -1,30 +1,56 @@
-input, select, textarea {
-  display: block;
+
+.general-info-section, .company-info-section, .contact-info-section, .details-container,  .job-search-container {
   width: 100%;
+  margin-bottom: 20px; 
+  padding: 20px;
+  background: rgb(211, 211, 245);
+  border-radius: 3px;
+}
+
+input, select, textarea, .cancel-button {
+  display: block;
+  width: 80%;
   height: auto;
-  font-size: 18px;
+  font-size: 1em;
   text-align: left;
-  padding: 15px;
+  padding: 8px;
   border: 2px solid #e7e7e7;
   border-radius: 3px;
   background: #fcfcfc;
-  margin: 0 auto;
+  margin-top: 6px;  
   transition: opacity 0.4s;
+  box-sizing: border-box;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus, textarea:focus, select:focus, .cancel-button:focus {
   border:1px solid #2188ff;
   outline: none;
   box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075),
     0 0 0 0.2em rgba(3, 102, 214, 0.3);
 }
 
-input[type="submit"] {
-  width: 50%;
-  margin: 0px;
+input[type="submit"], .cancel-button {
+  width: 30%;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
 }
 
-/* add button */
+input[type="submit"] {
+  margin-right: 1%;
+}
+
+.cancel-button {
+  margin-left: 1%;
+}
+
+.buttons-wrapper {
+  width: 80%;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+
+/* add new job/activity button */
 .w3-circle {
   border-radius: 50%;
 }
@@ -60,3 +86,4 @@ body .w3-black {
   cursor: pointer;
   white-space: nowrap;
 }
+

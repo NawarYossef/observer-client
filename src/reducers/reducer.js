@@ -6,14 +6,6 @@ const initialState = {
 };
 
 export function reducer(state=initialState, action) {
-  if (action.type === actions.ADD_NEW_ACTIVITY_OR_JOB) {
-      return Object.assign({}, state, {
-        addButton: true
-      }) 
-  } else if (action.type === actions.CANCEL_NEW_ACTIVITY_OR_JOB) {
-    return Object.assign({}, state, {
-      cancelButton: true
-    }) 
-  } 
+
   return state;
 }

@@ -7,6 +7,9 @@ export default function HeaderNavbar() {
     <Link to="/dashboard" className="">
       DASHBOARD
     </Link>,
+    <Link to="/job-search" className="">
+      SEARCH
+    </Link>,
     <Link to="/jobs" className="">
       JOBS
     </Link>,
@@ -20,8 +23,8 @@ export default function HeaderNavbar() {
         <h1 className="App-title">OBSERVER</h1>
         <nav>
           <ul>
-            {links.map(link => {
-              return <li className="link">{link}</li>;
+            {links.map((link, idx) => {
+              return <li key={idx.toString()} className="link">{link}</li>;
             })}
           </ul>
         </nav>

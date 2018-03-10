@@ -1,0 +1,9 @@
+.jobs-search {
+  width: 40%;
+  margin: 200px auto 0 auto;
+}
+
+.jobs-search label {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}

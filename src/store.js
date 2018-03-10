@@ -4,8 +4,9 @@ import {reducer} from './reducers/reducer';
 
  const store = createStore(
 	combineReducers({
-			reducer: reducer
+			reducer: reducer,
 	}),
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 	applyMiddleware(thunk)
 );
 

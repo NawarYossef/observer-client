@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import "./styles/new-jobs.css";
+import { Link } from "react-router-dom";
+import "./styles/new-job.css";
 
 export class NewJob extends Component {
   constructor(props) {
@@ -10,68 +10,81 @@ export class NewJob extends Component {
   render() {
     return (
       <section className="new-job-container">
+        <div className="h2-wrapper">
+          <h2>New Job</h2>
+        </div>
         <form>
-          <label for="date">
-            Date
-            <input type="date" name="date-and-time" />
-          </label>
-
-          <label for="jobs-status">
-            <h3>Job Status</h3>
-
-            <label>
-              <input type="radio" name="applied" />
-              <span>Applied</span>
+          <div className="general-info-section">
+            <label for="apply-discovered">
+              Date Discovered
+              <input type="date" name="discover-date" />
             </label>
-
             <label>
-              <span>interview</span>
-              <input type="radio" name="interview" />
+              Job Type
+              <select>
+                <option value="applied">Applied</option>
+                <option value="interview">Interview</option>
+                <option value="interested">Interested</option>
+                <option value="new-lead">Negotiate</option>
+              </select>
             </label>
-
-            <label>
-              <span>Interested</span>
-              <input type="radio" name="interested" />
+          </div>
+          <div className="company-info-section">
+            <label for="name">
+              Company Name
+              <input type="text" name="company-name" />
             </label>
-
-            <label>
-              <span>Offer</span>
-              <input type="radio" name="offer" />
+            <label for="position">
+              Position
+              <input type="text" name="company-position" />
             </label>
-          </label>
+            <label for="salary">
+              Salary
+              <input type="number" name="company-salary" />
+            </label>
+            <label for="website">
+              Company Website
+              <input type="url" name="company-website" />
+            </label>
+            <label for="size">
+              Company Size
+              <input type="url" name="company-size" />
+            </label>
+            <label for="description">
+              Link to Job Description
+              <input type="url" name="company-description" />
+            </label>
+          </div>
 
-          <label for="name">
-            Company Name
-            <input type="text" name="company-name" />
-          </label>
+          <div className="contact-info-section">
+            <label for="apply-date">
+              Date Applied
+              <input type="date" name="apply-date" />
+            </label>
+            <label for="contact">
+              Contact Name
+              <input type="text" name="company-contact" />
+            </label>
+            <label for="email">
+              Contact Email
+              <input type="email" name="company-email" />
+            </label>
+            <label for="coding-challenge-date">
+              Coding Challenge Date
+              <input type="date" name="intervnew-date" />
+            </label>
+            <label for="interview-date">
+              Technical Interview Date
+              <input type="date" name="intervnew-date" />
+            </label>
+          </div>
 
-          <label for="website">
-            Company Website
-            <input type="url" name="company-website" />
-          </label>
-
-          <label for="position">
-            Position Title
-            <input type="text" name="company-position" />
-          </label>
-
-          <label for="contact">
-            Company Contact Title
-            <input type="text" name="company-contact" />
-          </label>
-
-          <label for="email">
-            Company Contact Email
-            <input type="email" name="company-email" />
-          </label>
-
-          <label for="description">
-            Description
-            <textarea rows="4" cols="50" />
-          </label>
-
-          <input type="submit" value="Add Job" />
-          <input type="submit" value="Cancel" />
+          <div className="buttons-wrapper">
+            <input type="submit" value="Add Job" />
+            <Link to="/jobs">
+              <button className="cancel-button">Cancel</button>
+            </Link>
+          </div>
         </form>
       </section>
     );
