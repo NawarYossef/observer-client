@@ -17,14 +17,39 @@ export const createNewJob = (newJob) => {
         return res.json();
       })
       .then(newJob => {
-        dispatch(createNewJobSuccess(newJob));
         history.push(`/jobs`);
-      });
+      })
+      .catch(err => 
+        console.log(err)
+      )
   };
 };
 
-export const CREATE_NEW_JOB_SUCCESS = "CREATE_NEW_JOB_SUCCESS";
-export const createNewJobSuccess = newJob => ({
-  type: CREATE_NEW_JOB_SUCCESS,
-  newJob
+export const getJobs = () => {
+  return dispatch => {
+    // const authToken = localStorage.getItem("token");
+    fetch(`${API_BASE_URL}/jobs/`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        'Accept': 'application/json'
+      }
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        dispatch(getJobsSuccess(data.jobs));
+        history.push(`/jobs`);
+      })
+      .catch(err => 
+        console.log(err)
+      )
+  };
+};
+
+export const GET_JOBS_SUCCESS = "GET_JOBS_SUCCESS";
+export const getJobsSuccess = jobs => ({
+  type: GET_JOBS_SUCCESS,
+  jobs
 });

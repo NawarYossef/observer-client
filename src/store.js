@@ -4,7 +4,7 @@ import {appReducer} from './reducers/reducer';
 
  const store = createStore(
 	combineReducers({
-			reducer: appReducer,
+			app: appReducer
 	}),
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 	applyMiddleware(thunk)

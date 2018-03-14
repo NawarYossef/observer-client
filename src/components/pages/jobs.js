@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { getJobs } from "../../actions/action";
 
 import "./styles/jobs.css";
 import "./styles/helper.css";
@@ -9,7 +10,13 @@ export class Jobs extends Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount() {
+    this.props.dispatch(getJobs())
+  }
+
   render() {
+    console.table(this.props.jobs)
     return (
       <section className="jobs-container">
         <Link to="/new-job">
@@ -22,6 +29,9 @@ export class Jobs extends Component {
 
 // const mapDispatchToProps = dispatch => ({});
 
-// const mapStateToProps = state => {};
+const mapStateToProps = state => ({
+  jobs: state.app.jobs
+})
 
-export default connect()(Jobs);
+
+export default connect(mapStateToProps)(Jobs);

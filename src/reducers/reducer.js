@@ -2,14 +2,15 @@ import * as actions from "../actions/action";
 
 const initialState = {
   jobs: [],
+  singleJob: {},
   activities: []
 };
 
 export function appReducer(state = initialState, action) {
   switch (action.type) {
-    case actions.CREATE_NEW_JOB_SUCCESS:
+    case actions.GET_JOBS_SUCCESS:
       return Object.assign({}, state, {
-        jobs: state.jobs.concat(action.newJob)
+        jobs: action.jobs
       });
     default:
       return state;
