@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Route, withRouter } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 
 import { API_BASE_URL } from "../config";
 import HeaderNavbar from "./header-navbar";
@@ -15,20 +15,20 @@ import { JobSearch } from "./pages/job-search";
 import "./app.css";
 
 class App extends Component {
-  
-
   render() {
     return (
-      <div className="App">
-        <HeaderNavbar />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/activities" component={Activities} />
-        <Route exact path="/new-activity" component={NewActivity} />
-        <Route exact path="/jobs" component={Jobs} />
-        <Route exact path="/new-job" component={NewJob} />
-        <Route exact path="/job-search" component={JobSearch} />
-      </div>
+      <Router>
+        <div className="App">
+          <HeaderNavbar />
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/activities" component={Activities} />
+          <Route exact path="/new-activity" component={NewActivity} />
+          <Route exact path="/jobs" component={Jobs} />
+          <Route exact path="/new-job" component={NewJob} />
+          <Route exact path="/job-search" component={JobSearch} />
+        </div>
+      </Router>
     );
   }
 }
