@@ -11,12 +11,12 @@ export default function NewActivity() {
       </div>
       <form>
         <div className="details-container">
-          <label for="date">
-            Date
-            <input type="date" name="date-and-time" />
+          <label for="title">
+            Title
+            <input type="text" name="activity-title" />
           </label>
           <label>
-             Type
+            Type
             <select>
               <option value="networking">Networking Event</option>
               <option value="meetup">Meetup</option>
@@ -26,18 +26,17 @@ export default function NewActivity() {
               <option value="portfolio">Other</option>
             </select>
           </label>
-          <label for="name">
-             Name
-            <input type="text" name="activity-name" />
+          <label for="date">
+            Date
+            <input type="date" name="date-and-time" />
           </label>
-
           <label for="topic">
-             Topic
+            Topic
             <input type="text" name="activity-topic" />
           </label>
 
           <label for="website">
-             Website
+            Website
             <input type="url" name="activity-website" />
           </label>
         </div>

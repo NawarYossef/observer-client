@@ -13,11 +13,11 @@ export class NewJob extends Component {
     };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ jobType: e.target.value });
-  }
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     const newJob = {
       dateDiscovered: e.target.dateDiscovered.value || "",
@@ -35,10 +35,10 @@ export class NewJob extends Component {
       codingChallengeDate: e.target.codingChallengeDate.value || "",
       techChallengeDate: e.target.techChallengeDate.value || ""
     };
-    console.log(newJob)
+    console.log(newJob);
 
     this.props.createNewJob(newJob);
-  }
+  };
 
   render() {
     return (
@@ -47,30 +47,6 @@ export class NewJob extends Component {
           <h2>New Job</h2>
         </div>
         <form onSubmit={this.handleSubmit}>
-          <div className="general-info-section">
-            <label for="apply-discovered">
-              Date Discovered
-              <input type="date" name="dateDiscovered" />
-            </label>
-            <label>
-              Job Type
-              <select onChange={this.handleChange}>
-                <option value="applied" name="jobType">
-                  Applied
-                </option>
-                <option value="interview" name="jobType">
-                  Interview
-                </option>
-                <option value="interested" name="jobType">
-                  Interested
-                </option>
-                <option value="new-lead" name="jobType">
-                  Negotiate
-                </option>
-              </select>
-            </label>
-          </div>
-
           <div className="company-info-section">
             <label for="name">
               Company Name
@@ -92,36 +68,30 @@ export class NewJob extends Component {
               Company Website
               <input type="url" name="companyWebsite" />
             </label>
-            <label for="size">
-              Company Size
-              <input type="url" name="companySize" />
-            </label>
             <label for="description">
               Link to Job Description
               <input type="url" name="linkJobDescription" />
             </label>
-          </div>
-
-          <div className="contact-info-section">
-            <label for="apply-date">
-              Date Applied
-              <input type="date" name="dateApplied" />
+            <label>
+              Job Status
+              <select onChange={this.handleChange}>
+                <option value="applied" name="jobStatus">
+                  Applied
+                </option>
+                <option value="interview" name="jobStatus">
+                  Interview
+                </option>
+                <option value="interested" name="jobStatus">
+                  Interested
+                </option>
+                <option value="new-lead" name="jobStatus">
+                  Negotiate
+                </option>
+              </select>
             </label>
-            <label for="contact">
-              Contact Name
-              <input type="text" name="contactName" />
-            </label>
-            <label for="email">
-              Contact Email
-              <input type="email" name="contactEmail" />
-            </label>
-            <label for="coding-challenge-date">
-              Coding Challenge Date
-              <input type="date" name="codingChallengeDate" />
-            </label>
-            <label for="interview-date">
-              Technical Interview Date
-              <input type="date" name="techChallengeDate" />
+            <label for="comments">
+              Notes
+              <textarea rows="4" cols="50" />
             </label>
           </div>
 
