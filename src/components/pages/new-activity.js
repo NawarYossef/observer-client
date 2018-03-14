@@ -16,7 +16,7 @@ export default function NewActivity() {
             <input type="date" name="date-and-time" />
           </label>
           <label>
-            Activity Type
+             Type
             <select>
               <option value="networking">Networking Event</option>
               <option value="meetup">Meetup</option>
@@ -27,17 +27,17 @@ export default function NewActivity() {
             </select>
           </label>
           <label for="name">
-            Activity Name
+             Name
             <input type="text" name="activity-name" />
           </label>
 
           <label for="topic">
-            Activity Topic
+             Topic
             <input type="text" name="activity-topic" />
           </label>
 
           <label for="website">
-            Activity Website
+             Website
             <input type="url" name="activity-website" />
           </label>
         </div>

@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, withRouter } from "react-router-dom";
 
-import { CLIENT_ORIGIN } from "../config";
+import { API_BASE_URL } from "../config";
 import HeaderNavbar from "./header-navbar";
 import LandingPage from "./pages/landing-page";
 import { Dashboard } from "./pages/dashboard";
 import Jobs from "./pages/jobs";
-import { NewJob } from "./pages/new-job";
+import NewJob from "./pages/new-job";
 import { Activities } from "./pages/activities";
 import NewActivity from "./pages/new-activity";
 import { JobSearch } from "./pages/job-search";
@@ -15,11 +15,7 @@ import { JobSearch } from "./pages/job-search";
 import "./app.css";
 
 class App extends Component {
-  componentDidMount() {
-    fetch(`api/user/${CLIENT_ORIGIN}`)
-      .then(json => console.log(json))
-      .catch(error => console.log(error));
-  }
+  
 
   render() {
     return (

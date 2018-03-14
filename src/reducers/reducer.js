@@ -1,11 +1,17 @@
-import * as actions from '../actions/action';
+import * as actions from "../actions/action";
 
 const initialState = {
-  addButton: false,
-  cancelButton: false
+  jobs: [],
+  activities: []
 };
 
-export function reducer(state=initialState, action) {
-
-  return state;
+export function appReducer(state = initialState, action) {
+  switch (action.type) {
+    case actions.CREATE_NEW_JOB_SUCCESS:
+      return Object.assign({}, state, {
+        jobs: state.jobs.concat(action.newJob)
+      });
+    default:
+      return state;
+  }
 }

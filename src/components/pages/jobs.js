@@ -20,8 +20,8 @@ export class Jobs extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({});
+// const mapDispatchToProps = dispatch => ({});
 
-const mapStateToProps = state => {};
+// const mapStateToProps = state => {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Jobs);
+export default connect()(Jobs);
