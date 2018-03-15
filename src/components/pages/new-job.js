@@ -23,8 +23,9 @@ export class NewJob extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    
-    this.props.createNewJob( this.state);
+    const newJob = this.state
+    this.props.createNewJob(newJob);
+    this.props.history.push('/jobs');
   };
 
   handleCompanyNameChange = e => {
@@ -40,19 +41,19 @@ export class NewJob extends Component {
   };
 
   handleCompanyTypeChange = e => {
-    this.setState({ companyTitle: e.target.value });
+    this.setState({ companyType: e.target.value });
   };
 
   handleSalaryChange = e => {
-    this.setState({ jobsStatus: e.target.value });
+    this.setState({ salary: e.target.value });
   };
 
   handleCompanyWebsiteChange = e => {
-    this.setState({ jobsStatus: e.target.value });
+    this.setState({ companyWebsite: e.target.value });
   };
 
   handleJobLinkChange = e => {
-    this.setState({ jobsStatus: e.target.value });
+    this.setState({ linkJobDescription: e.target.value });
   };
 
   handleJobStatusChange = e => {
@@ -71,35 +72,32 @@ export class NewJob extends Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="company-info-section">
-            <label for="company-name">
+            <label htmlFor="company-name">
               Company Name
               <input
                 type="text"
                 name="companyName"
-                value={this.state.companyName}
                 onChange={this.handleCompanyNameChange}
               />
             </label>
-            <label for="company-location">
+            <label htmlFor="company-location">
               Location
               <input
                 type="text"
                 name="companyLocation"
-                value={this.state.companyLocation}
                 onChange={this.handleCompanyLocationChange}
               />
             </label>
-            <label for="position">
+            <label htmlFor="position">
               Position Title
               <input
                 type="text"
                 name="position"
-                value={this.state.positionTitle}
                 onChange={this.handlePositionTitleChange}
               />
             </label>
 
-            <label>
+            <label htmlFor="companyType">
               Company Type
               <select onChange={this.handleCompanyTypeChange}>
                 <option value="startup" name="companyType">
@@ -113,35 +111,32 @@ export class NewJob extends Component {
                 </option>
               </select>
             </label>
-            <label for="salary">
+            <label htmlFor="salary">
               Salary
               <input
                 type="number"
                 name="salary"
-                value={this.state.salary}
                 onChange={this.handleSalaryChange}
               />
             </label>
-            <label for="website">
+            <label htmlFor="website">
               Company Website
               <input
                 type="url"
                 name="companyWebsite"
-                value={this.state.companyWebsite}
                 onChange={this.handleCompanyWebsiteChange}
               />
             </label>
-            <label for="description">
+            <label htmlFor="description">
               Link to Job Description
               <input
                 type="url"
                 name="linkJobDescription"
-                value={this.state.linkJobDescription}
                 onChange={this.handleJobLinkChange}
               />
             </label>
 
-            <label>
+            <label htmlFor="jobStatus">
               Job Status
               <select onChange={this.handleJobStatusChange}>
                 <option value="applied" name="jobStatus">
@@ -158,7 +153,7 @@ export class NewJob extends Component {
                 </option>
               </select>
             </label>
-            <label for="notes">
+            <label htmlFor="notes">
               Notes
               <textarea rows="4" cols="50" onChange={this.handleNotesChange} />
             </label>
