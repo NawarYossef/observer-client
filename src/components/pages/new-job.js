@@ -9,35 +9,58 @@ export class NewJob extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      jobType: ""
+      companyName: "",
+      companyLocation: "",
+      positionTitle: "",
+      companyType: "",
+      salary: "",
+      companyWebsite: "",
+      linkJobDescription: "",
+      jobStatus: "",
+      notes: ""
     };
   }
 
-  handleChange = e => {
-    this.setState({ jobType: e.target.value });
-  };
-
   handleSubmit = e => {
     e.preventDefault();
-    const newJob = {
-      dateDiscovered: e.target.dateDiscovered.value || "",
-      jobType: this.state.jobType || "",
-      companyName: e.target.companyName.value || "",
-      companyLocation: e.target.companyLocation.value || "",
-      position: e.target.position.value || "",
-      salary: e.target.salary.value || "",
-      companyWebsite: e.target.companyWebsite.value || "",
-      companySize: e.target.companySize.value || "",
-      linkJobDescription: e.target.linkJobDescription.value || "",
-      dateApplied: e.target.dateApplied.value || "",
-      contactName: e.target.contactName.value || "",
-      contactEmail: e.target.contactEmail.value || "",
-      codingChallengeDate: e.target.codingChallengeDate.value || "",
-      techChallengeDate: e.target.techChallengeDate.value || ""
-    };
-    console.log(newJob);
+    
+    this.props.createNewJob( this.state);
+  };
 
-    this.props.createNewJob(newJob);
+  handleCompanyNameChange = e => {
+    this.setState({ companyName: e.target.value });
+  };
+
+  handleCompanyLocationChange = e => {
+    this.setState({ CompanyLocation: e.target.value });
+  };
+
+  handlePositionTitleChange = e => {
+    this.setState({ positionTitle: e.target.value });
+  };
+
+  handleCompanyTypeChange = e => {
+    this.setState({ companyTitle: e.target.value });
+  };
+
+  handleSalaryChange = e => {
+    this.setState({ jobsStatus: e.target.value });
+  };
+
+  handleCompanyWebsiteChange = e => {
+    this.setState({ jobsStatus: e.target.value });
+  };
+
+  handleJobLinkChange = e => {
+    this.setState({ jobsStatus: e.target.value });
+  };
+
+  handleJobStatusChange = e => {
+    this.setState({ jobsStatus: e.target.value });
+  };
+
+  handleNotesChange = e => {
+    this.setState({ notes: e.target.value });
   };
 
   render() {
@@ -48,33 +71,79 @@ export class NewJob extends Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="company-info-section">
-            <label for="name">
+            <label for="company-name">
               Company Name
-              <input type="text" name="companyName" />
+              <input
+                type="text"
+                name="companyName"
+                value={this.state.companyName}
+                onChange={this.handleCompanyNameChange}
+              />
             </label>
-            <label for="name">
+            <label for="company-location">
               Location
-              <input type="text" name="companyLocation" />
+              <input
+                type="text"
+                name="companyLocation"
+                value={this.state.companyLocation}
+                onChange={this.handleCompanyLocationChange}
+              />
             </label>
             <label for="position">
               Position Title
-              <input type="text" name="position" />
+              <input
+                type="text"
+                name="position"
+                value={this.state.positionTitle}
+                onChange={this.handlePositionTitleChange}
+              />
+            </label>
+
+            <label>
+              Company Type
+              <select onChange={this.handleCompanyTypeChange}>
+                <option value="startup" name="companyType">
+                  Startup
+                </option>
+                <option value="nonprofit" name="companyType">
+                  Nonprofit
+                </option>
+                <option value="corporation" name="companyType">
+                  Corporation
+                </option>
+              </select>
             </label>
             <label for="salary">
               Salary
-              <input type="number" name="salary" />
+              <input
+                type="number"
+                name="salary"
+                value={this.state.salary}
+                onChange={this.handleSalaryChange}
+              />
             </label>
             <label for="website">
               Company Website
-              <input type="url" name="companyWebsite" />
+              <input
+                type="url"
+                name="companyWebsite"
+                value={this.state.companyWebsite}
+                onChange={this.handleCompanyWebsiteChange}
+              />
             </label>
             <label for="description">
               Link to Job Description
-              <input type="url" name="linkJobDescription" />
+              <input
+                type="url"
+                name="linkJobDescription"
+                value={this.state.linkJobDescription}
+                onChange={this.handleJobLinkChange}
+              />
             </label>
+
             <label>
               Job Status
-              <select onChange={this.handleChange}>
+              <select onChange={this.handleJobStatusChange}>
                 <option value="applied" name="jobStatus">
                   Applied
                 </option>
@@ -84,14 +153,14 @@ export class NewJob extends Component {
                 <option value="interested" name="jobStatus">
                   Interested
                 </option>
-                <option value="new-lead" name="jobStatus">
+                <option value="negotiate" name="jobStatus">
                   Negotiate
                 </option>
               </select>
             </label>
-            <label for="comments">
+            <label for="notes">
               Notes
-              <textarea rows="4" cols="50" />
+              <textarea rows="4" cols="50" onChange={this.handleNotesChange} />
             </label>
           </div>
 
