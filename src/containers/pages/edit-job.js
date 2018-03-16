@@ -3,29 +3,29 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createNewJob } from "../../actions/action";
 
-import "./styles/new-job.css";
+import "./styles/edit-job.css";
 
-export class NewJob extends Component {
+export class EditJob extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      companyName: "",
-      companyLocation: "",
-      positionTitle: "",
-      companyType: "",
-      salary: "",
-      companyWebsite: "",
-      linkJobDescription: "",
-      jobStatus: "",
-      notes: ""
-    };
+    // this.state = {
+    //   companyName: "",
+    //   companyLocation: "",
+    //   positionTitle: "",
+    //   companyType: "",
+    //   salary: "",
+    //   companyWebsite: "",
+    //   linkJobDescription: "",
+    //   jobStatus: "",
+    //   notes: ""
+    // };
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    const newJob = this.state
+    const newJob = this.state;
     this.props.createNewJob(newJob);
-    this.props.history.push('/jobs');
+    this.props.history.push("/jobs");
   };
 
   handleCompanyNameChange = e => {
@@ -171,8 +171,5 @@ export class NewJob extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  createNewJob: newJob => dispatch(createNewJob(newJob))
-});
 
-export default connect(null, mapDispatchToProps)(NewJob);
+export default connect()(EditJob);

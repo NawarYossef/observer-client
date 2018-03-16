@@ -1,0 +1,7 @@
+.job {
+  display: block;
+  width: 60%;
+  background: rgb(202, 202, 202);
+  margin: 0 auto 20px auto;
+  padding: 20px;
+}

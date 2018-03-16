@@ -1,9 +1,9 @@
-.jobs-container {
+.jobs-section {
   width: 40%;
   margin: 200px auto 0 auto;
 }
 
-.jobs-container label {
+.jobs-section label {
   font-size: 1.4em;
   margin-bottom: 20px;
 }

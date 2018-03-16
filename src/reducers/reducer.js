@@ -12,6 +12,7 @@ export function appReducer(state = initialState, action) {
       return Object.assign({}, state, {
         jobs: action.jobs
       });
+      
     default:
       return state;
   }
