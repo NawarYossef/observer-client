@@ -4,9 +4,6 @@ import "./header-navbar.css";
 
 export default function HeaderNavbar() {
   const links = [
-    <Link to="/dashboard" className="">
-      DASHBOARD
-    </Link>,
     <Link to="/job-search" className="">
       SEARCH
     </Link>,
@@ -16,6 +13,9 @@ export default function HeaderNavbar() {
     <Link to="/activities" className="">
       ACTIVITIES
     </Link>,
+    <Link to="/contacts" className="">
+      CONTACTS
+    </Link>
   ];
   return (
     <div className="App">
@@ -24,7 +24,11 @@ export default function HeaderNavbar() {
         <nav>
           <ul>
             {links.map((link, idx) => {
-              return <li key={idx.toString()} className="link">{link}</li>;
+              return (
+                <li key={idx.toString()} className="link">
+                  {link}
+                </li>
+              );
             })}
           </ul>
         </nav>

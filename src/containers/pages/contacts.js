@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import "./styles/dashboard.css"
-export class Dashboard extends Component {
+import "./styles/contacts.css"
+export class Contacts extends Component {
   constructor(props) {
     super(props);
   }
@@ -9,7 +9,7 @@ export class Dashboard extends Component {
   render() {
     return (
       <section className="dashboard-container">
-        <h1>Dashboard</h1>
+        <h1>Contacts</h1>
       </section>
     );
   }

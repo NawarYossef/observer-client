@@ -12,6 +12,10 @@ export function appReducer(state = initialState, action) {
       return Object.assign({}, state, {
         jobs: action.jobs
       });
+    case actions.GET_SINGLE_JOB_SUCCESS:
+      return Object.assign({}, state, {
+        singleJob: action.job
+      });
       
     default:
       return state;

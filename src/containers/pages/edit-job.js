@@ -1,32 +1,40 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { createNewJob } from "../../actions/action";
+import { withRouter } from "react-router";
+import { editJob, getJob } from "../../actions/action";
 
 import "./styles/edit-job.css";
 
 export class EditJob extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   companyName: "",
-    //   companyLocation: "",
-    //   positionTitle: "",
-    //   companyType: "",
-    //   salary: "",
-    //   companyWebsite: "",
-    //   linkJobDescription: "",
-    //   jobStatus: "",
-    //   notes: ""
-    // };
+    this.state = {
+      companyName: "",
+      companyLocation: "",
+      positionTitle: "",
+      companyType: "",
+      salary: "",
+      companyWebsite: "",
+      linkJobDescription: "",
+      jobStatus: "",
+      notes: ""
+    };
+  }
+
+  componentDidMount() {
+    const { match: { params } } = this.props;
+    this.props.getJob(params.id ); 
+    console.log(this.props.job)
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    const newJob = this.state;
-    this.props.createNewJob(newJob);
+    const job = this.state;
+    const { match: { params } } = this.props;
+    // this.props.editJob(job, params.id);
     this.props.history.push("/jobs");
-  };
+  };  
 
   handleCompanyNameChange = e => {
     this.setState({ companyName: e.target.value });
@@ -171,5 +179,12 @@ export class EditJob extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  getJob: (id) => dispatch(getJob(id))
+});
 
-export default connect()(EditJob);
+const mapStateToProps = state => ({
+  job: state.app.singleJob
+});
+
+export default connect(null, mapDispatchToProps)(EditJob);

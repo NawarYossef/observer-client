@@ -9,7 +9,7 @@ export const getJobs = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        'Accept': 'application/json'
+        Accept: "application/json"
       }
     })
       .then(res => {
@@ -19,9 +19,7 @@ export const getJobs = () => {
         dispatch(getJobsSuccess(data.jobs));
         history.push(`/jobs`);
       })
-      .catch(err => 
-        console.log(err)
-      )
+      .catch(err => console.log(err));
   };
 };
 
@@ -31,15 +29,44 @@ export const getJobsSuccess = jobs => ({
   jobs
 });
 
-// ------------GET new job --------------//
-export const createNewJob = (newJob) => {
+// ----------------GET a single job --------------
+export const getJob = id => {
+  return dispatch => {
+    // const authToken = localStorage.getItem("token");
+    fetch(`${API_BASE_URL}/jobs/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        dispatch(getSingleJobSuccess(data));
+      })
+      .catch(err => console.log(err));
+  };
+};
+
+export const GET_SINGLE_JOB_SUCCESS = "GET_SINGLE_JOB_SUCCESS";
+export const getSingleJobSuccess = job => ({
+  type: GET_SINGLE_JOB_SUCCESS,
+  job
+});
+
+// ----------------(PUT) Edit a single job --------------
+
+// ------------POST new job --------------//
+export const createNewJob = newJob => {
   return dispatch => {
     // const authToken = localStorage.getItem("token");
     fetch(`${API_BASE_URL}/jobs/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        'Accept': 'application/json'
+        Accept: "application/json"
       },
       body: JSON.stringify(newJob)
     })
@@ -49,9 +76,7 @@ export const createNewJob = (newJob) => {
       .then(newJob => {
         history.push(`/jobs`);
       })
-      .catch(err => 
-        console.log(err)
-      )
+      .catch(err => console.log(err));
   };
 };
 
@@ -63,7 +88,7 @@ export const deleteJob = (job, id) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        'Accept': 'application/json'
+        Accept: "application/json"
       },
       body: JSON.stringify(job)
     })
@@ -71,9 +96,6 @@ export const deleteJob = (job, id) => {
         return res.status(200).json();
         history.push(`/jobs`);
       })
-      .catch(err => 
-        console.log(err)
-      )
+      .catch(err => console.log(err));
   };
 };
-
