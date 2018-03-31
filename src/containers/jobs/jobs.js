@@ -34,7 +34,7 @@ export class Jobs extends Component {
 }
 
 const mapStateToProps = state => ({
-  jobs: state.app.jobs
+  jobs: state.jobs.jobs
 });
 
 export default connect(mapStateToProps)(Jobs);

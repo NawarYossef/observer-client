@@ -6,7 +6,7 @@ const initialState = {
   activities: []
 };
 
-export function jobsReducer(state = initialState, action) {
+export function jobs(state = initialState, action) {
   switch (action.type) {
     case actions.GET_JOBS_SUCCESS:
       return Object.assign({}, state, {
