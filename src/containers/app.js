@@ -3,17 +3,16 @@ import { connect } from "react-redux";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
 import { API_BASE_URL } from "../config";
-import HeaderNavbar from "./header-navbar";
-import LandingPage from "./pages/landing-page";
-import { Contacts } from "./pages/contacts";
-import Jobs from "./pages/jobs";
-import NewJob from "./pages/new-job";
-import EditJob from "./pages/edit-job";
-import { Activities } from "./pages/activities";
-import NewActivity from "./pages/new-activity";
-import { JobSearch } from "./pages/job-search";
+import HeaderNavbar from "../components/header-navbar";
+import LandingPage from "./landing-page";
+import { Contacts } from "./contacts/contacts";
+import Jobs from "./jobs/jobs";
+import NewJob from "./jobs/new-job";
+import EditJob from "./jobs/edit-job";
+import { Activities } from "./activities/activities";
+import NewActivity from "./activities/new-activity";
 
-import "./app.css";
+import "./styles/app.css";
 
 class App extends Component {
   render() {
@@ -27,7 +26,6 @@ class App extends Component {
           <Route exact path="/new-activity" component={NewActivity} />
           <Route exact path="/jobs" component={Jobs} />
           <Route exact path="/new-job" component={NewJob} />
-          <Route exact path="/job-search" component={JobSearch} />
           <Route  path="/edit-job/:id" component={EditJob} />
         </div>
       </Router>
