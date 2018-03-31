@@ -57,7 +57,32 @@ export const getSingleJobSuccess = job => ({
 });
 
 // ----------------(PUT) Edit a single job --------------
+export const editJob = (job, id) => {
+  return dispatch => {
+    // const authToken = localStorage.getItem("token");
+    fetch(`${API_BASE_URL}/jobs/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(newJob)
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        dispatch(edit_job_success(data));
+      })
+      .catch(err => console.log(err));
+  };
+};
 
+export const EDIT_JOB_SUCCESS = "EDIT_JOB_SUCCESS";
+export const edit_job_success = job => ({
+  type: EDIT_JOB_SUCCESS,
+  job
+});
 
 
 // ------------POST new job --------------//
@@ -76,15 +101,15 @@ export const createNewJob = newJob => {
         return res.json();
       })
       .then(data => {
-        dispatch(create_new_job(data));
+        dispatch(create_new_job_success(data));
       })
       .catch(err => console.log(err));
   };
 };
 
-export const CREATE_NEW_JOB = "CREATE_NEW_JOB";
-export const create_new_job = job => ({
-  type: GET_SINGLE_JOB_SUCCESS,
+export const CREATE_NEW_JOB_SUCCESS = "CREATE_NEW_JOB_SUCCESS";
+export const create_new_job_success = job => ({
+  type: CREATE_NEW_JOB_SUCCESS,
   job
 });
 

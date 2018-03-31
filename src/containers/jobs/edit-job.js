@@ -44,7 +44,7 @@ export class EditJob extends Component {
     const job = this.state;
     const { match: { params } } = this.props;
     this.props.editJob(job, params.id);
-    // this.props.history.push("/jobs");
+    this.props.history.push("/jobs");
   };
 
   handleCompanyNameChange = e => {
@@ -122,7 +122,7 @@ export class EditJob extends Component {
 
             <label htmlFor="companyType">
               Company Type
-              <select name={"select"} value={this.state.companyType} onChange={this.handleCompanyTypeChange}>
+              <select value={this.state.companyType} onChange={this.handleCompanyTypeChange}>
                 <option value="startup" name="companyType">
                   Startup
                 </option>
@@ -198,7 +198,8 @@ export class EditJob extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getJob: (id) => dispatch(getSingleJob(id))
+  getJob: (id) => dispatch(getSingleJob(id)),
+  editJob: (id) => dispatch(editJob(id))
 });
 
 const mapStateToProps = state => ({
