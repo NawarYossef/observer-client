@@ -58,6 +58,8 @@ export const getSingleJobSuccess = job => ({
 
 // ----------------(PUT) Edit a single job --------------
 
+
+
 // ------------POST new job --------------//
 export const createNewJob = newJob => {
   return dispatch => {
@@ -73,12 +75,18 @@ export const createNewJob = newJob => {
       .then(res => {
         return res.json();
       })
-      .then(newJob => {
-        history.push(`/jobs`);
+      .then(data => {
+        dispatch(create_new_job(data));
       })
       .catch(err => console.log(err));
   };
 };
+
+export const CREATE_NEW_JOB = "CREATE_NEW_JOB";
+export const create_new_job = job => ({
+  type: GET_SINGLE_JOB_SUCCESS,
+  job
+});
 
 // --------------DELETE job --------------------//
 export const deleteJob = (job, id) => {

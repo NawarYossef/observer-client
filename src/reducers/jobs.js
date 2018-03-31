@@ -1,4 +1,4 @@
-import * as actions from "../actions/action";
+import * as actions from "../actions/jobs";
 
 const initialState = {
   jobs: [],
@@ -16,6 +16,11 @@ export function jobs(state = initialState, action) {
       return Object.assign({}, state, {
         singleJob: action.job
       });
+    
+    case actions.CREATE_NEW_JOB:
+    return Object.assign({}, state, {
+      jobs: [...jobs, action.job]
+    })
       
     default:
       return state;

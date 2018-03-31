@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { editJob, getJob } from "../../actions/action";
+import { editJob, getJob } from "../../actions/jobs";
 
 import "./styles/edit-job.css";
 
@@ -184,7 +184,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  job: state.app.singleJob
+  job: state.jobs.singleJob
 });
 
 export default connect(null, mapDispatchToProps)(EditJob);

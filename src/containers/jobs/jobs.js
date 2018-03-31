@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getJobs, deleteJob } from "../../actions/action";
+import { getJobs, deleteJob } from "../../actions/jobs";
 import AddNewJob from "../../components/add-new-job";
 import SingleJob from "../../components/single-job";
 
