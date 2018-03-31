@@ -30,7 +30,7 @@ export const getJobsSuccess = jobs => ({
 });
 
 // ----------------GET a single job --------------
-export const getJob = id => {
+export const getSingleJob = id => {
   return dispatch => {
     // const authToken = localStorage.getItem("token");
     fetch(`${API_BASE_URL}/jobs/${id}`, {

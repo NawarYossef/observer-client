@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { editJob, getJob } from "../../actions/jobs";
+import { editJob, getSingleJob } from "../../actions/jobs";
 
 import "./styles/edit-job.css";
 
@@ -24,17 +24,28 @@ export class EditJob extends Component {
 
   componentDidMount() {
     const { match: { params } } = this.props;
-    this.props.getJob(params.id ); 
-    console.log(this.props.job)
+    this.props.getJob(params.id);
+    this.setState({
+      companyName: this.props.job["companyName"],
+      companyLocation: this.props.job["companyLocation"],
+      positionTitle: this.props.job["positionTitle"],
+      companyType: this.props.job["companyType"],
+      salary: this.props.job["salary"],
+      companyWebsite: this.props.job["companyWebsite"],
+      linkJobDescription: this.props.job["linkJobDescription"],
+      jobStatus: this.props.job["jobStatus"],
+      notes: this.props.job["notes"],
+    })
+
   }
 
   handleSubmit = e => {
     e.preventDefault();
     const job = this.state;
     const { match: { params } } = this.props;
-    // this.props.editJob(job, params.id);
-    this.props.history.push("/jobs");
-  };  
+    this.props.editJob(job, params.id);
+    // this.props.history.push("/jobs");
+  };
 
   handleCompanyNameChange = e => {
     this.setState({ companyName: e.target.value });
@@ -74,6 +85,7 @@ export class EditJob extends Component {
 
   render() {
     return (
+
       <section className="new-job-container">
         <div className="h2-wrapper">
           <h2>New Job</h2>
@@ -85,6 +97,7 @@ export class EditJob extends Component {
               <input
                 type="text"
                 name="companyName"
+                value={this.state.companyName || ""}
                 onChange={this.handleCompanyNameChange}
               />
             </label>
@@ -93,6 +106,7 @@ export class EditJob extends Component {
               <input
                 type="text"
                 name="companyLocation"
+                value={this.state.companyLocation || ""}
                 onChange={this.handleCompanyLocationChange}
               />
             </label>
@@ -101,13 +115,14 @@ export class EditJob extends Component {
               <input
                 type="text"
                 name="position"
+                value={this.state.positionTitle || ""}
                 onChange={this.handlePositionTitleChange}
               />
             </label>
 
             <label htmlFor="companyType">
               Company Type
-              <select onChange={this.handleCompanyTypeChange}>
+              <select name={"select"} value={this.state.companyType} onChange={this.handleCompanyTypeChange}>
                 <option value="startup" name="companyType">
                   Startup
                 </option>
@@ -124,6 +139,7 @@ export class EditJob extends Component {
               <input
                 type="number"
                 name="salary"
+                value={this.state.salary || ""}
                 onChange={this.handleSalaryChange}
               />
             </label>
@@ -132,6 +148,7 @@ export class EditJob extends Component {
               <input
                 type="url"
                 name="companyWebsite"
+                value={this.state.companyWebsite || ""}
                 onChange={this.handleCompanyWebsiteChange}
               />
             </label>
@@ -140,13 +157,14 @@ export class EditJob extends Component {
               <input
                 type="url"
                 name="linkJobDescription"
+                value={this.state.linkJobDescription || ""}
                 onChange={this.handleJobLinkChange}
               />
             </label>
 
             <label htmlFor="jobStatus">
               Job Status
-              <select onChange={this.handleJobStatusChange}>
+              <select value={this.state.jobStatus} onChange={this.handleJobStatusChange}>
                 <option value="applied" name="jobStatus">
                   Applied
                 </option>
@@ -163,7 +181,7 @@ export class EditJob extends Component {
             </label>
             <label htmlFor="notes">
               Notes
-              <textarea rows="4" cols="50" onChange={this.handleNotesChange} />
+              <textarea rows="4" cols="50" value={this.state.notes || ""} onChange={this.handleNotesChange} />
             </label>
           </div>
 
@@ -180,11 +198,11 @@ export class EditJob extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getJob: (id) => dispatch(getJob(id))
+  getJob: (id) => dispatch(getSingleJob(id))
 });
 
 const mapStateToProps = state => ({
   job: state.jobs.singleJob
 });
 
-export default connect(null, mapDispatchToProps)(EditJob);
+export default connect(mapStateToProps, mapDispatchToProps)(EditJob);
