@@ -186,7 +186,7 @@ export class EditJob extends Component {
           </div>
 
           <div className="buttons-wrapper">
-            <input type="submit" value="Add Job" />
+            <input type="submit" value="Save" />
             <Link to="/jobs">
               <button className="cancel-button">Cancel</button>
             </Link>

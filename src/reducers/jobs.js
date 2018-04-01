@@ -17,11 +17,16 @@ export function jobs(state = initialState, action) {
         singleJob: action.job
       });
     
-    case actions.CREATE_NEW_JOB:
+    case actions.CREATE_NEW_JOB_SUCCESS:
     return Object.assign({}, state, {
       jobs: [...jobs, action.job]
     })
       
+    case actions.EDIT_JOB_SUCCESS:
+    return Object.assign({}, state, {
+      jobs: jobs.concat(action.job)
+    })
+
     default:
       return state;
   }

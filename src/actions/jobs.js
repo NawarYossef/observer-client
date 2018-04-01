@@ -1,7 +1,7 @@
 import { API_BASE_URL } from "../config";
 import history from "../history";
 
-// -------------- GET all jobs --------------------//
+// -------------- GET all jobs --------------------
 export const getJobs = () => {
   return dispatch => {
     // const authToken = localStorage.getItem("token");
@@ -29,7 +29,7 @@ export const getJobsSuccess = jobs => ({
   jobs
 });
 
-// ----------------GET a single job --------------
+// ----------------GET a single job -----------------
 export const getSingleJob = id => {
   return dispatch => {
     // const authToken = localStorage.getItem("token");
@@ -66,26 +66,26 @@ export const editJob = (job, id) => {
         "Content-Type": "application/json",
         Accept: "application/json"
       },
-      body: JSON.stringify(newJob)
+      body: JSON.stringify(job)
     })
       .then(res => {
         return res.json();
       })
-      .then(data => {
-        dispatch(edit_job_success(data));
+      .then(job => {
+        dispatch(edit_job_success(job, id));
       })
       .catch(err => console.log(err));
   };
 };
 
 export const EDIT_JOB_SUCCESS = "EDIT_JOB_SUCCESS";
-export const edit_job_success = job => ({
+export const edit_job_success = (job, id) => ({
   type: EDIT_JOB_SUCCESS,
-  job
+  job,
+  id
 });
 
-
-// ------------POST new job --------------//
+// ------------POST new job ------------------------
 export const createNewJob = newJob => {
   return dispatch => {
     // const authToken = localStorage.getItem("token");
@@ -113,7 +113,7 @@ export const create_new_job_success = job => ({
   job
 });
 
-// --------------DELETE job --------------------//
+// --------------DELETE job --------------------
 export const deleteJob = (job, id) => {
   return dispatch => {
     // const authToken = localStorage.getItem("token");

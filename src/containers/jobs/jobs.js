@@ -27,6 +27,7 @@ export class Jobs extends Component {
         {this.props.jobs.map((job, k) => {
           return <SingleJob key={k} job={job} onClick={() => this.handleJobDelete(job, job.id)}/>;
         })}
+        {console.log(this.props.jobs)}
         <AddNewJob />
       </section>
     );
