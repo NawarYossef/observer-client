@@ -24,7 +24,9 @@ export function jobs(state = initialState, action) {
       
     case actions.EDIT_JOB_SUCCESS:
     return Object.assign({}, state, {
-      jobs: jobs.concat(action.job)
+      jobs: jobs.map(job => {
+        job.id === action.id ? job = action.job : null;
+      })
     })
 
     default:
