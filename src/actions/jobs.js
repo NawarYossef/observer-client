@@ -127,7 +127,6 @@ export const deleteJob = (job, id) => {
     })
       .then(res => {
         return res.status(200).json();
-        history.push(`/jobs`);
       })
       .catch(err => console.log(err));
   };

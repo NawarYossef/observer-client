@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { getJobs, deleteJob } from "../../actions/jobs";
-import AddNewJob from "../../components/add-new-job";
-import SingleJob from "../../components/single-job";
+import AddNewJob from "../../components/jobs/add-new-job";
+import SingleJob from "../../components/jobs/single-job";
 
 import "./styles/jobs.css";
 import "./styles/helper.css";
@@ -19,6 +20,7 @@ export class Jobs extends Component {
 
   handleJobDelete(job, id) {
     this.props.dispatch(deleteJob(job, id))
+    this.props.history.push(`/jobs`);
   } 
 
   render() {
@@ -27,7 +29,6 @@ export class Jobs extends Component {
         {this.props.jobs.map((job, k) => {
           return <SingleJob key={k} job={job} onClick={() => this.handleJobDelete(job, job.id)}/>;
         })}
-        {console.log(this.props.jobs)}
         <AddNewJob />
       </section>
     );

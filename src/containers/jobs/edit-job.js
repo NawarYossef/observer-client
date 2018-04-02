@@ -25,6 +25,7 @@ export class EditJob extends Component {
   componentDidMount() {
     const { match: { params } } = this.props;
     this.props.getJob(params.id);
+    // console.log(this.props.job)
     this.setState({
       companyName: this.props.job["companyName"],
       companyLocation: this.props.job["companyLocation"],
