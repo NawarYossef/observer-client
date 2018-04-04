@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { editJob, getSingleJob } from "../../actions/jobs";
+import { editActivity, getSingleActivity } from "../../actions/activities";
 
 // import "./styles/edit-job.css";
 
@@ -10,81 +10,57 @@ export class EditActivity extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      companyName: "",
-      companyLocation: "",
-      positionTitle: "",
-      companyType: "",
-      salary: "",
-      companyWebsite: "",
-      linkJobDescription: "",
-      jobStatus: "",
-      notes: ""
+      title: "",
+      type: "",
+      date: "",
+      topic: "",
+      website: "",
     };
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      companyName: nextProps.job["companyName"],
-      companyLocation: nextProps.job["companyLocation"],
-      positionTitle: nextProps.job["positionTitle"],
-      companyType: nextProps.job["companyType"],
-      salary: nextProps.job["salary"],
-      companyWebsite: nextProps.job["companyWebsite"],
-      linkJobDescription: nextProps.job["linkJobDescription"],
-      jobStatus: nextProps.job["jobStatus"],
-      notes: nextProps.job["notes"]
+      title: nextProps.activity["title"],
+      type: nextProps.activity["type"],
+      date: nextProps.activity["date"],
+      topic: nextProps.activity["topic"],
+      website: nextProps.activity["website"]
     });
   }
 
   componentDidMount() {
     const { match: { params } } = this.props;
-    this.props.getJob(params.id);
+    this.props.getActivity(params.id);
     // console.log(this.props.job)
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    const job = this.state;
+    const activity = this.state;
     const { match: { params } } = this.props;
-    this.props.editJob(job, params.id);
-    this.props.history.push("/jobs");
-    console.log(this.props.job)
+    this.props.editActivity(activity, params.id);
+    this.props.history.push("/activities");
+    console.log(this.props.activity)
   };
 
-  handleCompanyNameChange = e => {
-    this.setState({ companyName: e.target.value });
+  handleTitleChange = e => {
+    this.setState({ title: e.target.value });
   };
 
-  handleCompanyLocationChange = e => {
-    this.setState({ CompanyLocation: e.target.value });
+  handleTypeChange = e => {
+    this.setState({ title: e.target.value });
   };
 
-  handlePositionTitleChange = e => {
-    this.setState({ positionTitle: e.target.value });
+  handleDateChange = e => {
+    this.setState({ title: e.target.value });
   };
 
-  handleCompanyTypeChange = e => {
-    this.setState({ companyType: e.target.value });
+  handleTopicChange = e => {
+    this.setState({ title: e.target.value });
   };
 
-  handleSalaryChange = e => {
-    this.setState({ salary: e.target.value });
-  };
-
-  handleCompanyWebsiteChange = e => {
-    this.setState({ companyWebsite: e.target.value });
-  };
-
-  handleJobLinkChange = e => {
-    this.setState({ linkJobDescription: e.target.value });
-  };
-
-  handleJobStatusChange = e => {
-    this.setState({ jobsStatus: e.target.value });
-  };
-
-  handleNotesChange = e => {
-    this.setState({ notes: e.target.value });
+  handleWebsiteChange = e => {
+    this.setState({ title: e.target.value });
   };
 
   render() {
@@ -94,18 +70,19 @@ export class EditActivity extends Component {
         <div className="h2-wrapper">
           <h2>Edit Activity</h2>
         </div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="details-container">
             <label htmlFor="title">
               Title
             <input type="text"
                 name="title"
-                value=""
+                value={this.state.title || ""}
+                onChange={this.handleTitleChange}
               />
             </label>
             <label htmlFor="type">
               Type
-            <select>
+            <select value={this.state.type} onChange={this.handleTypeChange}>
                 <option value="networking" name="type">Networking Event</option>
                 <option value="meetup" name="type">Meetup</option>
                 <option value="mercedes" name="type">Tech Conference</option>
@@ -118,16 +95,17 @@ export class EditActivity extends Component {
               Date
             <input type="date"
                 name="date"
-                value="" />
+                value={this.state.date || ""} onChange={this.handleTypeChange} />
             </label>
             <label htmlFor="topic">
               Topic
-            <input type="text" name="topic" value="" />
+            <input type="text" name="topic"
+                value={this.state.topic || ""} onChange={this.handleTopicChange} />
             </label>
 
             <label htmlFor="website">
               Website
-            <input type="url" name="website" value="" />
+            <input type="url" name="website" value={this.state.website || ""} onChange={this.handleWebsiteChange} />
             </label>
           </div>
           <div className="buttons-wrapper">
@@ -143,12 +121,12 @@ export class EditActivity extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getJob: (id) => dispatch(getSingleJob(id)),
-  editJob: (job, id) => dispatch(editJob(job, id))
+  getActivity: (id) => dispatch(getSingleActivity(id)),
+  editActivity: (job, id) => dispatch(editActivity(job, id))
 });
 
 const mapStateToProps = state => ({
-  job: state.jobs.singleJob
+  job: state.jobs.singleActivity
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditActivity);
