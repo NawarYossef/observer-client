@@ -5,7 +5,7 @@ import "./styles/helper.css";
 
 export default function NewActivity() {
   return (
-    <section className="new-activity-container">
+    <section className="activity-container">
       <div className="h2-wrapper">
         <h2>New Activity</h2>
       </div>
@@ -22,7 +22,7 @@ export default function NewActivity() {
               <option value="meetup">Meetup</option>
               <option value="mercedes">Tech Conference</option>
               <option value="hackathon">Hackathon</option>
-              <option value="outreach">Cold Outreach</option>
+              <option value="outreach">Learning</option>
               <option value="portfolio">Other</option>
             </select>
           </label>
