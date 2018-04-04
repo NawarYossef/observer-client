@@ -22,22 +22,24 @@ export class EditJob extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      companyName: nextProps.job["companyName"],
+      companyLocation: nextProps.job["companyLocation"],
+      positionTitle: nextProps.job["positionTitle"],
+      companyType: nextProps.job["companyType"],
+      salary: nextProps.job["salary"],
+      companyWebsite: nextProps.job["companyWebsite"],
+      linkJobDescription: nextProps.job["linkJobDescription"],
+      jobStatus: nextProps.job["jobStatus"],
+      notes: nextProps.job["notes"]
+    });
+  }
+
   componentDidMount() {
     const { match: { params } } = this.props;
     this.props.getJob(params.id);
     // console.log(this.props.job)
-    this.setState({
-      companyName: this.props.job["companyName"],
-      companyLocation: this.props.job["companyLocation"],
-      positionTitle: this.props.job["positionTitle"],
-      companyType: this.props.job["companyType"],
-      salary: this.props.job["salary"],
-      companyWebsite: this.props.job["companyWebsite"],
-      linkJobDescription: this.props.job["linkJobDescription"],
-      jobStatus: this.props.job["jobStatus"],
-      notes: this.props.job["notes"],
-    })
-
   }
 
   handleSubmit = e => {
@@ -46,6 +48,7 @@ export class EditJob extends Component {
     const { match: { params } } = this.props;
     this.props.editJob(job, params.id);
     this.props.history.push("/jobs");
+    console.log(this.props.job)
   };
 
   handleCompanyNameChange = e => {
