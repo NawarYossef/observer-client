@@ -16,19 +16,16 @@ export function jobs(state = initialState, action) {
       return Object.assign({}, state, {
         singleJob: action.job
       });
-    
-    case actions.CREATE_NEW_JOB_SUCCESS:
-    return Object.assign({}, state, {
-      jobs: [...jobs, action.job]
-    })
-      
-    case actions.EDIT_JOB_SUCCESS:
-    return Object.assign({}, state, {
-      jobs: jobs.map(job => {
-        job.id === action.id ? job = action.job : null;
-      })
-    })
 
+    case actions.CREATE_NEW_JOB_SUCCESS:
+      return Object.assign({}, state, {
+        jobs: [...jobs, action.job]
+      })
+
+    case actions.EDIT_JOB_SUCCESS:
+      return Object.assign({}, state, {
+        jobs: state.jobs.map(job => (job.id === action.id ? action.job : job))
+      });
     default:
       return state;
   }

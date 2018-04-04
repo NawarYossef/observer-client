@@ -58,6 +58,9 @@ export const getSingleJobSuccess = job => ({
 
 // ----------------(PUT) Edit a single job --------------
 export const editJob = (job, id) => {
+  console.log('------------------------------------');
+  console.log("editing job");
+  console.log('------------------------------------');
   return dispatch => {
     // const authToken = localStorage.getItem("token");
     fetch(`${API_BASE_URL}/jobs/${id}`, {
@@ -72,6 +75,9 @@ export const editJob = (job, id) => {
         return res.json();
       })
       .then(job => {
+        console.log('------------------------------------');
+        console.log("dispatching success action");
+        console.log('------------------------------------');
         dispatch(edit_job_success(job, id));
       })
       .catch(err => console.log(err));

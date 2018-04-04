@@ -200,7 +200,7 @@ export class EditJob extends Component {
 
 const mapDispatchToProps = dispatch => ({
   getJob: (id) => dispatch(getSingleJob(id)),
-  editJob: (id) => dispatch(editJob(id))
+  editJob: (job, id) => dispatch(editJob(job, id))
 });
 
 const mapStateToProps = state => ({
