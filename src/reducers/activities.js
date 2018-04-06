@@ -1,30 +1,30 @@
-import * as actions from "../actions/Activities";
+import * as actions from "../actions/activities";
 
 const initialState = {
-  Activities: [],
+  activities: [],
   singleActivity: {},
   activities: []
-};
+};  
 
-export function Activities(state = initialState, action) {
+export function activities(state = initialState, action) {
   switch (action.type) {
     case actions.GET_ACTIVITIES_SUCCESS:
       return Object.assign({}, state, {
-        Activities: action.Activities
+        activities: action.activities
       });
-    case actions.GET_SINGLE_JOB_SUCCESS:
+    case actions.GET_SINGLE_ACTIVITY_SUCCESS:
       return Object.assign({}, state, {
-        singleActivity: action.Activity
+        singleActivity: action.activity
       });
 
     case actions.CREATE_NEW_ACTIVITY_SUCCESS:
       return Object.assign({}, state, {
-        Activities: [...Activities, action.Activity]
+        activities: [...activities, action.activity]
       })
 
-    case actions.EDIT_JOB_SUCCESS:
+    case actions.EDIT_ACTIVITY_SUCCESS:
       return Object.assign({}, state, {
-        Activities: state.Activities.map(Activity => (Activity.id === action.id ? action.Activity : Activity))
+        activities: state.Activities.map(activity => (activity.id === action.id ? action.activity : activity))
       });
     default:
       return state;

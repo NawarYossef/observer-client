@@ -50,9 +50,9 @@ export const getSingleActivity = id => {
   };
 };
 
-export const GET_SINGLE_JOB_SUCCESS = "GET_SINGLE_JOB_SUCCESS";
+export const GET_SINGLE_ACTIVITY_SUCCESS = "GET_SINGLE_ACTIVITY_SUCCESS";
 export const getSingleActivitySuccess = activity => ({
-  type: GET_SINGLE_JOB_SUCCESS,
+  type: GET_SINGLE_ACTIVITY_SUCCESS,
   activity
 });
 
@@ -79,9 +79,9 @@ export const editActivity = (activity, id) => {
   };
 };
 
-export const EDIT_JOB_SUCCESS = "EDIT_JOB_SUCCESS";
+export const EDIT_ACTIVITY_SUCCESS = "EDIT_ACTIVITY_SUCCESS";
 export const edit_activity_success = (activity, id) => ({
-  type: EDIT_JOB_SUCCESS,
+  type: EDIT_ACTIVITY_SUCCESS,
   activity,
   id
 });
@@ -108,9 +108,9 @@ export const createNewActivity = newActivity => {
   };
 };
 
-export const CREATE_NEW_JOB_SUCCESS = "CREATE_NEW_JOB_SUCCESS";
+export const CREATE_NEW_ACTIVITY_SUCCESS = "CREATE_NEW_ACTIVITY_SUCCESS";
 export const create_new_activity_success = activity => ({
-  type: CREATE_NEW_JOB_SUCCESS,
+  type: CREATE_NEW_ACTIVITY_SUCCESS,
   activity
 });
 

@@ -83,12 +83,11 @@ export class EditActivity extends Component {
             <label htmlFor="type">
               Type
             <select value={this.state.type} onChange={this.handleTypeChange}>
-                <option value="networking" name="type">Networking Event</option>
-                <option value="meetup" name="type">Meetup</option>
-                <option value="mercedes" name="type">Tech Conference</option>
-                <option value="hackathon" name="type">Hackathon</option>
-                <option value="outreach" name="type">Learning</option>
-                <option value="portfolio" name="type">Other</option>
+                <option value="Networking" name="type">Networking</option>
+                <option value="Meetup" name="type">Meetup</option>
+                <option value="Conference" name="type">Conference</option>
+                <option value="study" name="type">Study</option>
+                <option value="Other" name="type">Other</option>
               </select>
             </label>
             <label htmlFor="date">

@@ -100,13 +100,13 @@ export class NewJob extends Component {
             <label htmlFor="companyType">
               Company Type
               <select onChange={this.handleCompanyTypeChange}>
-                <option value="startup" name="companyType">
+                <option value="Startup" name="companyType">
                   Startup
                 </option>
-                <option value="nonprofit" name="companyType">
+                <option value="Nonprofit" name="companyType">
                   Nonprofit
                 </option>
-                <option value="corporation" name="companyType">
+                <option value="Corporation" name="companyType">
                   Corporation
                 </option>
               </select>
@@ -139,16 +139,16 @@ export class NewJob extends Component {
             <label htmlFor="jobStatus">
               Job Status
               <select onChange={this.handleJobStatusChange}>
-                <option value="applied" name="jobStatus">
+                <option value="Applied" name="jobStatus">
                   Applied
                 </option>
-                <option value="interview" name="jobStatus">
+                <option value="Interview" name="jobStatus">
                   Interview
                 </option>
-                <option value="interested" name="jobStatus">
+                <option value="Interested" name="jobStatus">
                   Interested
                 </option>
-                <option value="negotiate" name="jobStatus">
+                <option value="Negotiate" name="jobStatus">
                   Negotiate
                 </option>
               </select>
