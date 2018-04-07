@@ -57,7 +57,6 @@ export const getSingleActivitySuccess = activity => ({
 });
 
 // ----------------(PUT) Edit a single activity --------------
-// ----------------(PUT) Edit a single activity --------------
 export const editActivity = (activity, id) => {
   activity.id = id;
   return dispatch => {

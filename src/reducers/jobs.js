@@ -2,8 +2,7 @@ import * as actions from "../actions/jobs";
 
 const initialState = {
   jobs: [],
-  singleJob: {},
-  activities: []
+  singleJob: {}
 };
 
 export function jobs(state = initialState, action) {

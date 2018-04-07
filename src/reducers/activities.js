@@ -2,8 +2,7 @@ import * as actions from "../actions/activities";
 
 const initialState = {
   activities: [],
-  singleActivity: {},
-  activities: []
+  singleActivity: {}
 };  
 
 export function activities(state = initialState, action) {
