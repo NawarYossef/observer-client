@@ -1,0 +1,11 @@
+.calendar-wrapper {
+    width: 40%;
+    margin: 200px auto 0 auto;
+  }
+  
+  .activities-container label {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+  
+  

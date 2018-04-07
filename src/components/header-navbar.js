@@ -4,9 +4,6 @@ import "./styles/header-navbar.css";
 
 export default function HeaderNavbar() {
   const links = [
-    <Link to="/job-search" className="">
-      SEARCH
-    </Link>,
     <Link to="/jobs" className="">
       JOBS
     </Link>,
