@@ -3,23 +3,26 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 
-function SingleActivity(props) {
+function SingleContact(props) {
   return (
-    <section className="activity">
-      <h2>{props.activity["name"]}</h2>
-      <p>{props.activity["contactTitle"]}</p>
-      <p>{props.activity["companyName"]}</p>
-      <p>{props.activity["email"]}</p>
-      <p>{props.activity["notes"]}</p>
+    <section className="contact">
+      <h2>{props.contact["name"]}</h2>
+      <p>{props.contact["contactTitle"]}</p>
+      <p>{props.contact["companyName"]}</p>
+      <p>{props.contact["email"]}</p>
+      <p>{props.contact["notes"]}</p>
 
-      <Link to={`/edit-job/${props.job.id}`}>
+      <Link to={`/show-contact/${props.contact.id}`}>
+        <button>Contact details</button>
+      </Link>
+      <Link to={`/edit-contact/${props.contact.id}`}>
         <button>Edit Details</button>
       </Link>
-      <Link to="/job-details">
-        <button onClick={props.onClick}>Delete activity</button>
+      <Link to="/contact-details">
+        <button onClick={props.onClick}>Delete contact</button>
       </Link>
     </section>
   );
 }
 
-export default connect()(SingleActivity);
+export default connect()(SingleContact);

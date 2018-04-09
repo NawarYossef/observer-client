@@ -20,11 +20,11 @@ export class Activities extends Component {
   }
 
   componentDidMount() {
-    // this.props.dispatch(getActivities());
+    this.props.dispatch(getActivities());
   }
 
   handleActivityDelete(activity, id) {
-    // this.props.dispatch(deleteActivity(activity, id))
+    this.props.dispatch(deleteActivity(activity, id))
     this.props.history.push(`/activities`);
   }
 
@@ -44,9 +44,9 @@ export class Activities extends Component {
   render() {
     return (
       <section className="Activities-section">
-        {/*this.props.activities.map((activity, k) => {
-          return <SingleActivity key={k} activity={activity} onClick={() => this.handleActivityDelete(activity, activity.id)}/>;
-        })*/}
+        {this.props.activities.map((activity, idx) => 
+           <SingleActivity key={idx} activity={activity} onClick={() => this.handleActivityDelete(activity, activity.id)}/>
+        )}
         <AddNewActivity />
         <CalendarSection onChange={this.handleDateChange.bind(this)} currDate={this.state.date}/>
         <h2>{this.displayCurrentDate()}</h2>

@@ -15,20 +15,20 @@ export class Contacts extends Component {
   }
 
   componentDidMount() {
-    // this.props.dispatch(getContacts());
+    this.props.dispatch(getContacts());
   }
 
   handleContactDelete(contact, id) {
-    // this.props.dispatch(deleteContact(contact, id))
+    this.props.dispatch(deleteContact(contact, id))
     this.props.history.push(`/contacts`);
-  } 
+  }
 
   render() {
     return (
       <section className="contacts-section">
-        {/*this.props.contacts.map((contact, k) => {
-          return <SingleContact key={k} contact={contact} onClick={() => this.handleContactDelete(contact, contact.id)}/>;
-        })*/}
+        {this.props.contacts.map((contact, k) =>
+          <SingleContact key={k} contact={contact} onClick={() => this.handleContactDelete(contact, contact.id)} />
+        )}
         <AddNewContact />
       </section>
     );

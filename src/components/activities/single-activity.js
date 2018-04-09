@@ -15,7 +15,7 @@ function SingleActivity(props) {
       <Link to={`/show-activity/${props.activity.id}`}>
         <button>Activities details</button>
       </Link>
-      <Link to={`/edit-activity/${props.job.id}`}>
+      <Link to={`/edit-activity/${props.activity.id}`}>
         <button>Edit Details</button>
       </Link>
       <Link to="/activities">
