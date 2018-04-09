@@ -29,11 +29,11 @@ export class Jobs extends Component {
 
   render() {
     let selectedJobs = this.props.jobs
-    // if (this.state.searchQuery !== "") {
-    //   selectedJobs = this.props.jobs.filter(job =>
-    //     job.companyName.toLowerCase().includes(this.state.searchQuery.toLowerCase()) ||
-    //     job.jobStatus.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
-    // }
+    if (this.state.searchQuery !== "") {
+      selectedJobs = this.props.jobs.filter(job =>
+        job.companyName.toLowerCase().includes(this.state.searchQuery.toLowerCase()) ||
+        job.jobStatus.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
+    }
     return (
       <section className="jobs-section">
         <SearchBar onChange={searchQuery => this.setState({ searchQuery })} />
