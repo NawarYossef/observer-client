@@ -46,7 +46,6 @@ export class NewContact extends Component {
 
   render() {
     return (
-
       <section className="contact-container">
         <div className="h2-wrapper">
           <h2>Edit Contact</h2>
