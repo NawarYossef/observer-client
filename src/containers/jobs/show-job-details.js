@@ -37,7 +37,7 @@ export class ShowJobDetails extends Component {
 
   componentDidMount() {
     const { match: { params } } = this.props;
-    this.props.getJob(params.id);
+    this.props.getSingleJob(params.id);
   }
 
   render() {
@@ -68,7 +68,7 @@ export class ShowJobDetails extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getJob: (id) => dispatch(getSingleJob(id)),
+  getSingleJob: (id) => dispatch(getSingleJob(id)),
 });
 
 const mapStateToProps = state => ({

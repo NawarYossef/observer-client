@@ -30,15 +30,13 @@ export class ShowContactsDetails extends Component {
 
   componentDidMount() {
     const { match: { params } } = this.props;
-    this.props.getContact(params.id);
-    console.log('------------------------------------');
-    console.log(this.props.contact);
-    console.log('------------------------------------');
+    this.props.getSingleContact(params.id);
   }
 
   render() {
     return (
       <section className="contact">
+      {console.log(this.props.contact)}
         <h2>{this.props.contact["title"]}</h2>
         <p>{this.props.contact["type"]}</p>
         <p>{this.props.contact["date"]}</p>
@@ -60,7 +58,7 @@ export class ShowContactsDetails extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getContact: (id) => dispatch(getSingleContact(id)),
+  getSingleContact: (id) => dispatch(getSingleContact(id)),
 });
 
 const mapStateToProps = state => ({
