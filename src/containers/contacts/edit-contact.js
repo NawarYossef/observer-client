@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { editContact, getSingleContact } from "../../actions/contacts";
 
-// import "./styles/edit-job.css";
+import "./styles/edit-contact.css";
 
 export class EditContact extends Component {
   constructor(props) {

@@ -8,6 +8,7 @@ import LandingPage from "./landing-page";
 import { Contacts } from "./contacts/contacts";
 import NewContact from "./contacts/new-contact";
 import EditContact from "./contacts/edit-contact";
+import ShowContactDetails from "./contacts/show-contact-details"; 
 import Jobs from "./jobs/jobs";
 import NewJob from "./jobs/new-job";
 import EditJob from "./jobs/edit-job";
@@ -37,6 +38,7 @@ class App extends Component {
           <Route exact path="/contacts" component={Contacts} />
           <Route exact path="/new-contact" component={NewContact} />
           <Route  path="/edit-contact/:id" component={EditContact} />
+          <Route  path="/show-contact/:id" component={ShowContactDetails} />
         </div>
       </Router>
     );

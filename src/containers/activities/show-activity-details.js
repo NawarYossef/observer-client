@@ -60,7 +60,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  job: state.jobs.singleActivity
+  activity: state.activities.singleActivity
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowActivityDetails);

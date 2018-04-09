@@ -27,16 +27,14 @@ export class Jobs extends Component {
     this.props.history.push(`/jobs`);
   }
 
-  searchTermIsValid() {
-    return this.props.jobs.filter((job, idx) => {
-      job["companyName"].toLowerCase().includes(this.state.searchTerm.toLowerCase()) 
-    })
-  }
+  // searchTermIsValid() {
+  //   return this.props.jobs.filter((job, idx) => {
+  //     job["companyName"].toLowerCase().includes(this.state.searchTerm.toLowerCase()) 
+  //   })
+  // }
 
   render() {
-    const selectedJobs = this.props.jobs.forEach((job, idx) => {
-      job["companyName"].toLowerCase().includes(this.state.searchTerm.toLowerCase()) 
-    })
+    
     if (this.state.searchTerm === "") {
       return (
         <section className="jobs-section">
@@ -50,6 +48,7 @@ export class Jobs extends Component {
         </section>
       )
     } else {
+      const selectedJobs = this.props.jobs.filter(job  =>  job.companyName === "HP" )
       console.log(selectedJobs)
       return (
         <section className="jobs-section">
