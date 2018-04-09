@@ -23,7 +23,7 @@ function SingleJob(props) {
       <Link to={`/edit-job/${props.job.id}`}>
         <button>Edit information</button>
       </Link>
-      <Link to="/job-details">
+      <Link to="/jobs">
         <button onClick={props.onClick}>Delete Job</button>
       </Link>
     </section>
