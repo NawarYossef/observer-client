@@ -7,27 +7,6 @@ import { getSingleContact } from "../../actions/contacts";
 import "./styles/show-contact-details.css";
 
 export class ShowContactsDetails extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      contactTitle: "",
-      companyName: "",
-      email: "",
-      notes: "",
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      name: nextProps.contact["name"],
-      contactTitle: nextProps.contact["type"],
-      companyName: nextProps.contact["companyName"],
-      email: nextProps.contact["email"],
-      notes: nextProps.contact["notes"]
-    });
-  }
-
   componentDidMount() {
     const { match: { params } } = this.props;
     this.props.getSingleContact(params.id);
@@ -35,13 +14,12 @@ export class ShowContactsDetails extends Component {
 
   render() {
     return (
-      <section className="contact">
-      {console.log(this.props.contact)}
-        <h2>{this.props.contact["title"]}</h2>
-        <p>{this.props.contact["type"]}</p>
-        <p>{this.props.contact["date"]}</p>
-        <p>{this.props.contact["topic"]}</p>
-        <p>{this.props.contact["job"]}</p>
+      <section className="contact-wrapper">
+        <h2>{this.props.contact.name}</h2>
+        <p>{this.props.contact.contactTitle}</p>
+        <p>{this.props.contact.companyName}</p>
+        <p>{this.props.contact.email}</p>
+        <p>{this.props.contact.notes}</p>
 
         <Link to={`/show-contact/${this.props.contact.id}`}>
           <button>Contacts details</button>
