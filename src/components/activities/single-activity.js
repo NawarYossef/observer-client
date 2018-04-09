@@ -12,10 +12,10 @@ function SingleActivity(props) {
       <p>{props.activity["topic"]}</p>
       <p>{props.activity["job"]}</p>
 
-      <Link to={`/show-activity/${props.activity.id}`}>
+      <Link to={`/activities/${props.activity.id}`}>
         <button>Activities details</button>
       </Link>
-      <Link to={`/edit-activity/${props.activity.id}`}>
+      <Link to={`/activities/edit/${props.activity.id}`}>
         <button>Edit Details</button>
       </Link>
       <Link to="/activities">

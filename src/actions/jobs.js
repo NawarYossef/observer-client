@@ -57,7 +57,6 @@ export const getSingleJobSuccess = job => ({
 });
 
 // ----------------(PUT) Edit a single job --------------
-// ----------------(PUT) Edit a single job --------------
 export const editJob = (job, id) => {
   job.id = id;
   return dispatch => {

@@ -39,7 +39,6 @@ export class EditJob extends Component {
   componentDidMount() {
     const { match: { params } } = this.props;
     this.props.getJob(params.id);
-    // console.log(this.props.job)
   }
 
   handleSubmit = e => {

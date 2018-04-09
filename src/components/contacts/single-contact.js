@@ -12,13 +12,13 @@ function SingleContact(props) {
       <p>{props.contact["email"]}</p>
       <p>{props.contact["notes"]}</p>
 
-      <Link to={`/show-contact/${props.contact.id}`}>
+      <Link to={`/contacts/${props.contact.id}`}>
         <button>Contact details</button>
       </Link>
-      <Link to={`/edit-contact/${props.contact.id}`}>
+      <Link to={`/contacts/edit/${props.contact.id}`}>
         <button>Edit Details</button>
       </Link>
-      <Link to="/contact-details">
+      <Link to="/contacts">
         <button onClick={props.onClick}>Delete contact</button>
       </Link>
     </section>

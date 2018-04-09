@@ -27,18 +27,21 @@ class App extends Component {
         <div className="App">
           <HeaderNavbar />
           <Route exact path="/" component={LandingPage} />
+
           <Route exact path="/activities" component={Activities} />
-          <Route exact path="/new-activity" component={NewActivity} />
-          <Route path="/edit-activity/:id" component={EditActivity} />
-          <Route path="/show-activity/:id" component={ShowActivityDetails} />
+          <Route path="/activities/edit/:id" component={EditActivity} />
+          <Route exact path="/activities/new" component={NewActivity} />
+          <Route path="/activities/:id" component={ShowActivityDetails} />
+
           <Route exact path="/jobs" component={Jobs} />
-          <Route exact path="/new-job" component={NewJob} />
-          <Route path="/edit-job/:id" component={EditJob} />
-          <Route path="/show-job/:id" component={ShowJobDetails} />
+          <Route path="/jobs/edit/:id" component={EditJob} />
+          <Route exact path="/jobs/new" component={NewJob} />
+          <Route path="/jobs/:id" component={ShowJobDetails} />
+
           <Route exact path="/contacts" component={Contacts} />
-          <Route exact path="/new-contact" component={NewContact} />
-          <Route path="/edit-contact/:id" component={EditContact} />
-          <Route path="/show-contact/:id" component={ShowContactDetails} />
+          <Route path="/contacts/edit/:id" component={EditContact} />
+          <Route exact path="/contacts/new" component={NewContact} />
+          <Route path="/contacts/:id" component={ShowContactDetails} />
         </div>
       </Router>
     );

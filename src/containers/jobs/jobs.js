@@ -14,7 +14,7 @@ export class Jobs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: ''
+      searchQuery: ''
     }
   }
 
@@ -27,49 +27,25 @@ export class Jobs extends Component {
     this.props.history.push(`/jobs`);
   }
 
-  // searchTermIsValid() {
-  //   return this.props.jobs.filter((job, idx) => {
-  //     job["companyName"].toLowerCase().includes(this.state.searchTerm.toLowerCase()) 
-  //   })
-  // }
-
   render() {
-    
-    if (this.state.searchTerm === "") {
-      return (
-        <section className="jobs-section">
-          <SearchBar onChange={searchTerm => this.setState({ searchTerm })} />
-          {
-            this.props.jobs.map((job, k) => {
-              return <SingleJob key={k} job={job} onClick={() => this.handleJobDelete(job, job.id)} />;
-            })
-          }
-          <AddNewJob />
-        </section>
-      )
-    } else {
-      const selectedJobs = this.props.jobs.filter(job  =>  job.companyName === "HP" )
-      console.log(selectedJobs)
-      return (
-        <section className="jobs-section">
-          <SearchBar onChange={searchTerm => this.setState({ searchTerm })} />
-          {
-            this.props.jobs.map((job, k) => {
-              return <SingleJob key={k} job={job} onClick={() => this.handleJobDelete(job, job.id)} />;
-            })
-          }
-          <AddNewJob />
-        </section>
-      )
-    }
-    // } else {
-    //   return (
-    //     <section className="jobs-section">
-    //       <SearchBar onChange={searchTerm => this.setState({ searchTerm })} />
-    //       <h4>Not Found</h4>
-    //     </section>
-    //   )
+    let selectedJobs = this.props.jobs
+    // if (this.state.searchQuery !== "") {
+    //   selectedJobs = this.props.jobs.filter(job =>
+    //     job.companyName.toLowerCase().includes(this.state.searchQuery.toLowerCase()) ||
+    //     job.jobStatus.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
     // }
+    return (
+      <section className="jobs-section">
+        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} />
+        {
+          selectedJobs.length ? (selectedJobs.map((job, idx) => {
+            return <SingleJob key={idx} job={job} onClick={() => this.handleJobDelete(job, job.id)} />;
+          })) :
+            <h3>No Result Found</h3>
+        }
+        <AddNewJob />
+      </section>
+    )
   }
 }
 

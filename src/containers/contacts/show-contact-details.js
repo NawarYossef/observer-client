@@ -21,14 +21,11 @@ export class ShowContactsDetails extends Component {
         <p>{this.props.contact.email}</p>
         <p>{this.props.contact.notes}</p>
 
-        <Link to={`/show-contact/${this.props.contact.id}`}>
-          <button>Contacts details</button>
-        </Link>
-        <Link to={`/edit-contact/${this.props.contact.id}`}>
-          <button>Edit Details</button>
-        </Link>
         <Link to="/contacts">
-          <button onClick={this.props.onClick}>Delete contact</button>
+          <button>Back to Contacts</button>
+        </Link>
+        <Link to={`/contact/edit/${this.props.contact.id}`}>
+          <button>Edit Details</button>
         </Link>
       </section>
     )
