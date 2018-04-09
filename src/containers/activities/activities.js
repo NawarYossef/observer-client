@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 import { getActivities, deleteActivity } from "../../actions/activities";
 import AddNewActivity from "../../components/activities/add-new-activity";
 import SingleActivity from "../../components/activities/single-activity";
-import CalendarSection from '../../components/activities/calendarSection';
+import CalendarSection from '../../components/activities/calendar-section';
 
 import "./styles/helper.css";
 

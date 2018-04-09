@@ -11,6 +11,7 @@ import EditContact from "./contacts/edit-contact";
 import Jobs from "./jobs/jobs";
 import NewJob from "./jobs/new-job";
 import EditJob from "./jobs/edit-job";
+import ShowJobDetails from "./jobs/show-job-details";
 import { Activities } from "./activities/activities";
 import NewActivity from "./activities/new-activity";
 import EditActivity from "./activities/edit-activity";
@@ -30,6 +31,7 @@ class App extends Component {
           <Route exact path="/jobs" component={Jobs} />
           <Route exact path="/new-job" component={NewJob} />
           <Route  path="/edit-job/:id" component={EditJob} />
+          <Route  path="/show-job/:id" component={ShowJobDetails} />
           <Route exact path="/contacts" component={Contacts} />
           <Route exact path="/new-contact" component={NewContact} />
           <Route  path="/edit-contact/:id" component={EditContact} />

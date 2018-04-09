@@ -17,8 +17,11 @@ function SingleJob(props) {
       <p>{props.job["jobStatus"]}</p>
       <p>{props.job["notes"]}</p>
 
+      <Link to={`/show-job/${props.job.id}`}>
+        <button>Job details</button>
+      </Link>
       <Link to={`/edit-job/${props.job.id}`}>
-        <button>Edit Details</button>
+        <button>Edit information</button>
       </Link>
       <Link to="/job-details">
         <button onClick={props.onClick}>Delete Job</button>

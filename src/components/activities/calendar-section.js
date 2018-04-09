@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Calendar from 'react-calendar';
-import '../styles/calendarSection.css';
+import '../styles/calendar-section.css';
 
 export default function CalendarSection(props) {
   return (
