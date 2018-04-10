@@ -29,19 +29,19 @@ class App extends Component {
           <Route exact path="/" component={LandingPage} />
 
           <Route exact path="/activities" component={Activities} />
-          <Route path="/activities/edit/:id" component={EditActivity} />
+          <Route exact path="/activities/edit/:id" component={EditActivity} />
           <Route exact path="/activities/new" component={NewActivity} />
-          <Route path="/activities/:id" component={ShowActivityDetails} />
+          <Route exact path="/activities/:id" component={ShowActivityDetails} />
 
           <Route exact path="/jobs" component={Jobs} />
-          <Route path="/jobs/edit/:id" component={EditJob} />
+          <Route exact path="/jobs/edit/:id" component={EditJob} />
           <Route exact path="/jobs/new" component={NewJob} />
-          <Route path="/jobs/:id" component={ShowJobDetails} />
+          <Route exact path="/jobs/:id" component={ShowJobDetails} />
 
           <Route exact path="/contacts" component={Contacts} />
-          <Route path="/contacts/edit/:id" component={EditContact} />
+          <Route exact path="/contacts/edit/:id" component={EditContact} />
           <Route exact path="/contacts/new" component={NewContact} />
-          <Route path="/contacts/:id" component={ShowContactDetails} />
+          <Route exact path="/contacts/:id" component={ShowContactDetails} />
         </div>
       </Router>
     );

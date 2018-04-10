@@ -31,7 +31,6 @@ export class EditActivity extends Component {
   componentDidMount() {
     const { match: { params } } = this.props;
     this.props.getActivity(params.id);
-    // console.log(this.props.job)
   }
 
   handleSubmit = e => {
@@ -40,7 +39,6 @@ export class EditActivity extends Component {
     const { match: { params } } = this.props;
     this.props.editActivity(activity, params.id);
     this.props.history.push("/activities");
-    console.log(this.props.activity)
   };
 
   handleTitleChange = e => {
@@ -121,11 +119,11 @@ export class EditActivity extends Component {
 
 const mapDispatchToProps = dispatch => ({
   getActivity: (id) => dispatch(getSingleActivity(id)),
-  editActivity: (job, id) => dispatch(editActivity(job, id))
+  editActivity: (activity, id) => dispatch(editActivity(activity, id))
 });
 
 const mapStateToProps = state => ({
-  job: state.jobs.singleActivity
+  activity: state.activities.singleActivity
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditActivity);

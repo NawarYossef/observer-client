@@ -14,7 +14,6 @@ export class ShowActivityDetails extends Component {
   render() {
     return (
       <section className="activity">
-      {console.log(this.props.activity)}
         <h2>{this.props.activity.title}</h2>
         <p>{this.props.activity.type}</p>
         <p>{this.props.activity.date}</p>

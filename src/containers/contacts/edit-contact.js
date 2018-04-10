@@ -122,11 +122,11 @@ export class EditContact extends Component {
 
 const mapDispatchToProps = dispatch => ({
   getContact: (id) => dispatch(getSingleContact(id)),
-  editContact: (job, id) => dispatch(editContact(job, id))
+  editContact: (contact, id) => dispatch(editContact(contact, id))
 });
 
 const mapStateToProps = state => ({
-  job: state.jobs.singleContact
+  contact: state.contacts.singleContact
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditContact);
