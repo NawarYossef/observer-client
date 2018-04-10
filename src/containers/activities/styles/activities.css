@@ -1,8 +1,12 @@
-.activities-container {
-  width: 40%;
-  margin: 200px auto 0 auto;
+.activities-wrapper {
+  width: 100%;
+  margin: 100px auto 0 auto;
 }
 
+.activity {
+  width: 50%;
+  float: left;
+}
 .activities-container label {
   font-size: 1.4em;
   margin-bottom: 20px;

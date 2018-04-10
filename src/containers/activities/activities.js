@@ -9,6 +9,7 @@ import SingleActivity from "../../components/activities/single-activity";
 import CalendarSection from '../../components/activities/calendar-section';
 
 import "./styles/helper.css";
+import "./styles/activities.css";
 
 
 export class Activities extends Component {
@@ -43,7 +44,7 @@ export class Activities extends Component {
 
   render() {
     return (
-      <section className="Activities-section">
+      <section className="activities-wrapper col-12">
         {this.props.activities.map((activity, idx) => 
            <SingleActivity key={idx} activity={activity} onClick={() => this.handleActivityDelete(activity, activity.id)}/>
         )}

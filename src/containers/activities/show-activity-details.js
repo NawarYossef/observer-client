@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getSingleActivity } from "../../actions/activities";
 
-// import "./styles/new-job.css";
+import "./styles/show-activity-details.css";
 
 export class ShowActivityDetails extends Component {
   componentDidMount() {
@@ -14,6 +14,7 @@ export class ShowActivityDetails extends Component {
   render() {
     return (
       <section className="activity">
+      {console.log(this.props.activity)}
         <h2>{this.props.activity.title}</h2>
         <p>{this.props.activity.type}</p>
         <p>{this.props.activity.date}</p>
@@ -23,7 +24,7 @@ export class ShowActivityDetails extends Component {
         <Link to={`/activities`}>
           <button>Back to activities</button>
         </Link>
-        <Link to={`/activities/edit/${this.props.job.id}`}>
+        <Link to={`/activities/edit/${this.props.activity.id}`}>
           <button>Edit Details</button>
         </Link>
       </section>
