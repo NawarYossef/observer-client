@@ -22,9 +22,6 @@ export class Activities extends Component {
 
   componentDidMount() {
     this.props.dispatch(getActivities());
-    console.log('------------------------------------');
-    console.log(this.props.activities);
-    console.log('------------------------------------');
   }
 
   handleActivityDelete(activity, id) {

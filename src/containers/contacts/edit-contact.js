@@ -42,23 +42,23 @@ export class EditContact extends Component {
   };
 
   handleNameChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ name: e.target.value });
   };
 
   handleTitleChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ contactTitle: e.target.value });
   };
 
   handleCompanyNameChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ companyName: e.target.value });
   };
 
   handleEmailChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ email: e.target.value });
   };
 
   handleNotesChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ notes: e.target.value });
   };
 
   render() {
@@ -74,7 +74,7 @@ export class EditContact extends Component {
             <input type="text"
                 name="name"
                 value={this.state.name || ""}
-                onChange={this.handleTitleChange}
+                onChange={this.handleNameChange}
               />
             </label>
             <label htmlFor="contact-title">
@@ -90,7 +90,7 @@ export class EditContact extends Component {
             <input type="text"
                 name="companyName"
                 value={this.state.companyName || ""}
-                onChange={this.handleTitleChange}
+                onChange={this.handleCompanyNameChange}
               />
             </label>
             <label htmlFor="email">
@@ -98,7 +98,7 @@ export class EditContact extends Component {
             <input type="email"
                 name="email"
                 value={this.state.email || ""}
-                onChange={this.handleTitleChange}
+                onChange={this.handleEmailChange}
               />
             </label>
             <label htmlFor="notes">

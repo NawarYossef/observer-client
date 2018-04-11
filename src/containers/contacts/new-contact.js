@@ -25,23 +25,23 @@ export class NewContact extends Component {
   };
 
   handleNameChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ name: e.target.value });
   };
 
   handleTitleChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ contactTile: e.target.value });
   };
 
   handleCompanyNameChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ companyName: e.target.value });
   };
 
   handleEmailChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ email: e.target.value });
   };
 
   handleNotesChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ notes: e.target.value });
   };
 
   render() {
@@ -56,28 +56,28 @@ export class NewContact extends Component {
               Name
             <input type="text"
                 name="name"
-                onChange={this.handleTitleChange}
+                onChange={this.handleNameChange}
               />
             </label>
             <label htmlFor="contact-title">
               Contact Title
             <input type="text"
                 name="contactTitle"
-                onChange={this.handleTitleChange}
+                onChange={this.handleContactTitleChange}
               />
             </label>
             <label htmlFor="company-name">
               Company Name
             <input type="text"
                 name="companyName"
-                onChange={this.handleTitleChange}
+                onChange={this.handleCompanyNameChange}
               />
             </label>
             <label htmlFor="email">
               Email
             <input type="email"
                 name="email"
-                onChange={this.handleTitleChange}
+                onChange={this.handleEmailChange}
               />
             </label>
             <label htmlFor="notes">

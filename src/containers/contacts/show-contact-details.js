@@ -24,7 +24,7 @@ export class ShowContactsDetails extends Component {
         <Link to="/contacts">
           <button>Back to Contacts</button>
         </Link>
-        <Link to={`/contact/edit/${this.props.contact.id}`}>
+        <Link to={`/contacts/edit/${this.props.contact.id}`}>
           <button>Edit Details</button>
         </Link>
       </section>
