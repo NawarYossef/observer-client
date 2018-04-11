@@ -21,7 +21,7 @@ export class NewActivity extends Component {
     e.preventDefault();
     const newActivity = this.state;
     this.props.createNewActivity(newActivity);
-    this.props.history.push("/jobs");
+    this.props.history.push("/activities");
   };
 
   handleTitleChange = e => {
@@ -46,7 +46,6 @@ export class NewActivity extends Component {
 
   render() {
     return (
-
       <section className="activity-container">
         <div className="h2-wrapper">
           <h2>Edit Activity</h2>

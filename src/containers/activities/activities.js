@@ -22,6 +22,9 @@ export class Activities extends Component {
 
   componentDidMount() {
     this.props.dispatch(getActivities());
+    console.log('------------------------------------');
+    console.log(this.props.activities);
+    console.log('------------------------------------');
   }
 
   handleActivityDelete(activity, id) {
@@ -44,6 +47,7 @@ export class Activities extends Component {
 
   render() {
     return (
+      
       <section className="activities-wrapper col-12">
         {this.props.activities.map((activity, idx) => 
            <SingleActivity key={idx} activity={activity} onClick={() => this.handleActivityDelete(activity, activity.id)}/>

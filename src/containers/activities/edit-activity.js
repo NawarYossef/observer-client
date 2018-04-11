@@ -20,11 +20,11 @@ export class EditActivity extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      title: nextProps.activity["title"],
-      type: nextProps.activity["type"],
-      date: nextProps.activity["date"],
-      topic: nextProps.activity["topic"],
-      website: nextProps.activity["website"]
+      title: nextProps.activity.title,
+      type: nextProps.activity.type,
+      date: nextProps.activity.date,
+      topic: nextProps.activity.topic,
+      website: nextProps.activity.website
     });
   }
 
@@ -46,24 +46,23 @@ export class EditActivity extends Component {
   };
 
   handleTypeChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ type: e.target.value });
   };
 
   handleDateChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ date: e.target.value });
   };
 
   handleTopicChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ topic: e.target.value });
   };
 
   handleWebsiteChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ website: e.target.value });
   };
 
   render() {
     return (
-
       <section className="activity-container">
         <div className="h2-wrapper">
           <h2>Edit Activity</h2>
@@ -92,7 +91,7 @@ export class EditActivity extends Component {
               Date
             <input type="date"
                 name="date"
-                value={this.state.date || ""} onChange={this.handleTypeChange} />
+                value={this.state.date || ""} onChange={this.handleDateChange} />
             </label>
             <label htmlFor="topic">
               Topic

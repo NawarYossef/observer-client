@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import { API_BASE_URL } from "../config";
 import HeaderNavbar from "../components/header-navbar";
@@ -26,22 +26,24 @@ class App extends Component {
       <Router>
         <div className="App">
           <HeaderNavbar />
-          <Route exact path="/" component={LandingPage} />
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
 
-          <Route exact path="/activities" component={Activities} />
-          <Route exact path="/activities/edit/:id" component={EditActivity} />
-          <Route exact path="/activities/new" component={NewActivity} />
-          <Route exact path="/activities/:id" component={ShowActivityDetails} />
+            <Route exact path="/activities" component={Activities} />
+            <Route path="/activities/new" component={NewActivity} />
+            <Route path="/activities/edit/:id" component={EditActivity} />
+            <Route path="/activities/:id" component={ShowActivityDetails} />
 
-          <Route exact path="/jobs" component={Jobs} />
-          <Route exact path="/jobs/edit/:id" component={EditJob} />
-          <Route exact path="/jobs/new" component={NewJob} />
-          <Route exact path="/jobs/:id" component={ShowJobDetails} />
+            <Route exact path="/jobs" component={Jobs} />
+            <Route path="/jobs/new" component={NewJob} />
+            <Route path="/jobs/edit/:id" component={EditJob} />
+            <Route path="/jobs/:id" component={ShowJobDetails} />
 
-          <Route exact path="/contacts" component={Contacts} />
-          <Route exact path="/contacts/edit/:id" component={EditContact} />
-          <Route exact path="/contacts/new" component={NewContact} />
-          <Route exact path="/contacts/:id" component={ShowContactDetails} />
+            <Route exact path="/contacts" component={Contacts} />
+            <Route path="/contacts/new" component={NewContact} />
+            <Route path="/contacts/edit/:id" component={EditContact} />
+            <Route path="/contacts/:id" component={ShowContactDetails} />
+          </Switch>
         </div>
       </Router>
     );

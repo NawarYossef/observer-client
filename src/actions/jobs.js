@@ -126,7 +126,7 @@ export const deleteJob = (job, id) => {
       body: JSON.stringify(job)
     })
       .then(res => {
-        return res.status(200).json();
+        return res.status(204).json();
       })
       .catch(err => console.log(err));
   };
