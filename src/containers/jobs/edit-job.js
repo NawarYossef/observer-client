@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { withRouter } from "react-router";
 import { editJob, getSingleJob } from "../../actions/jobs";
 
 import "./styles/edit-job.css";

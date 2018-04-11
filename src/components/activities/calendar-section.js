@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import Calendar from 'react-calendar';
 import './styles/calendar-section.css';
 

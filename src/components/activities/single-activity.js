@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -6,11 +6,11 @@ import { connect } from "react-redux";
 function SingleActivity(props) {
   return (
     <section className="activity">
-      <h2>{props.activity["title"]}</h2>
-      <p>{props.activity["type"]}</p>
-      <p>{props.activity["date"]}</p>
-      <p>{props.activity["topic"]}</p>
-      <p>{props.activity["job"]}</p>
+      <h2>{props.activity.title}</h2>
+      <p>{props.activity.type}</p>
+      <p>{props.parseDate(props.activity.date)}</p>
+      <p>{props.activity.topic}</p>
+      <p>{props.activity.website}</p>
 
       <Link to={`/activities/${props.activity.id}`}>
         <button>Activities details</button>

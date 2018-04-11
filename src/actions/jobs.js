@@ -126,7 +126,12 @@ export const deleteJob = (job, id) => {
       body: JSON.stringify(job)
     })
       .then(res => {
-        return res.status(204).json();
+        if (res.status === 204) {
+          console.log('------------------------------------');
+          console.log("delete");
+          console.log('------------------------------------');
+          return
+        }
       })
       .catch(err => console.log(err));
   };

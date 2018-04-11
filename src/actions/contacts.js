@@ -126,8 +126,9 @@ export const deleteContact = (contact, id) => {
       body: JSON.stringify(contact)
     })
       .then(res => {
-        // res.status(204).json();
-        history.push(`/contacts`);
+        if (res.status === 204) {
+          history.push(`/contacts`);
+        }
       })
       .catch(err => console.log(err));
   };

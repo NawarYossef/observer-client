@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -23,7 +23,7 @@ function SingleJob(props) {
       <Link to={`/jobs/edit/${props.job.id}`}>
         <button>Edit information</button>
       </Link>
-      <Link to="/jobs">
+      <Link to={"/jobs"}>
         <button onClick={props.onClick}>Delete Job</button>
       </Link>
     </section>

@@ -126,8 +126,9 @@ export const deleteActivity = (activity, id) => {
       body: JSON.stringify(activity)
     })
       .then(res => {
-        res.status(204).json();
-        history.push(`/activities`);
+        if (res.status === 204) {
+          history.push(`/activities`);
+        }
       })
       .catch(err => console.log(err));
   };

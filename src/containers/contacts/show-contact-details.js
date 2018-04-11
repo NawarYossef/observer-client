@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { withRouter } from "react-router";
 import { getSingleContact } from "../../actions/contacts";
 
 import "./styles/show-contact-details.css";

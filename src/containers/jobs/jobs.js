@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 import { getJobs, deleteJob } from "../../actions/jobs";
 import AddNewJob from "../../components/jobs/add-new-job";
 import SingleJob from "../../components/jobs/single-job";
@@ -23,8 +21,8 @@ export class Jobs extends Component {
   }
 
   handleJobDelete(job, id) {
-    this.props.dispatch(deleteJob(job, id))
-    this.props.history.push(`/jobs`);
+    this.props.dispatch(deleteJob(job, id));
+    this.props.history.push("/jobs")
   }
 
   render() {

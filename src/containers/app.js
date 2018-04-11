@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import { API_BASE_URL } from "../config";
 import HeaderNavbar from "../components/header-navbar";
 import LandingPage from "./landing-page";
 import Contacts from "./contacts/contacts";

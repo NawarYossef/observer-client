@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { withRouter } from "react-router";
+import DatePicker from 'react-date-picker';
 import { editActivity, getSingleActivity } from "../../actions/activities";
 
 // import "./styles/edit-job.css";
@@ -22,7 +22,7 @@ export class EditActivity extends Component {
     this.setState({
       title: nextProps.activity.title,
       type: nextProps.activity.type,
-      date: nextProps.activity.date,
+      date: new Date(nextProps.activity.date),
       topic: nextProps.activity.topic,
       website: nextProps.activity.website
     });
@@ -49,8 +49,8 @@ export class EditActivity extends Component {
     this.setState({ type: e.target.value });
   };
 
-  handleDateChange = e => {
-    this.setState({ date: e.target.value });
+  handleDateChange = date => {
+    this.setState({ date })
   };
 
   handleTopicChange = e => {
@@ -89,9 +89,10 @@ export class EditActivity extends Component {
             </label>
             <label htmlFor="date">
               Date
-            <input type="date"
-                name="date"
-                value={this.state.date || ""} onChange={this.handleDateChange} />
+              <DatePicker
+                onChange={this.handleDateChange}
+                value={this.state.date}
+              />
             </label>
             <label htmlFor="topic">
               Topic

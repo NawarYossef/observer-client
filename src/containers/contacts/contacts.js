@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 import { getContacts, deleteContact } from "../../actions/contacts";
 import AddNewContact from "../../components/contacts/add-new-contact";
 import SingleContact from "../../components/contacts/single-contact";

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import DatePicker from 'react-date-picker';
 import { connect } from "react-redux";
 import { createNewActivity } from "../../actions/activities";
 
@@ -11,9 +12,9 @@ export class NewActivity extends Component {
     this.state = {
       title: "",
       type: "",
-      date: "",
+      date: new Date(),
       topic: "",
-      website: "",
+      website: ""
     };
   }
 
@@ -29,22 +30,25 @@ export class NewActivity extends Component {
   };
 
   handleTypeChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ type: e.target.value });
   };
 
-  handleDateChange = e => {
-    this.setState({ title: e.target.value });
+  handleDateChange = date => {
+    this.setState({ date })
   };
 
   handleTopicChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ topic: e.target.value });
   };
 
   handleWebsiteChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ website: e.target.value });
   };
 
   render() {
+    console.log('------------------------------------');
+    console.log(this.state.date);
+    console.log('------------------------------------');
     return (
       <section className="activity-container">
         <div className="h2-wrapper">
@@ -71,9 +75,10 @@ export class NewActivity extends Component {
             </label>
             <label htmlFor="date">
               Date
-            <input type="date"
-                name="date"
-                onChange={this.handleTypeChange} />
+              <DatePicker
+                onChange={this.handleDateChange}
+                value={this.state.date}
+              />
             </label>
             <label htmlFor="topic">
               Topic
