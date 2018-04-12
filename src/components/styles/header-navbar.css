@@ -3,19 +3,24 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 20px 20px;
-    background-color: #eeeeee;
-    border-bottom: 1px solid #dddddd;
+    padding: 20px 80px;
+    background-color: #ffffffd5;
   }
 
 header ul {
   margin: 0 0;
-  font-size: 1.2em;
 }
 
 header h1 {
   float: left;
-  font-size: 2em;
+  font: normal 1.6em 'Fjalla One', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  color:#000000;
+}
+
+header img {
+  float: left;
 }
 
 nav ul {
@@ -31,4 +36,13 @@ nav li {
 
 nav li a {
   text-decoration: none;
+  color:#020202;
+  font: normal 0.9em 'Roboto', sans-serif;
+  transition: color 0.2s ease-out;
 }
+
+nav li a:hover {
+  color: #4075c5;
+}
+
+

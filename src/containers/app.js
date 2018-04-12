@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="app">
           <HeaderNavbar />
           <Switch>
             <Route exact path="/" component={LandingPage} />

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/header-navbar.css";
+import headerIcon from "../images/header-icon.png"
 
 export default function HeaderNavbar() {
   const links = [
@@ -15,21 +16,20 @@ export default function HeaderNavbar() {
     </Link>
   ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">OBSERVER</h1>
-        <nav>
-          <ul>
-            {links.map((link, idx) => {
-              return (
-                <li key={idx.toString()} className="link">
-                  {link}
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </header>
-    </div>
+    <header>
+      <img src={headerIcon} alt="logo"/>
+      <h1 className="App-title">OBSERVER</h1>
+      <nav>
+        <ul>
+          {links.map((link, idx) => {
+            return (
+              <li key={idx.toString()} className="link">
+                {link}
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </header>
   );
 }
