@@ -1,10 +1,12 @@
   header {
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     padding: 20px 80px;
-    background-color: #ffffffd5;
+    background-color: #ffffffe3;
+    z-index: 1;
   }
 
 header ul {
