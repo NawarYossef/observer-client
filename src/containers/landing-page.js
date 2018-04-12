@@ -6,7 +6,6 @@ import LaptopIcon from "../images/laptop-icon.png"
 import BagIcon from "../images/bag-icon.png"
 import CalendarImg from "../images/calendar-img.png"
 import PaperImg from "../images/paper-icon.png"
-import headerIcon from "../images/header-icon.png"
 
 import "./styles/landing-page.css";
 

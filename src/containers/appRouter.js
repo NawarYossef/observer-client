@@ -18,7 +18,7 @@ import ShowActivityDetails from "./activities/show-activity-details";
 
 import "./styles/app.css";
 
-class App extends Component {
+class AppRouter extends Component {
   render() {
     return (
       <Router>
@@ -48,4 +48,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AppRouter;
