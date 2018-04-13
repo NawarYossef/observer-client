@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { getActivities, deleteActivity } from "../../actions/activities";
-import AddNewActivity from "../../components/activities/add-new-activity";
+import AddNewActivityButton from "../../components/activities/add-new-activity-button";
 import SingleActivity from "../../components/activities/single-activity";
 import CalendarSection from '../../components/activities/calendar-section';
 
@@ -55,7 +55,7 @@ export class Activities extends Component {
         {selectedActivities.map((activity, idx) =>
           <SingleActivity key={idx} activity={activity} onClick={() => this.handleActivityDelete(activity, activity.id)} parseDate={this.parseActivityDate} />
         )}
-        <AddNewActivity />
+        <AddNewActivityButton />
         <CalendarSection onChange={this.handleCalendarDateChange.bind(this)} currDate={this.state.date} />
         <h2>{this.displayCurrentCalendarDate()}</h2>
         { selectedActivities.length === this.props.activities.length ? <h3>No Result Found</h3> : null }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function AddNewContact() {
+export default function AddNewContactButton() {
   return (
     <div>
       <Link to="/contacts/new">

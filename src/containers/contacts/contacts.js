@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getContacts, deleteContact } from "../../actions/contacts";
-import AddNewContact from "../../components/contacts/add-new-contact";
+import AddNewContactButton from "../../components/contacts/add-new-contact-button";
 import SingleContact from "../../components/contacts/single-contact";
 import SearchBar from "../../components/search-bar";
 
@@ -41,7 +41,7 @@ export class Contacts extends Component {
           })) :
             <h3>No Result Found</h3>
         }
-        <AddNewContact />
+        <AddNewContactButton />
       </section>
     )
   }

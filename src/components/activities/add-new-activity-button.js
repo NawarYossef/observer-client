@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function AddNewActivity() {
+export default function AddNewActivityButton() {
   return (
     <div>
       <Link to="/activities/new">

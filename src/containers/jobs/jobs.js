@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getJobs, deleteJob } from "../../actions/jobs";
-import AddNewJob from "../../components/jobs/add-new-job";
+import AddNewJobButton from "../../components/jobs/add-new-job-button";
 import SingleJob from "../../components/jobs/single-job";
 import SearchBar from "../../components/search-bar";
 
@@ -41,7 +41,7 @@ export class Jobs extends Component {
           })) :
             <h3>No Result Found</h3>
         }
-        <AddNewJob />
+        <AddNewJobButton />
       </section>
     )
   }
