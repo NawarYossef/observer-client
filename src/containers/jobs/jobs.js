@@ -6,13 +6,13 @@ import SingleJob from "../../components/jobs/single-job";
 import SearchBar from "../../components/search-bar";
 
 import "./styles/jobs.css";
-import "./styles/helper.css";
 
 export class Jobs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchQuery: ''
+      searchQuery: '',
+      field: 'jobs'
     }
   }
 
@@ -34,12 +34,17 @@ export class Jobs extends Component {
     }
     return (
       <section className="jobs-section">
-        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} />
+        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} category={this.state.field} />
+        <div className="list-text-wrapper">
+          <span className="list-text">Your {this.state.field}</span>
+        </div>
         {
           selectedJobs.length ? (selectedJobs.map((job, idx) => {
             return <SingleJob key={idx} job={job} onClick={() => this.handleJobDelete(job, job.id)} />;
           })) :
-            <h3>No Result Found</h3>
+            <div className="no-results-wrapper">
+              <h6 className="no-results-message">No {this.state.field} Found</h6>
+            </div>
         }
         <AddNewJobButton />
       </section>

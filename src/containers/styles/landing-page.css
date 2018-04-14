@@ -19,6 +19,7 @@ aside {
   height: 100%;
   width: 94%;
   background-image: url('../../images/header-main-img.png');
+  background-position: 0% 20%;
   box-shadow: inset 0px 0px 18px 12px rgb(255, 252, 252);
 }
 
@@ -78,13 +79,9 @@ h3 {
 /* ///////////////////////////////////////// */
 
 /* main section */
-
 main {
   width: 100%;
-  position: absolute;
-  top: 530px;
-  left: 0;
-  right: 0;
+  margin-top: 20px;
   background-color: #FFFFFF;
 }
 
@@ -133,10 +130,10 @@ h5 {
 }
 
 .text-wrapper {
-  width: 25%;
+  width: 50%;
   text-align: left;
   margin: 0 auto;
-  font: normal 1em 'Open Sans', sans-serif;
+  padding: 20px 114px;
 }
 
 h6 {
@@ -147,6 +144,11 @@ h6 {
 .text-wrapper p {
   color: #696969;
   font: normal 1.2em 'Open Sans', sans-serif;
+}
+
+.calendar-img {
+  width:  100%;
+  max-width: 450px;
 }
 
 /* join us */
@@ -181,10 +183,4 @@ footer {
   background-color: #3D3D3D;
   width: 100%;
   padding: 10px 30px;
-  position: absolute;
-  bottom: 0;
-}
-
-.img444 {
-  width:  100%;
 }

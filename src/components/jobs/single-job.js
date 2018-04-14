@@ -8,14 +8,8 @@ function SingleJob(props) {
   return (
     <section className="job">
       <h2>{props.job["companyName"]}</h2>
-      <p>{props.job["companyLocation"]}</p>
       <p>{props.job["positionTitle"]}</p>
-      <p>{props.job["companyType"]}</p>
-      <p>{props.job["salary"]}</p>
-      <p>{props.job["companyWebsite"]}</p>
-      <p>{props.job["linkJobDescription"]}</p>
       <p>{props.job["jobStatus"]}</p>
-      <p>{props.job["notes"]}</p>
 
       <Link to={`/jobs/${props.job.id}`}>
         <button>Job details</button>

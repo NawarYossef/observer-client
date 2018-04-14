@@ -1,9 +1,24 @@
-.jobs-section {
-  width: 40%;
-  margin: 200px auto 0 auto;
+body .jobs-section {
+  width: 80%;
+  margin: 150px auto 0 auto;
 }
 
-.jobs-section label {
+/* .jobs-section label {
   font-size: 1.4em;
   margin-bottom: 20px;
+} */
+
+.list-text-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.no-results-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.no-results-message {
+  margin-top: 10px;
+  font: normal 0.9em 'Open Sans', sans-serif;
 }

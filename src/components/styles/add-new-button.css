@@ -1,0 +1,12 @@
+.btn-wrapper {
+  position: fixed;
+  bottom: 20%;
+  right: 10%;
+}
+
+body .btn-wrapper button {
+  background: -webkit-gradient(linear,left bottom, left top,from(rgb(196, 55, 71)),to(rgb(255, 144, 157))) no-repeat;
+  background: -webkit-linear-gradient(bottom,rgb(196, 55, 71),rgb(255, 144, 157)) no-repeat;
+  background: -o-linear-gradient(bottom,rgb(196, 55, 71),rgb(255, 144, 157)) no-repeat;
+  background: linear-gradient(0deg,rgb(196, 55, 71),rgb(255, 144, 157)) no-repeat;
+}

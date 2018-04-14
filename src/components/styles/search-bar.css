@@ -1,4 +1,13 @@
 .search-bar-wrapper {
   width: 60%;
-  margin: 200px auto 30px auto;
+ margin: 0 auto;
+}
+
+.search-bar-wrapper h6 {
+  font: bold 0.9em 'Open Sans', sans-serif;
+  padding-left: 10%;
+}
+
+.search-bar-wrapper input {
+  margin: 0 auto;
 }

@@ -56,7 +56,7 @@ export default class LandingPage extends Component {
                 <p className="calendar-text">Use our calendar to save and access all your activities on any giving day</p>
               </div>
               <div className="img-wrapper right">
-                <img src={CalendarImg}  className="img444" alt="icon" />
+                <img src={CalendarImg} className="calendar-img" alt="icon" />
               </div>
             </section>
           </section>
@@ -75,15 +75,13 @@ export default class LandingPage extends Component {
             </div>
           </section>
         </main>
-        
+        <footer>
+          <div>
+           ``
+            <h1 className="App-title">OBSERVER</h1>
+          </div>
+        </footer>
       </div>
     )
   }
 }
-
-// <footer>
-//           <div>
-//             <img src={headerIcon} alt="logo" />
-//             <h1 className="App-title">OBSERVER</h1>
-//           </div>
-//         </footer>

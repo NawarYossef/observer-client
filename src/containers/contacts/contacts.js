@@ -12,7 +12,8 @@ export class Contacts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchQuery: ''
+      searchQuery: '',
+      field: 'contacts'
     }
   }
 
@@ -34,7 +35,7 @@ export class Contacts extends Component {
     }
     return (
       <section className="contacts-section">
-        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} />
+        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} category={this.state.field}/>
         {
           selectedContacts.length ? (selectedContacts.map((contact, idx) => {
             return <SingleContact key={idx} contact={contact} onClick={() => this.handleContactDelete(contact, contact.id)} />;

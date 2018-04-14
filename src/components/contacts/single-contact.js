@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import "../styles/add-new-button.css";
 
 function SingleContact(props) {
   return (
