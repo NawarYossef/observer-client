@@ -16,7 +16,7 @@ export default function HeaderNavbar() {
     </Link>
   ];
   return (
-    <header>
+    <header className="app-title-wrapper">
       <img src={headerIcon} alt="logo"/>
       <h1 className="App-title">OBSERVER</h1>
       <nav>

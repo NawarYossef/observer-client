@@ -7,19 +7,21 @@ import "./styles/single-job.css";
 function SingleJob(props) {
   return (
     <section className="job">
-      <h2>{props.job["companyName"]}</h2>
-      <p>{props.job["positionTitle"]}</p>
-      <p>{props.job["jobStatus"]}</p>
+      <h2>{props.job.companyName}</h2>
+      <p className="position-title">{props.job.positionTitle}</p>
+      <p className="job-status">{props.job.jobStatus}</p>
 
-      <Link to={`/jobs/${props.job.id}`}>
-        <button>Job details</button>
-      </Link>
-      <Link to={`/jobs/edit/${props.job.id}`}>
-        <button>Edit information</button>
-      </Link>
-      <Link to={"/jobs"}>
-        <button onClick={props.onClick}>Delete Job</button>
-      </Link>
+      <div className="btns-wrapper">
+        <Link to={`/jobs/${props.job.id}`}>
+          <button className="first-btn"><p className="btn-text">Job details</p></button>
+        </Link>
+        <Link to={`/jobs/edit/${props.job.id}`}>
+          <button className="second-btn"><p className="btn-text">Edit</p></button>
+        </Link>
+        <Link to={"/jobs"}>
+          <button onClick={props.onClick}><p className="btn-text">Delete</p></button>
+        </Link>
+      </div>
     </section>
   );
 }

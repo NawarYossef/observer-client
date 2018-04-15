@@ -1,7 +1,44 @@
 .job {
   display: block;
   width: 60%;
-  background: rgb(202, 202, 202);
-  margin: 0 auto 20px auto;
-  padding: 20px;
+  background: rgb(255, 255, 255);
+  margin: 20px auto 0px auto;
+  padding: 20px 0px;
+  text-align: left;
+  border-bottom: 1px solid rgb(185, 183, 183);
 }
+
+.job h2 {
+  color: rgb(76, 76, 212);
+}
+
+.job button {
+  border: none;
+  background-color: #ffffff;
+  text-align: left;
+  margin-top: 10px;
+  font: bold 0.9em 'Open Sans', sans-serif;
+}
+
+.job .first-btn, .job .second-btn {
+  border-right: 1px solid rgb(185, 183, 183);
+}
+
+.job .btn-text {
+  border-bottom: 1px solid #ffffff;
+}
+
+.job .btn-text:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #E47911;
+  color: #E47911;
+}
+
+.position-title {
+  color: #111;
+}
+
+.job-status {
+  color: #008a00;
+}
+

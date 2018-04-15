@@ -6,6 +6,7 @@ import LaptopIcon from "../images/laptop-icon.png"
 import BagIcon from "../images/bag-icon.png"
 import CalendarImg from "../images/calendar-img.png"
 import PaperImg from "../images/paper-icon.png"
+import headerIconBlack from "../images/header-icon-black.png"
 
 import "./styles/landing-page.css";
 
@@ -76,10 +77,16 @@ export default class LandingPage extends Component {
           </section>
         </main>
         <footer>
-          <div>
-           ``
+          <div className="footer-title-wrapper">
+            <img src={headerIconBlack} alt="icon" />
             <h1 className="App-title">OBSERVER</h1>
           </div>
+          <h4 id="made-with">
+            Made with
+        <i class="fa fa-heart fa created-by-icon" aria-hidden="true"></i>
+            and
+        <i class="fa fa-coffee fa created-by-icon" aria-hidden="true"></i>
+          </h4>
         </footer>
       </div>
     )

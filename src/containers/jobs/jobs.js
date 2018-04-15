@@ -26,6 +26,9 @@ export class Jobs extends Component {
   }
 
   render() {
+    console.log('------------------------------------');
+    console.log(this.props.jobs);
+    console.log('------------------------------------');
     let selectedJobs = this.props.jobs
     if (this.state.searchQuery !== "") {
       selectedJobs = this.props.jobs.filter(job =>

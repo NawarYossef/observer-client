@@ -184,3 +184,15 @@ footer {
   width: 100%;
   padding: 10px 30px;
 }
+
+.footer-title-wrapper h1 {
+  float: none;
+  font: normal 1.6em 'Fjalla One', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  color: #6B6B6B;
+}
+
+.footer-title-wrapper img {
+  float: left;
+}
