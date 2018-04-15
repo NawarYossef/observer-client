@@ -1,23 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./styles/header-navbar.css";
+
+import "./styles/navigation-menu.css";
+
 import headerIcon from "../images/header-icon.png"
 
-export default function HeaderNavbar() {
+export default function NavigationMenu(props) {
   const links = [
-    <Link to="/jobs" className="">
+    <Link to="/jobs">
       JOBS
     </Link>,
-    <Link to="/activities" className="">
+    <Link to="/activities">
       ACTIVITIES
     </Link>,
-    <Link to="/contacts" className="">
+    <Link to="/contacts">
       CONTACTS
     </Link>
   ];
+
   return (
     <header className="app-title-wrapper">
-      <img src={headerIcon} alt="logo"/>
+      <img src={headerIcon} alt="logo" />
       <h1 className="App-title">OBSERVER</h1>
       <nav>
         <ul>
@@ -25,6 +28,7 @@ export default function HeaderNavbar() {
             return (
               <li key={idx.toString()} className="link">
                 {link}
+                <hr />
               </li>
             );
           })}

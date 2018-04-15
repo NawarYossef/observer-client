@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import HeaderNavbar from "../components/header-navbar";
-import LandingPage from "./landing-page";
+import NavigationMenu from "../components/navigation-menu";
+import HamburgerButton from "../components/hamburger-button";
+import LandingPage from "./landing-page/landing-page";
 import Contacts from "./contacts/contacts";
 import NewContact from "./contacts/new-contact";
 import EditContact from "./contacts/edit-contact";
@@ -19,11 +20,26 @@ import ShowActivityDetails from "./activities/show-activity-details";
 import "./styles/app.css";
 
 class AppRouter extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      hamburgerState: "is-active"
+    }
+  }
+
+  handleHamburgerClick() {
+    this.state.hamburgerState === "is-active" ? 
+    this.setState({hamburgerState: "not-active"}) :
+    this.setState({hamburgerState: "is-active"}) 
+  }
+
   render() {
     return (
       <Router>
         <div className="app">
-          <HeaderNavbar />
+          <HamburgerButton hamburgerState={this.state.hamburgerState} onClick={this.handleHamburgerClick.bind(this)}/>
+          <NavigationMenu  animate={this.state.hamburgerState}/>
           <Switch>
             <Route exact path="/" component={LandingPage} />
 

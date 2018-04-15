@@ -1,4 +1,12 @@
-.App {
-    position: relative;
-    width: 100%;
+@media screen and (max-width: 680px) {
+  .hamburger {
+      display: initial;
+  }
 }
+
+@media screen and (min-width: 681px) {
+    .hamburger {
+        display: none;
+    }
+  }
+  
