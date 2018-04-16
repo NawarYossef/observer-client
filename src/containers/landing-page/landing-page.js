@@ -13,7 +13,7 @@ export default class LandingPage extends Component {
   }
 
   showBackToTopBtn() {
-  console.log(window.innerWidth === 1440)
+  // console.log(window.innerWidth === 1440)
   }
 
   componentDidMount() {
@@ -26,7 +26,7 @@ export default class LandingPage extends Component {
 
   render() {
     return (
-      <div  className="lading-page-wrapper">
+      <div  className="landing-page-wrapper">
         <HeaderContent onClick={this.scrollTo}/>
         <MainSection />
         <Footer />

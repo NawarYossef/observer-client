@@ -24,7 +24,8 @@ class AppRouter extends Component {
     super(props)
 
     this.state = {
-      hamburgerState: "not-active"
+      hamburgerState: "not-active",
+      animationClass: "slideOutRight"
     }
   }
 
@@ -34,13 +35,17 @@ class AppRouter extends Component {
       this.setState({ hamburgerState: "not-active" })
   }
 
+  slideOutMenu() {
+    this.setState({animationClass: "slideOutRight"})
+  }
+
   render() {
     if (this.state.hamburgerState === "is-active") {
       return (
         <Router>
           <div className="app">
             <HamburgerButton hamburgerState={this.state.hamburgerState} onClick={this.handleHamburgerClick.bind(this)} />
-            <NavigationMenu hamburgerState={this.state.hamburgerState} />
+            <NavigationMenu hamburgerState={this.state.hamburgerState} slideOutMenu={this.slideOutMenu.bind(this)} />
           </div>
         </Router>
       )
@@ -50,7 +55,7 @@ class AppRouter extends Component {
       <Router>
         <div className="app">
           <HamburgerButton hamburgerState={this.state.hamburgerState} onClick={this.handleHamburgerClick.bind(this)} />
-          <NavigationMenu hamburgerState={this.state.hamburgerState} />
+          <NavigationMenu hamburgerState={this.state.hamburgerState}  slideOutMenu={this.slideOutMenu.bind(this)} />
           <Switch>
             <Route exact path="/" component={LandingPage} />
 

@@ -237,7 +237,9 @@ footer {
 .contacts span:hover {
   color: #ffffff;
 }
-
+.footer-title-wrapper {
+  padding-left: 40px;
+}
 /* media Query */
 
 @media screen and (max-width: 680px) {
@@ -284,6 +286,7 @@ footer {
   }
   .footer-title-wrapper {
     text-align: center;
+    padding-left: 0px;
   }
   .footer-title-wrapper h1 {
     vertical-align: super;

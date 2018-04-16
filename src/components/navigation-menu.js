@@ -7,24 +7,33 @@ import "./styles/navigation-menu.css";
 import headerIcon from "../images/header-icon.png"
 
 export default function NavigationMenu(props) {
+  let animation = "hide-nav"
+  
   const links = [
-    <Link to="/jobs">
+    <Link to="/jobs" onClick={animation = "slideOutRight"}>
       JOBS
     </Link>,
-    <Link to="/activities">
+    <Link to="/activities" onClick={animation = "slideOutRight"}>
       ACTIVITIES
     </Link>,
-    <Link to="/contacts">
+    <Link to="/contacts" onClick={animation = "slideOutRight"}>
       CONTACTS
     </Link>
   ];
-  let animation = props.hamburgerState === "is-active" ? "slideInRight" : "slideOutRight"
-  window.innerWidth > 680 ? animation = "" : null; 
+
+  if (window.innerWidth < 681 && props.hamburgerState === "is-active") {
+    animation = "show-nav slideInRight"
+  } else if (window.innerWidth < 681 && props.hamburgerState === "not-active" && animation === "slideInRight") {
+    animation = "slideOutRight"
+  } else if (window.innerWidth > 681) {
+    animation = "show-nav"
+  }
+
   return (
-    <header className={`app-title-wrapper animated ${animation}`}>
+    <header className={`app-title-wrapper`}>
       <img src={headerIcon} alt="logo" />
       <h1 className="App-title">OBSERVER</h1>
-      <nav>
+      <nav className={`animated ${animation}`}>
         <ul>
           {links.map((link, idx) => {
             return (

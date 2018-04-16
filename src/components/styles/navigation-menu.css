@@ -18,7 +18,7 @@
     font: normal 1.6em 'Fjalla One', sans-serif;
     letter-spacing: 2px;
     line-height: 1.5;
-    color: #000000;
+    color: #312e2e;
   }
 
   .app-title-wrapper img {
@@ -47,21 +47,24 @@
     color: #4075c5;
   }
 
+  .hide-nav {
+    display: none;
+  }
+
+  .show-nav {
+    display: block;
+  }
+
   @media screen and (max-width: 680px) {
     header {
       text-align: center;
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
     }
 
     nav {
       padding-top: 50px;
+      display: none;
+      margin-top: 20px;
+      z-index: 1;
     }
     nav ul {
       float: none;
@@ -74,10 +77,13 @@
       margin-top: 20px;
     }
     .app-title-wrapper h1 {
-      display: none
+      display: initial;
+      font-size: 2em;
+      line-height: 1.2;
+      vertical-align: inherit;
     }
     .app-title-wrapper img {
-      display: none
+      display: initial;
     }
     nav li a {
       color: #E83F53;

@@ -7,10 +7,12 @@
 */
 
 .hamburger {
-  position: relative;
+  float: right;
+  position: fixed;
+  top: 0;
+  right: 0;
   z-index: 2;
   padding: 15px 15px;
-  display: inline-block;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
@@ -66,6 +68,7 @@
 }
 
 /* Spin Animation */
+
 .hamburger--spring .hamburger-inner {
   top: 2px;
   transition: background-color 0s 0.13s linear;
