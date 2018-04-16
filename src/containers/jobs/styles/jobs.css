@@ -1,16 +1,16 @@
 body .jobs-section {
   width: 80%;
-  margin: 150px auto 0 auto;
+  margin:0 auto;
 }
 
-/* .jobs-section label {
-  font-size: 1.4em;
-  margin-bottom: 20px;
-} */
+.add-background-img {
+  background-color: #f5f4f4;
+}
 
 .list-text-wrapper {
   width: 100%;
   text-align: center;
+  padding: 10px 0;
 }
 
 .no-results-wrapper {

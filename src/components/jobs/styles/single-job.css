@@ -1,11 +1,14 @@
 .job {
   display: block;
-  width: 60%;
+  width: 70%;
   background: rgb(255, 255, 255);
-  margin: 20px auto 0px auto;
-  padding: 20px 0px;
+  margin: 0px auto;
+  padding: 10px 10px;
   text-align: left;
-  border-bottom: 1px solid rgb(185, 183, 183);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 3px;
+  background-image: linear-gradient(#c2d2dd, #f1efef);
+  margin-bottom: 20px;
 }
 
 .job h2 {
@@ -14,18 +17,26 @@
 
 .job button {
   border: none;
-  background-color: #ffffff;
+  background-color: #ffffff00;
   text-align: left;
-  margin-top: 10px;
-  font: bold 0.9em 'Open Sans', sans-serif;
+  font: normal 0.9em sans-serif;
+  border-right: 1px solid rgb(204, 201, 201);
+  padding: 0px 15px;
 }
 
-.job .first-btn, .job .second-btn {
-  border-right: 1px solid rgb(185, 183, 183);
+.job p {
+  text-decoration: none;
+}
+.job .third-btn {
+  border-right: none;
+}
+
+.job .first-btn {
+  padding-left: 0px;
 }
 
 .job .btn-text {
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #e9e7e7;
 }
 
 .job .btn-text:hover {
@@ -39,6 +50,10 @@
 }
 
 .job-status {
-  color: #008a00;
+  color: rgb(196, 55, 71);
+  font: normal 0.9em sans-serif;
 }
 
+.position-title,  .job-status, .btns-wrapper {
+  margin-top: 5px;
+}

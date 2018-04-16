@@ -26,9 +26,6 @@ export class Jobs extends Component {
   }
 
   render() {
-    console.log('------------------------------------');
-    console.log(this.props.jobs);
-    console.log('------------------------------------');
     let selectedJobs = this.props.jobs
     if (this.state.searchQuery !== "") {
       selectedJobs = this.props.jobs.filter(job =>
@@ -37,16 +34,16 @@ export class Jobs extends Component {
     }
     return (
       <section className="jobs-section">
-        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} category={this.state.field} />
+        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} />
         <div className="list-text-wrapper">
-          <span className="list-text">Your {this.state.field}</span>
+          <span className="list-text">You have {this.props.jobs.length} {this.state.field} saved</span>
         </div>
         {
           selectedJobs.length ? (selectedJobs.map((job, idx) => {
             return <SingleJob key={idx} job={job} onClick={() => this.handleJobDelete(job, job.id)} />;
           })) :
             <div className="no-results-wrapper">
-              <h6 className="no-results-message">No {this.state.field} Found</h6>
+              <h6 className="no-results-message"> * No {this.state.field} Found</h6>
             </div>
         }
         <AddNewJobButton />

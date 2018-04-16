@@ -1,5 +1,4 @@
 import { API_BASE_URL } from "../config";
-import history from "../history";
 
 // -------------- GET all jobs --------------------
 export const getJobs = () => {
@@ -17,7 +16,6 @@ export const getJobs = () => {
       })
       .then(data => {
         dispatch(getJobsSuccess(data.jobs));
-        history.push(`/jobs`);
       })
       .catch(err => console.log(err));
   };
@@ -126,12 +124,7 @@ export const deleteJob = (job, id) => {
       body: JSON.stringify(job)
     })
       .then(res => {
-        if (res.status === 204) {
-          console.log('------------------------------------');
-          console.log("delete");
-          console.log('------------------------------------');
-          return
-        }
+        dispatch(getJobs());
       })
       .catch(err => console.log(err));
   };

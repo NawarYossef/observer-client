@@ -19,7 +19,7 @@ function SingleJob(props) {
           <button className="second-btn"><p className="btn-text">Edit</p></button>
         </Link>
         <Link to={"/jobs"}>
-          <button onClick={props.onClick}><p className="btn-text">Delete</p></button>
+          <button onClick={props.onClick} className="third-btn"><p className="btn-text">Delete</p></button>
         </Link>
       </div>
     </section>

@@ -78,7 +78,7 @@ export class EditJob extends Component {
   };
 
   handleJobStatusChange = e => {
-    this.setState({ jobsStatus: e.target.value });
+    this.setState({ jobStatus: e.target.value });
   };
 
   handleNotesChange = e => {
