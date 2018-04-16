@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { animateScroll as scroll } from 'react-scroll';
+import { Helmet } from 'react-helmet';
+
 import HeaderContent from "./header-content";
 import MainSection from "./main-section";
 import Footer from "./footer";
@@ -13,7 +15,7 @@ export default class LandingPage extends Component {
   }
 
   showBackToTopBtn() {
-  // console.log(window.innerWidth === 1440)
+    // console.log(window.innerWidth === 1440)
   }
 
   componentDidMount() {
@@ -26,8 +28,11 @@ export default class LandingPage extends Component {
 
   render() {
     return (
-      <div  className="landing-page-wrapper">
-        <HeaderContent onClick={this.scrollTo}/>
+      <div className="landing-page-wrapper">
+        <Helmet>
+          <style>{'#root { background-color: #ffffff; } header { box-shadow: none; } '}</style>
+        </Helmet>
+        <HeaderContent onClick={this.scrollTo} />
         <MainSection />
         <Footer />
       </div>

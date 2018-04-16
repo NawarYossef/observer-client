@@ -6,6 +6,7 @@
     right: 0;
     padding: 20px 80px;
     background-color: #ffffffe3;
+    box-shadow: 0 0px 20px rgba(255, 255, 255, 0.19), 0 2px 6px rgba(0,0,0,0.23);
     z-index: 1;
   }
 
@@ -38,7 +39,7 @@
 
   nav li a {
     text-decoration: none;
-    color: #020202;
+    color: rgb(66, 66, 66);
     font: normal 0.9em 'Roboto', sans-serif;
     transition: color 0.2s ease-out;
   }
