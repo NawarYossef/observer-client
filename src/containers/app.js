@@ -24,22 +24,33 @@ class AppRouter extends Component {
     super(props)
 
     this.state = {
-      hamburgerState: "is-active"
+      hamburgerState: "not-active"
     }
   }
 
   handleHamburgerClick() {
-    this.state.hamburgerState === "is-active" ? 
-    this.setState({hamburgerState: "not-active"}) :
-    this.setState({hamburgerState: "is-active"}) 
+    this.state.hamburgerState === "not-active" ?
+      this.setState({ hamburgerState: "is-active" }) :
+      this.setState({ hamburgerState: "not-active" })
   }
 
   render() {
+    if (this.state.hamburgerState === "is-active") {
+      return (
+        <Router>
+          <div className="app">
+            <HamburgerButton hamburgerState={this.state.hamburgerState} onClick={this.handleHamburgerClick.bind(this)} />
+            <NavigationMenu hamburgerState={this.state.hamburgerState} />
+          </div>
+        </Router>
+      )
+    }
+
     return (
       <Router>
         <div className="app">
-          <HamburgerButton hamburgerState={this.state.hamburgerState} onClick={this.handleHamburgerClick.bind(this)}/>
-          <NavigationMenu  animate={this.state.hamburgerState}/>
+          <HamburgerButton hamburgerState={this.state.hamburgerState} onClick={this.handleHamburgerClick.bind(this)} />
+          <NavigationMenu hamburgerState={this.state.hamburgerState} />
           <Switch>
             <Route exact path="/" component={LandingPage} />
 

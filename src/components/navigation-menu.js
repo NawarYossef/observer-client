@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "animate.css";
 
 import "./styles/navigation-menu.css";
 
@@ -17,9 +18,10 @@ export default function NavigationMenu(props) {
       CONTACTS
     </Link>
   ];
-
+  let animation = props.hamburgerState === "is-active" ? "slideInRight" : "slideOutRight"
+  window.innerWidth > 680 ? animation = "" : null; 
   return (
-    <header className="app-title-wrapper">
+    <header className={`app-title-wrapper animated ${animation}`}>
       <img src={headerIcon} alt="logo" />
       <h1 className="App-title">OBSERVER</h1>
       <nav>

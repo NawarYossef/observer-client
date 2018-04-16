@@ -1,12 +1,11 @@
 @media screen and (max-width: 680px) {
   .hamburger {
-      display: initial;
+    display: initial;
   }
 }
 
 @media screen and (min-width: 681px) {
-    .hamburger {
-        display: none;
-    }
+  .hamburger {
+    display: none;
   }
-  
+}
