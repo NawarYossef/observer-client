@@ -1,5 +1,4 @@
 import { API_BASE_URL } from "../config";
-import history from "../history";
 
 // -------------- GET all activities --------------------
 export const getActivities = () => {
@@ -17,7 +16,6 @@ export const getActivities = () => {
       })
       .then(data => {
         dispatch(getActivitiesSuccess(data.activities));
-        history.push(`/activities`);
       })
       .catch(err => console.log(err));
   };
@@ -126,9 +124,7 @@ export const deleteActivity = (activity, id) => {
       body: JSON.stringify(activity)
     })
       .then(res => {
-        if (res.status === 204) {
-          history.push(`/activities`);
-        }
+        dispatch(getActivities())
       })
       .catch(err => console.log(err));
   };

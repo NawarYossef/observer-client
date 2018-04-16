@@ -1,5 +1,4 @@
 import { API_BASE_URL } from "../config";
-import history from "../history";
 
 // -------------- GET all contacts --------------------
 export const getContacts = () => {
@@ -17,7 +16,6 @@ export const getContacts = () => {
       })
       .then(data => {
         dispatch(getContactsSuccess(data.contacts));
-        history.push(`/contacts`);
       })
       .catch(err => console.log(err));
   };
@@ -126,9 +124,7 @@ export const deleteContact = (contact, id) => {
       body: JSON.stringify(contact)
     })
       .then(res => {
-        if (res.status === 204) {
-          history.push(`/contacts`);
-        }
+        dispatch(getContacts());
       })
       .catch(err => console.log(err));
   };
