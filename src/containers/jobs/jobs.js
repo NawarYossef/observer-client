@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { getJobs, deleteJob } from "../../actions/jobs";
 import AddNewJobButton from "../../components/jobs/add-new-job-button";
 import SingleJob from "../../components/jobs/single-job";
+import JobCountMessage from "../../components/jobs/job-count-message";
+import NoJobsFoundMessage from "../../components/jobs/no-jobs-found-message";
 import SearchBar from "../../components/search-bar";
 
 import "./styles/jobs.css";
@@ -30,7 +32,7 @@ export class Jobs extends Component {
   render() {
     let selectedJobs = this.props.jobs
     if (this.state.searchQuery !== "") {
-      let regexForSearchInput = new RegExp( '^' + this.state.searchQuery.toLocaleLowerCase(), 'g' );
+      let regexForSearchInput = new RegExp('^' + this.state.searchQuery.toLocaleLowerCase(), 'g');
       selectedJobs = this.props.jobs.filter(job =>
         job.companyName.toLowerCase().match(regexForSearchInput) !== null ||
         job.jobStatus.toLowerCase().match(regexForSearchInput) !== null
@@ -39,16 +41,13 @@ export class Jobs extends Component {
     return (
       <section className="jobs-section">
         <SearchBar onChange={searchQuery => this.setState({ searchQuery })} placeholder={this.state.placeholder} />
-        <div className="list-text-wrapper">
-          <span className="list-text">You have {this.props.jobs.length} {this.state.field} saved</span>
-        </div>
         {
-          selectedJobs.length ? (selectedJobs.map((job, idx) => {
-            return <SingleJob key={idx} job={job} onClick={() => this.handleJobDelete(job, job.id)} />;
-          })) :
-            <div className="no-results-wrapper">
-              <h6 className="no-results-message"> * No {this.state.field} Found</h6>
-            </div>
+          selectedJobs.length ?
+            <JobCountMessage /> &&
+            (selectedJobs.map((job, idx) => {
+              return <SingleJob key={idx} job={job} onClick={() => this.handleJobDelete(job, job.id)} />;
+            })) :
+            <NoJobsFoundMessage field={this.state.field} />
         }
         <AddNewJobButton />
       </section>

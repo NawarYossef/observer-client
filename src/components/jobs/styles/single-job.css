@@ -5,14 +5,14 @@
   margin: 0px auto;
   padding: 10px 10px;
   text-align: left;
-  box-shadow: 0 3px 6px rgba(155, 197, 248, 0.904), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0,0,0,0.23);
   border-radius: 3px;
   /* background-image: linear-gradient(#c2d2dd, #f1efef); */
   margin-bottom: 20px;
 }
 
 .job h2 {
-  color: rgb(76, 76, 212);
+  color: rgb(74, 69, 69)
 }
 
 .job button {
@@ -46,11 +46,11 @@
 }
 
 .position-title {
-  color: rgb(43, 43, 43);
+  color: rgb(47, 47, 47);
 }
 
 .job-status {
-  color: rgb(50, 173, 76);
+  color: rgb(54, 67, 232);
   font: normal 0.9em sans-serif;
 }
 
