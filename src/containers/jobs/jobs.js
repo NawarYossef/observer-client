@@ -6,13 +6,15 @@ import SingleJob from "../../components/jobs/single-job";
 import SearchBar from "../../components/search-bar";
 
 import "./styles/jobs.css";
+import "./styles/helper.css";
 
 export class Jobs extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchQuery: '',
-      field: 'jobs'
+      field: 'jobs',
+      placeholder: "Enter company name or job status"
     }
   }
 
@@ -28,13 +30,15 @@ export class Jobs extends Component {
   render() {
     let selectedJobs = this.props.jobs
     if (this.state.searchQuery !== "") {
+      let regexForSearchInput = new RegExp( '^' + this.state.searchQuery.toLocaleLowerCase(), 'g' );
       selectedJobs = this.props.jobs.filter(job =>
-        job.companyName.toLowerCase().includes(this.state.searchQuery.toLowerCase()) ||
-        job.jobStatus.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
+        job.companyName.toLowerCase().match(regexForSearchInput) !== null ||
+        job.jobStatus.toLowerCase().match(regexForSearchInput) !== null
+      )
     }
     return (
       <section className="jobs-section">
-        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} />
+        <SearchBar onChange={searchQuery => this.setState({ searchQuery })} placeholder={this.state.placeholder} />
         <div className="list-text-wrapper">
           <span className="list-text">You have {this.props.jobs.length} {this.state.field} saved</span>
         </div>

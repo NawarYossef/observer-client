@@ -1,13 +1,15 @@
 body .jobs-section {
-  width: 80%;
-  margin:0 auto;
+  width: 65%;
+  margin: 0 auto;
   padding-top: 15%;
 }
 
 .list-text-wrapper {
-  width: 100%;
-  text-align: center;
+  font: normal 0.8em 'Open Sans', sans-serif;
+  margin: 0 auto;
+  text-align: left;
   padding: 10px 0;
+  width: 70%;
 }
 
 .no-results-wrapper {
