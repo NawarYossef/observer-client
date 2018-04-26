@@ -15,9 +15,9 @@ export default class LandingPage extends Component {
   }
 
   showBackToTopBtn() {
-    // console.log(window.innerWidth === 1440)
-  }
 
+  }
+  
   componentDidMount() {
     window.addEventListener('scroll', this.showBackToTopBtn);
   }
@@ -28,9 +28,9 @@ export default class LandingPage extends Component {
 
   render() {
     return (
-      <div className="landing-page-wrapper">
+      <div className="landing-page-wrapper" onScroll={this.ss}>
         <Helmet>
-          <style>{'#root { background-color: #ffffff; } header { box-shadow: none; } '}</style>
+          <style>{'#root { background-color: #ffffff; } header { box-shadow: none; background-color: #ffffffdb;} '}</style>
         </Helmet>
         <HeaderContent onClick={this.scrollTo} />
         <MainSection />

@@ -51,14 +51,17 @@ export class Activities extends Component {
     }
 
     return (
-      <section className="activities-wrapper col-12">
-        {selectedActivities.map((activity, idx) =>
-          <SingleActivity key={idx} activity={activity} onClick={() => this.handleActivityDelete(activity, activity.id)} parseDate={this.parseActivityDate} />
-        )}
+      <section className="main-wrapper">
+        <h2 className={"current-date"}>{this.displayCurrentCalendarDate()}</h2>
+        <div className={"calendar-activities-wrapper"}>
+          <CalendarSection onChange={this.handleCalendarDateChange.bind(this)} currDate={this.state.date} activitiesCount={selectedActivities} activities={this.props.activities}/>
+          <div className={"activities-wrapper"}>
+            {selectedActivities.map((activity, idx) =>
+              <SingleActivity key={idx} activity={activity} onClick={() => this.handleActivityDelete(activity, activity.id)} parseDate={this.parseActivityDate} />
+            )}
+          </div>
+        </div>
         <AddNewActivityButton />
-        <CalendarSection onChange={this.handleCalendarDateChange.bind(this)} currDate={this.state.date} />
-        <h2>{this.displayCurrentCalendarDate()}</h2>
-        { selectedActivities.length === this.props.activities.length ? <h3>No Result Found</h3> : null }
       </section>
     );
   }

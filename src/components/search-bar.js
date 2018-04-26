@@ -10,7 +10,7 @@ export default function SearchBar(props) {
           <input  onChange={e => props.onChange(e.target.value)}
             className="search-input"
             placeholder={props.placeholder} />
-            <span class="fa fa-search"></span>
+            <span className="fa fa-search"></span>
         </label>
       </form>
     </section>

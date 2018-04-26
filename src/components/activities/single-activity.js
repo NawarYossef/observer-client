@@ -2,24 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import "./styles/single-activity.css";
+
 function SingleActivity(props) {
   return (
     <section className="activity">
       <h2>{props.activity.title}</h2>
-      <p>{props.activity.type}</p>
-      <p>{props.parseDate(props.activity.date)}</p>
-      <p>{props.activity.topic}</p>
-      <p>{props.activity.website}</p>
+      <p className="activity-date">{props.parseDate(props.activity.date)}</p>
+      <p className="activity-type">{props.activity.type}</p>
+      <p className="activity-topic">{props.activity.topic}</p>
+      <p className="activity-website"><a href={`${props.activity.website}`} target="_blank" className={"website-anchor"}>{props.activity.website}</a></p>
 
-      <Link to={`/activities/${props.activity.id}`}>
-        <button>Activities details</button>
-      </Link>
-      <Link to={`/activities/edit/${props.activity.id}`}>
-        <button>Edit Details</button>
-      </Link>
-      <Link to="/activities">
-        <button onClick={props.onClick}>Delete activity</button>
-      </Link>
+      <div className="btns-wrapper">
+        <Link to={`/activities/edit/${props.activity.id}`}>
+          <button className="first-btn"><p className="btn-text">Edit</p></button>
+        </Link>
+        <Link to="/activities">
+          <button className="second-btn" onClick={props.onClick}><p className="btn-text">Delete</p></button>
+        </Link>
+      </div>
     </section>
   );
 }

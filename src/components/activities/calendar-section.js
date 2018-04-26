@@ -9,6 +9,7 @@ export default function CalendarSection(props) {
       value={props.currDate}
         onChange={(value) => props.onChange(value)}
       />
+      {props.activitiesCount.length === props.activities.length ? <h3 className={"activities-count"}>* No activities today</h3> : <h3 className={"activities-count"}>Activities today: {props.activitiesCount.length}</h3> }
     </section>
   );
 }

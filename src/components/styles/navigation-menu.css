@@ -5,8 +5,8 @@
     left: 0;
     right: 0;
     padding: 20px 80px;
-    background-color: #ffffffe3;
-    box-shadow: 0 0px 20px rgba(255, 255, 255, 0.19), 0 2px 6px rgba(0,0,0,0.23);
+    background-color: #ffffff00;
+    box-shadow: 0 0px 20px rgba(255, 255, 255, 0.19), 0 2px 6px rgba(0, 0, 0, 0.23);
     z-index: 1;
   }
 
@@ -56,14 +56,22 @@
     display: block;
   }
 
+  .show-header {
+    height: 100%;
+    background-color: #ffffff;
+  }
+
+  .header-background-color {
+    background-color: #ffffff;
+  }
+
   @media screen and (max-width: 680px) {
     header {
       text-align: center;
     }
-
     nav {
       padding-top: 50px;
-      display: none;
+      /* display: none; */
       margin-top: 20px;
       z-index: 1;
     }
@@ -75,7 +83,7 @@
     }
     nav li {
       padding: 0px;
-      margin-top: 20px;
+      margin-top: 30px;
     }
     .app-title-wrapper h1 {
       display: initial;
@@ -88,7 +96,7 @@
     }
     nav li a {
       color: #E83F53;
-      font: normal 1.5em 'Roboto', sans-serif;
+      font: normal 1.3em 'Roboto', sans-serif;
     }
     hr {
       margin-top: 40px;

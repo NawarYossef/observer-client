@@ -1,14 +1,24 @@
-.activities-wrapper {
-  width: 100%;
+.main-wrapper {
+  width: 80%;
   margin: 100px auto 0 auto;
 }
 
-.activity {
-  width: 50%;
-  float: left;
+.main-wrapper .current-date {
+  display: block;
+  width: 100%;
+  color: rgb(196, 55, 71);
+  text-align: center;
 }
-.activities-container label {
-  font-size: 1.4em;
-  margin-bottom: 20px;
+
+.calendar-activities-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.activities-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
 }
 

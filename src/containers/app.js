@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import NavigationMenu from "../components/navigation-menu";
-import HamburgerButton from "../components/hamburger-button";
+import Header from "./header"
 import LandingPage from "./landing-page/landing-page";
 import Contacts from "./contacts/contacts";
 import NewContact from "./contacts/new-contact";
 import EditContact from "./contacts/edit-contact";
-import ShowContactDetails from "./contacts/show-contact-details";
 import Jobs from "./jobs/jobs";
 import NewJob from "./jobs/new-job";
 import EditJob from "./jobs/edit-job";
@@ -25,37 +23,27 @@ class AppRouter extends Component {
 
     this.state = {
       hamburgerState: "not-active",
-      animationClass: "slideOutRight"
+      headerStyles: ""
     }
   }
 
   handleHamburgerClick() {
     this.state.hamburgerState === "not-active" ?
-      this.setState({ hamburgerState: "is-active" }) :
-      this.setState({ hamburgerState: "not-active" })
-  }
-
-  slideOutMenu() {
-    this.setState({animationClass: "slideOutRight"})
+      this.setState({
+        hamburgerState: "is-active",
+        headerStyles: "show-header"
+      }) :
+      this.setState({
+        hamburgerState: "not-active",
+        headerStyles: "none"
+      })
   }
 
   render() {
-    if (this.state.hamburgerState === "is-active") {
-      return (
-        <Router>
-          <div className="app">
-            <HamburgerButton hamburgerState={this.state.hamburgerState} onClick={this.handleHamburgerClick.bind(this)} />
-            <NavigationMenu hamburgerState={this.state.hamburgerState} slideOutMenu={this.slideOutMenu.bind(this)} />
-          </div>
-        </Router>
-      )
-    }
-
     return (
       <Router>
         <div className="app">
-          <HamburgerButton hamburgerState={this.state.hamburgerState} onClick={this.handleHamburgerClick.bind(this)} />
-          <NavigationMenu hamburgerState={this.state.hamburgerState}  slideOutMenu={this.slideOutMenu.bind(this)} />
+          <Header />
           <Switch>
             <Route exact path="/" component={LandingPage} />
 
@@ -72,7 +60,6 @@ class AppRouter extends Component {
             <Route exact path="/contacts" component={Contacts} />
             <Route path="/contacts/new" component={NewContact} />
             <Route path="/contacts/edit/:id" component={EditContact} />
-            <Route path="/contacts/:id" component={ShowContactDetails} />
           </Switch>
         </div>
       </Router>

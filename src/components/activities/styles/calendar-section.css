@@ -1,5 +1,21 @@
 .calendar-wrapper {
-    width: 50%;
-    float: right;
-    margin-top: 20px;
+  max-width: 40%;
+}
+
+.react-calendar {
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  border-color: rgb(194, 192, 192);
+}
+
+.activities-count {
+  background-color: #ffffff00;
+  font: normal 0.9em sans-serif;
+  margin: 10px 0 40px 0;
+  text-align: center;
+  width: 100%;
+  padding: 0px;
+  
 }

@@ -1,21 +1,24 @@
-.job {
+.activity {
   display: block;
   width: 70%;
   background: rgb(249, 249, 249);
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 10px 10px;
   text-align: left;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 3px;
-  /* background-image: linear-gradient(#c2d2dd, #f1efef); */
   margin-bottom: 20px;
 }
 
-.job h2 {
+body .activity {
+  margin-top: 0px;
+}
+
+.activity h2 {
   color: rgb(74, 69, 69)
 }
 
-.job button {
+.activity button {
   border: none;
   background-color: #ffffff00;
   text-align: left;
@@ -24,37 +27,51 @@
   padding: 0px 15px;
 }
 
-.job p {
+.activity p {
   text-decoration: none;
 }
-.job .third-btn {
+
+.activity .second-btn {
   border-right: none;
 }
 
-.job .first-btn {
+.activity .first-btn {
   padding-left: 0px;
 }
 
-.job .btn-text {
+.activity .btn-text {
   border-bottom: 1px solid rgb(245, 245, 245)
 }
 
-.job .btn-text:hover {
+.activity .btn-text:hover {
   cursor: pointer;
   border-bottom: 1px solid #E47911;
   color: #E47911;
 }
 
-.position-title {
+.activity-title {
   color: rgb(47, 47, 47);
 }
 
-.job-status {
-  color: rgb(54, 67, 232);
-  font: normal 0.9em sans-serif;
+.activity-type, .activity-topic {
+  color: rgb(53, 53, 53);
 }
 
-.position-title,  .job-status, .btns-wrapper {
+.activity-date {
+  color: rgb(190, 50, 115);
+}
+
+.activity-website, .website-anchor {
+  color: rgb(54, 67, 232);
+  font: normal 0.9em sans-serif;
+  text-decoration: none;
+}
+
+.activity-website:hover {
+  text-decoration: underline;
+}
+
+.activity-title, .activity-type, .activity-date, .activity-website, .activity-topic, .btns-wrapper {
   margin-top: 5px;
 }
 
