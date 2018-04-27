@@ -19,7 +19,7 @@ export default function HeaderContent(props) {
           <p onClick={props.onClick}>How it works?</p>
         </div>
       </aside>
-      <div className="img-wrapper">
+      <div className="header-img-wrapper">
         <div className="img"></div>
       </div>
     </section>

@@ -28,7 +28,7 @@ export class NewContact extends Component {
     this.setState({ name: e.target.value });
   };
 
-  handleTitleChange = e => {
+  handleContactTitleChange = e => {
     this.setState({ contactTile: e.target.value });
   };
 

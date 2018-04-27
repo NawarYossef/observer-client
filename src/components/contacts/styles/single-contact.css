@@ -1,0 +1,68 @@
+.contact {
+  display: block;
+  width: 70%;
+  background: rgb(249, 249, 249);
+  margin: 0px auto;
+  padding: 10px 10px;
+  text-align: left;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.contact h2 {
+  color: rgb(74, 69, 69)
+}
+
+.contact button {
+  border: none;
+  background-color: #ffffff00;
+  text-align: left;
+  font: normal 0.9em sans-serif;
+  border-right: 1px solid rgb(204, 201, 201);
+  padding: 0px 15px;
+}
+
+.contact p {
+  text-decoration: none;
+}
+
+.contact .second-btn {
+  border-right: none;
+}
+
+.contact .first-btn {
+  padding-left: 0px;
+}
+
+.contact .btn-text {
+  border-bottom: 1px solid rgb(245, 245, 245)
+}
+
+.contact .btn-text:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #E47911;
+  color: #E47911;
+}
+
+.company-name, .contact-email, .contact-notes  {
+  color: rgb(47, 47, 47);
+}
+
+.contact-title {
+  color: rgb(196, 55, 71);
+  font: normal 0.9em sans-serif;
+}
+
+.contact-email {
+  color: rgb(54, 67, 232);
+  font: normal 0.9em sans-serif;
+}
+
+.contact-title, .company-name, .contact-email, .contact-notes, .btns-wrapper {
+  margin-top: 5px;
+}
+
+button p {
+  color: rgb(78, 78, 78);
+}

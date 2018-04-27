@@ -44,7 +44,7 @@ export class EditContact extends Component {
     this.setState({ name: e.target.value });
   };
 
-  handleTitleChange = e => {
+  handleContactTitleChange = e => {
     this.setState({ contactTitle: e.target.value });
   };
 
@@ -81,7 +81,7 @@ export class EditContact extends Component {
             <input type="text"
                 name="contactTitle"
                 value={this.state.contactTitle || ""}
-                onChange={this.handleTitleChange}
+                onChange={this.handleContactTitleChange}
               />
             </label>
             <label htmlFor="company-name">

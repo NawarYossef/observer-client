@@ -7,8 +7,6 @@ import JobCountMessage from "../../components/jobs/job-count-message";
 import NoJobsFoundMessage from "../../components/jobs/no-jobs-found-message";
 import SearchBar from "../../components/search-bar";
 
-import { Helmet } from 'react-helmet';
-
 import "./styles/jobs.css";
 import "./styles/helper.css";
 
@@ -41,10 +39,7 @@ export class Jobs extends Component {
       )
     }
     return (
-      <section className="jobs-section">
-      <Helmet>
-    <style>{'#root {  background-color: rgb(235, 237, 240); } '}</style>
-    </Helmet>
+      <section className="entries-section">
         <SearchBar onChange={searchQuery => this.setState({ searchQuery })} placeholder={this.state.placeholder} />
         {
           selectedJobs.length ?

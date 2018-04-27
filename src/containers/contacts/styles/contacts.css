@@ -1,4 +1,23 @@
-.dashboard-container  {
-  font-size: 3em;
-  margin-top: 100px;
+body .entries-section {
+  width: 65%;
+  margin: 0 auto;
+  padding-top: 10%;
+}
+
+.list-text-wrapper {
+  font: normal 0.8em 'Open Sans', sans-serif;
+  margin: 0 auto;
+  text-align: left;
+  padding: 10px 0;
+  width: 70%;
+}
+
+.no-results-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.no-results-message {
+  margin-top: 10px;
+  font: normal 0.9em 'Open Sans', sans-serif;
 }

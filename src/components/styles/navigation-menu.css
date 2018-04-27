@@ -111,4 +111,7 @@
     hr {
       display: none;
     }
+    body .main-section-hr-line {
+      display: initial;
+    }
   }
