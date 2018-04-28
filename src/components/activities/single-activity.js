@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import "./styles/single-activity.css";
 
-function SingleActivity(props) {
+export function SingleActivity(props) {
   return (
     <section className="activity">
       <h2>{props.activity.title}</h2>

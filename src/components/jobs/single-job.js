@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import "./styles/single-job.css";
 
-function SingleJob(props) {
+export function SingleJob(props) {
   return (
     <section className="job">
       <h2>{props.job.companyName}</h2>

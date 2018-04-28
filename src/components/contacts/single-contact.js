@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import "./styles/single-contact.css";
 import "../styles/add-new-button.css";
 
-function SingleContact(props) {
+export function SingleContact(props) {
   return (
     <section className="contact">
       <h2>{props.contact["name"]}</h2>
