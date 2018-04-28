@@ -11,7 +11,7 @@ export default function HeaderContent(props) {
         <h4>Manage your job search and professional contacts effectively.</h4>
         <h3>Finding  Job Can Be Simple With Observer</h3>
         <div className="links-wrapper">
-          <button className="link-to-signup">
+          <button className="link-to-signup" >
             <Link to="/signup">
               Get started for free!
             </Link>

@@ -10,30 +10,44 @@ import ".././styles/landing-page.css";
 
 export default class LandingPage extends Component {
 
-  scrollTo() {
+  scrollToMain() {
     scroll.scrollTo(570);
   }
 
-  showBackToTopBtn() {
-
+  backToTop() {
+    scroll.scrollToTop(570);
   }
-  
+
+  handleHeaderBoxShadow() {
+    window.scrollY > 92 ?
+      document.querySelector('header').style.boxShadow = "0 0px 20px rgba(255, 255, 255, 0.19), 0 2px 6px rgba(0, 0, 0, 0.23)" :
+      document.querySelector('header').style.boxShadow = "none";
+  }
+
+  handleBackToTopBtn() {
+    window.scrollY > 400 ?
+      document.getElementsByClassName('back-to-top-btn')[0].style.display = "initial" :
+      document.getElementsByClassName('back-to-top-btn')[0].style.display = "none";
+  }
+
   componentDidMount() {
-    window.addEventListener('scroll', this.showBackToTopBtn);
+    window.addEventListener('scroll', this.handleHeaderBoxShadow);
+    window.addEventListener('scroll', this.handleBackToTopBtn);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.showBackToTopBtn);
+    window.removeEventListener('scroll', this.handleHeaderBoxShadow);
+    window.removeEventListener('scroll', this.handleBackToTopBtn);
   }
 
   render() {
     return (
-      <div className="landing-page-wrapper" onScroll={this.ss}>
+      <div className="landing-page-wrapper">
         <Helmet>
           <style>{'#root { background-color: #ffffff; } header { box-shadow: none; background-color: #ffffffdb;} '}</style>
         </Helmet>
-        <HeaderContent onClick={this.scrollTo} />
-        <MainSection />
+        <HeaderContent onClick={this.scrollToMain} />
+        <MainSection backToTop={this.backToTop} />
         <Footer />
       </div>
     )

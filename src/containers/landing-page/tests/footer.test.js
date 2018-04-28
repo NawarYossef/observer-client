@@ -2,10 +2,10 @@ import React from "react";
 
 import { shallow } from "enzyme";
 
-import LandingPage from "./landing-page";
+import Footer from "../footer";
 
-describe("<LandingPage />", () => {
+describe("<Footer />", () => {
   it("Renders without crashing", () => {
-    shallow(<LandingPage />);
+    shallow(<Footer />);
   });
 });

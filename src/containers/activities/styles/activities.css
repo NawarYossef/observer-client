@@ -20,6 +20,22 @@
 .activities-wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  flex: 0 1 50%;
 }
 
+.calendar-wrapper {
+  flex: 0 1 50%;
+}
+
+p {
+  white-space: pre-wrap;
+  /* Webkit */
+  white-space: -moz-pre-wrap;
+  /* Firefox */
+  white-space: -pre-wrap;
+  /* Opera <7 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* IE */
+}

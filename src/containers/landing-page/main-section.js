@@ -5,7 +5,7 @@ import JobIcon from "../../images/job-icon.png"
 import LaptopIcon from "../../images/laptop-icon.png"
 import BagIcon from "../../images/bag-icon.png"
 import CalendarImg from "../../images/calendar-img.png"
-import JobsImg from "../../images/smart-phone-img.jpeg"
+// import JobsImg from "../../images/smart-phone-img.jpeg"
 import PaperImg from "../../images/paper-icon.png"
 
 import ".././styles/landing-page.css";
@@ -33,6 +33,9 @@ export default function MainSection(props) {
         </div>
 
         <section className="description-section">
+          <button onClick={props.backToTop} className={"back-to-top-btn"}>
+            <i className={"fa fa-angle-up"}></i>
+          </button>
           <div className="text-wrapper left">
             <h6>Manage your activities</h6>
             <p className="calendar-text">Use our calendar to save and access all your activities on any giving day</p>
@@ -41,29 +44,29 @@ export default function MainSection(props) {
             <img src={CalendarImg} className="calendar-img" alt="icon" />
           </div>
         </section>
-          <hr className={"main-section-hr-line"}/>
-          <section className="description-section-2">
+  {/*<hr className={"main-section-hr-line"} />*/}
+        {/*<section className="description-section-2">
           <h6 className={"jobs-title"}>Keep track of your job applications</h6>
-            <p className="jobs-text">Use our calendar to save and access all your activities on any giving day save and access all your activities on any giving day</p>
-            <div className="img-wrapper jobs-img right">
-              <img src={JobsImg} className="job-img" alt="icon" />
-            </div>
-          </section>
+          <p className="jobs-text">Use our calendar to save and access all your activities on any giving day save and access all your activities on any giving day</p>
+          <div className="img-wrapper jobs-img right">
+            <img src={JobsImg} className="job-img" alt="icon" />
+          </div>
+  </section>*/}
       </section>
 
-        <section className="description-section join-us">
-          <div className="img-wrapper left">
-            <img src={PaperImg} alt="icon" />
-          </div>
-          <div className="sign-up-text right">
-            <p className="join-us-text">Join us today and enjoy preparing and planning for your next job. </p>
-            <button className="link-to-signup with-border">
-              <Link to="/signup">
-                Get started for free!
+      <section className="description-section join-us">
+        <div className="img-wrapper left">
+          <img src={PaperImg} alt="icon" />
+        </div>
+        <div className="sign-up-text right">
+          <p className="join-us-text">Join us today and enjoy preparing and planning for your next job. </p>
+          <button className="link-to-signup with-border">
+            <Link to="/signup">
+              Get started for free!
                 </Link>
-            </button>
-          </div>
-        </section>
+          </button>
+        </div>
+      </section>
     </main>
-      )
-    }
+  )
+}

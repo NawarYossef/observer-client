@@ -185,7 +185,7 @@ body {
     padding-top: 15%;
   }
   .link-to-signup {
-    width: 40%;
+    width: 53%;
   }
 }
 
@@ -265,10 +265,45 @@ body {
     width: 70%;
     padding-top: 15%;
   }
+  .link-to-signup {
+    width: 40%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .link-to-signup.with-border {
     width: 80%;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px) {
+  .main-wrapper {
+    width: 100%;
+  }
+  .calendar-wrapper {
+    max-width: none;
+  }
+  .calendar-activities-wrapper {
+    flex-direction: column;
+  }
+  .w3-btn, .w3-button {
+    padding: 10px 17px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .main-wrapper {
+    width: 80%;
+  }
+  .calendar-wrapper {
+    max-width: none;
+  }
+  .calendar-activities-wrapper {
+    flex-direction: column;
+  }
+  .btn-wrapper {
+    position: fixed;
+    bottom: 10%;
+    right: 6%;
   }
 }
