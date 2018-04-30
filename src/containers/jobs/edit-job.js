@@ -54,7 +54,7 @@ export class EditJob extends Component {
   };
 
   handleCompanyLocationChange = e => {
-    this.setState({ CompanyLocation: e.target.value });
+    this.setState({ companyLocation: e.target.value });
   };
 
   handlePositionTitleChange = e => {
