@@ -28,42 +28,6 @@ export class NewJob extends Component {
     this.props.history.push("/jobs");
   };
 
-  handleCompanyNameChange = e => {
-    this.setState({ companyName: e.target.value });
-  };
-
-  handleCompanyLocationChange = e => {
-    this.setState({ CompanyLocation: e.target.value });
-  };
-
-  handlePositionTitleChange = e => {
-    this.setState({ positionTitle: e.target.value });
-  };
-
-  handleCompanyTypeChange = e => {
-    this.setState({ companyType: e.target.value });
-  };
-
-  handleSalaryChange = e => {
-    this.setState({ salary: e.target.value });
-  };
-
-  handleCompanyWebsiteChange = e => {
-    this.setState({ companyWebsite: e.target.value });
-  };
-
-  handleJobLinkChange = e => {
-    this.setState({ linkJobDescription: e.target.value });
-  };
-
-  handleJobStatusChange = e => {
-    this.setState({ jobStatus: e.target.value });
-  };
-
-  handleNotesChange = e => {
-    this.setState({ notes: e.target.value });
-  };
-
   render() {
     return (
       <section className="new-job-container">
@@ -77,7 +41,7 @@ export class NewJob extends Component {
               <input
                 type="text"
                 name="companyName"
-                onChange={this.handleCompanyNameChange}
+                onChange={(e) => this.setState({ companyName: e.target.value })}
               />
             </label>
             <label htmlFor="company-location">
@@ -85,7 +49,7 @@ export class NewJob extends Component {
               <input
                 type="text"
                 name="companyLocation"
-                onChange={this.handleCompanyLocationChange}
+                onChange={(e) => this.setState({ CompanyLocation: e.target.value })}
               />
             </label>
             <label htmlFor="position">
@@ -93,13 +57,13 @@ export class NewJob extends Component {
               <input
                 type="text"
                 name="position"
-                onChange={this.handlePositionTitleChange}
+                onChange={(e) => this.setState({ positionTitle: e.target.value })}
               />
             </label>
 
             <label htmlFor="companyType">
               Company Type
-              <select onChange={this.handleCompanyTypeChange}>
+              <select onChange={(e) => this.setState({ companyType: e.target.value })}>
                 <option value="Startup" name="companyType">
                   Startup
                 </option>
@@ -116,7 +80,7 @@ export class NewJob extends Component {
               <input
                 type="number"
                 name="salary"
-                onChange={this.handleSalaryChange}
+                onChange={(e) => this.setState({ salary: e.target.value })}
               />
             </label>
             <label htmlFor="website">
@@ -124,7 +88,7 @@ export class NewJob extends Component {
               <input
                 type="url"
                 name="companyWebsite"
-                onChange={this.handleCompanyWebsiteChange}
+                onChange={(e) => this.setState({ companyWebsite: e.target.value })}
               />
             </label>
             <label htmlFor="description">
@@ -132,13 +96,13 @@ export class NewJob extends Component {
               <input
                 type="url"
                 name="linkJobDescription"
-                onChange={this.handleJobLinkChange}
+                onChange={ (e) => this.setState({ linkJobDescription: e.target.value })}
               />
             </label>
 
             <label htmlFor="jobStatus">
               Job Status
-              <select onChange={this.handleJobStatusChange}>
+              <select onChange={(e) => this.setState({ jobStatus: e.target.value })}>
                 <option value="Applied" name="jobStatus">
                   Applied
                 </option>
@@ -155,7 +119,7 @@ export class NewJob extends Component {
             </label>
             <label htmlFor="notes">
               Notes
-              <textarea rows="4" cols="50" onChange={this.handleNotesChange} />
+              <textarea rows="4" cols="50" onChange={(e) => this.setState({ notes: e.target.value })} />
             </label>
           </div>
 
