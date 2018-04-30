@@ -78,3 +78,8 @@ body .activity {
 button p {
   color: rgb(78, 78, 78);
 }
+
+.notes span:nth-child(2) {
+  font-size: 0.9em;
+  color: rgb(53, 53, 53);
+}

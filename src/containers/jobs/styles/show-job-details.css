@@ -1,0 +1,73 @@
+.job-details {
+  display: block;
+  width: 70%;
+  background: rgb(249, 249, 249);
+  margin: 0px auto;
+  padding: 10px 10px;
+  text-align: left;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  /* background-image: linear-gradient(#c2d2dd, #f1efef); */
+  margin-bottom: 20px;
+  margin-top: 150px;
+}
+
+.job-details h2 {
+  color: rgb(74, 69, 69)
+}
+
+.job-details button {
+  border: none;
+  background-color: #ffffff00;
+  text-align: left;
+  font: normal 0.9em sans-serif;
+  border-right: 1px solid rgb(204, 201, 201);
+  padding: 0px 15px;
+}
+
+.job-details p {
+  text-decoration: none;
+}
+
+.job-details .second-btn {
+  border-right: none;
+}
+
+.job-details .first-btn {
+  padding-left: 0px;
+}
+
+.job-details .btn-text {
+  border-bottom: 1px solid rgb(245, 245, 245)
+}
+
+.job-details .btn-text:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #E47911;
+  color: #E47911;
+}
+
+.position-title, .title {
+  color: rgb(47, 47, 47);
+}
+
+.title span {
+  color: rgb(196, 55, 71)
+}
+.job-status, .website-anchor {
+  color: rgb(54, 67, 232);
+  font: normal 0.9em sans-serif;
+  text-decoration: none;
+}
+
+.website-anchor:hover {
+  text-decoration: underline;
+}
+
+.position-title, .title, .job-details-status, .btns-wrapper {
+  margin-top: 5px;
+}
+
+button p {
+  color: rgb(78, 78, 78);
+}
