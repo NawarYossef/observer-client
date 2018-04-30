@@ -56,7 +56,7 @@ export class NewJob extends Component {
               Position Title
               <input
                 type="text"
-                name="position"
+                name="positionTitle"
                 onChange={(e) => this.setState({ positionTitle: e.target.value })}
               />
             </label>

@@ -49,42 +49,6 @@ export class EditJob extends Component {
     console.log(this.props.job)
   };
 
-  handleCompanyNameChange = e => {
-    this.setState({ companyName: e.target.value });
-  };
-
-  handleCompanyLocationChange = e => {
-    this.setState({ companyLocation: e.target.value });
-  };
-
-  handlePositionTitleChange = e => {
-    this.setState({ positionTitle: e.target.value });
-  };
-
-  handleCompanyTypeChange = e => {
-    this.setState({ companyType: e.target.value });
-  };
-
-  handleSalaryChange = e => {
-    this.setState({ salary: e.target.value });
-  };
-
-  handleCompanyWebsiteChange = e => {
-    this.setState({ companyWebsite: e.target.value });
-  };
-
-  handleJobLinkChange = e => {
-    this.setState({ linkJobDescription: e.target.value });
-  };
-
-  handleJobStatusChange = e => {
-    this.setState({ jobStatus: e.target.value });
-  };
-
-  handleNotesChange = e => {
-    this.setState({ notes: e.target.value });
-  };
-
   render() {
     return (
 
@@ -100,7 +64,7 @@ export class EditJob extends Component {
                 type="text"
                 name="companyName"
                 value={this.state.companyName || ""}
-                onChange={this.handleCompanyNameChange}
+                onChange={(e) => this.setState({ companyName: e.target.value })}
               />
             </label>
             <label htmlFor="company-location">
@@ -109,22 +73,22 @@ export class EditJob extends Component {
                 type="text"
                 name="companyLocation"
                 value={this.state.companyLocation || ""}
-                onChange={this.handleCompanyLocationChange}
+                onChange={(e) => this.setState({ companyLocation: e.target.value })}
               />
             </label>
             <label htmlFor="position">
               Position Title
               <input
                 type="text"
-                name="position"
+                name="positionTitle"
                 value={this.state.positionTitle || ""}
-                onChange={this.handlePositionTitleChange}
+                onChange={(e) => this.setState({ positionTitle:  e.target.value })}
               />
             </label>
 
             <label htmlFor="companyType">
               Company Type
-              <select value={this.state.companyType} onChange={this.handleCompanyTypeChange}>
+              <select value={this.state.companyType} onChange={(e) => this.setState({ companyType: e.target.value })}>
                 <option value="Startup" name="companyType">
                   Startup
                 </option>
@@ -142,7 +106,7 @@ export class EditJob extends Component {
                 type="number"
                 name="salary"
                 value={this.state.salary || ""}
-                onChange={this.handleSalaryChange}
+                onChange={(e) => this.setState({ salary: e.target.value })}
               />
             </label>
             <label htmlFor="website">
@@ -151,7 +115,7 @@ export class EditJob extends Component {
                 type="url"
                 name="companyWebsite"
                 value={this.state.companyWebsite || ""}
-                onChange={this.handleCompanyWebsiteChange}
+                onChange={(e) => this.setState({ companyWebsite: e.target.value })}
               />
             </label>
             <label htmlFor="description">
@@ -160,13 +124,13 @@ export class EditJob extends Component {
                 type="url"
                 name="linkJobDescription"
                 value={this.state.linkJobDescription || ""}
-                onChange={this.handleJobLinkChange}
+                onChange={(e) => this.setState({ linkJobDescription: e.target.value })}
               />
             </label>
 
             <label htmlFor="jobStatus">
               Job Status
-              <select value={this.state.jobStatus} onChange={this.handleJobStatusChange}>
+              <select value={this.state.jobStatus} onChange={(e) => this.setState({ jobStatus: e.target.value })}>
                 <option value="Applied" name="jobStatus">
                   Applied
                 </option>
@@ -183,7 +147,7 @@ export class EditJob extends Component {
             </label>
             <label htmlFor="notes">
               Notes
-              <textarea rows="4" cols="50" value={this.state.notes || ""} onChange={this.handleNotesChange} />
+              <textarea rows="4" cols="50" value={this.state.notes || ""} onChange={(e) => this.setState({ notes: e.target.value })} />
             </label>
           </div>
 
