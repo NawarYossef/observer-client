@@ -25,30 +25,7 @@ export class NewActivity extends Component {
     this.props.history.push("/activities");
   };
 
-  handleTitleChange = e => {
-    this.setState({ title: e.target.value });
-  };
-
-  handleTypeChange = e => {
-    this.setState({ type: e.target.value });
-  };
-
-  handleDateChange = date => {
-    this.setState({ date })
-  };
-
-  handleTopicChange = e => {
-    this.setState({ topic: e.target.value });
-  };
-
-  handleWebsiteChange = e => {
-    this.setState({ website: e.target.value });
-  };
-
   render() {
-    console.log('------------------------------------');
-    console.log(this.state.date);
-    console.log('------------------------------------');
     return (
       <section className="activity-container">
         <div className="h2-wrapper">
@@ -60,7 +37,7 @@ export class NewActivity extends Component {
               Title
             <input type="text"
                 name="title"
-                onChange={this.handleTitleChange}
+                onChange={(e) => this.setState({ title: e.target.value })}
               />
             </label>
             <label htmlFor="type">
@@ -76,19 +53,19 @@ export class NewActivity extends Component {
             <label htmlFor="date">
               Date
               <DatePicker
-                onChange={this.handleDateChange}
+              onChange={(e) => this.setState({ date: e.target.value })}
                 value={this.state.date}
               />
             </label>
             <label htmlFor="topic">
               Topic
             <input type="text" name="topic"
-                onChange={this.handleTopicChange} />
+            onChange={(e) => this.setState({ topic: e.target.value })} />
             </label>
 
             <label htmlFor="website">
               Website
-            <input type="url" name="website" onChange={this.handleWebsiteChange} />
+            <input type="url" name="website"onChange={(e) => this.setState({ website: e.target.value })} />
             </label>
           </div>
           <div className="buttons-wrapper">

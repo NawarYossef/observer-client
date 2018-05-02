@@ -57,7 +57,7 @@ export class EditJob extends Component {
           <h2>New Job</h2>
         </div>
         <form onSubmit={this.handleSubmit}>
-          <div className="company-info-section">
+              <div className="company-info-section">
             <label htmlFor="company-name">
               Company Name
               <input
