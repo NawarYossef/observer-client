@@ -42,7 +42,7 @@ export class NewActivity extends Component {
             </label>
             <label htmlFor="type">
               Type
-            <select onChange={this.handleTypeChange}>
+            <select onChange={(e) => this.setState({ type: e.target.value })}>
                 <option value="Networking" name="type">Networking</option>
                 <option value="Meetup" name="type">Meetup</option>
                 <option value="Conference" name="type">Conference</option>

@@ -36,34 +36,43 @@ export class NewJob extends Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="company-info-section">
+           
             <label htmlFor="company-name">
-              Company Name
+             <div className={"field-text"}>Company Name</div>
               <input
                 type="text"
                 name="companyName"
+                placeholder={"Facebook"}
                 onChange={(e) => this.setState({ companyName: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="company-location">
-              Location
+            <div className={"field-text"}>Company Location</div>
               <input
                 type="text"
                 name="companyLocation"
+                placeholder={"1200 university Ave"}
                 onChange={(e) => this.setState({ CompanyLocation: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="position">
-              Position Title
+            <div className={"field-text"}>Position</div>
               <input
                 type="text"
                 name="positionTitle"
+                placeholder={"Software Developer"}
                 onChange={(e) => this.setState({ positionTitle: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
 
             <label htmlFor="companyType">
-              Company Type
-              <select onChange={(e) => this.setState({ companyType: e.target.value })}>
+            <div className={"field-text"}>Company Type</div>
+              <select onChange={(e) => this.setState({ companyType: e.target.value })}
+                className={"input-text style2"}
+              >
                 <option value="Startup" name="companyType">
                   Startup
                 </option>
@@ -76,33 +85,40 @@ export class NewJob extends Component {
               </select>
             </label>
             <label htmlFor="salary">
-              Salary
+            <div className={"field-text"}>Salary</div>
               <input
                 type="number"
                 name="salary"
                 onChange={(e) => this.setState({ salary: e.target.value })}
+                className={"input-text style2"}
+                placeholder={"$90000"}
               />
             </label>
             <label htmlFor="website">
-              Company Website
+            <div className={"field-text"}>Company Website</div>
               <input
                 type="url"
                 name="companyWebsite"
                 onChange={(e) => this.setState({ companyWebsite: e.target.value })}
+                className={"input-text style2"}
+                placeholder={"www.facebook.com"}
               />
             </label>
             <label htmlFor="description">
-              Link to Job Description
+            <div className={"field-text"}>Job Description Link</div>
               <input
                 type="url"
                 name="linkJobDescription"
-                onChange={ (e) => this.setState({ linkJobDescription: e.target.value })}
+                onChange={(e) => this.setState({ linkJobDescription: e.target.value })}
+                className={"input-text style2"}
+                placeholder={"http://job.description"}
               />
             </label>
 
             <label htmlFor="jobStatus">
-              Job Status
-              <select onChange={(e) => this.setState({ jobStatus: e.target.value })}>
+            <div className={"field-text"}>Job Status</div>
+              <select onChange={(e) => this.setState({ jobStatus: e.target.value })}
+                className={"input-text style2"}>
                 <option value="Applied" name="jobStatus">
                   Applied
                 </option>
@@ -118,8 +134,10 @@ export class NewJob extends Component {
               </select>
             </label>
             <label htmlFor="notes">
-              Notes
-              <textarea rows="4" cols="50" onChange={(e) => this.setState({ notes: e.target.value })} />
+            <div className={"field-text textarea-field"}>Notes</div>
+              <textarea rows="4" cols="50" onChange={(e) => this.setState({ notes: e.target.value })}
+                className={"input-text style2 textarea"}
+                placeholder={"I applied for this job two weeks ago..."} />
             </label>
           </div>
 

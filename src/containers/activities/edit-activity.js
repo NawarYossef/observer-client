@@ -41,26 +41,6 @@ export class EditActivity extends Component {
     this.props.history.push("/activities");
   };
 
-  handleTitleChange = e => {
-    this.setState({ title: e.target.value });
-  };
-
-  handleTypeChange = e => {
-    this.setState({ type: e.target.value });
-  };
-
-  handleDateChange = date => {
-    this.setState({ date })
-  };
-
-  handleTopicChange = e => {
-    this.setState({ topic: e.target.value });
-  };
-
-  handleWebsiteChange = e => {
-    this.setState({ website: e.target.value });
-  };
-
   render() {
     return (
       <section className="activity-container">
@@ -74,12 +54,12 @@ export class EditActivity extends Component {
             <input type="text"
                 name="title"
                 value={this.state.title || ""}
-                onChange={this.handleTitleChange}
+                onChange={(e) => this.setState({ title: e.target.value })}
               />
             </label>
             <label htmlFor="type">
               Type
-            <select value={this.state.type} onChange={this.handleTypeChange}>
+            <select value={this.state.type} onChange={(e) => this.setState({ type: e.target.value })}>
                 <option value="Networking" name="type">Networking</option>
                 <option value="Meetup" name="type">Meetup</option>
                 <option value="Conference" name="type">Conference</option>
@@ -90,19 +70,19 @@ export class EditActivity extends Component {
             <label htmlFor="date">
               Date
               <DatePicker
-                onChange={this.handleDateChange}
+                onChange={(e) => this.setState({ date: e.target.value })}
                 value={this.state.date}
               />
             </label>
             <label htmlFor="topic">
               Topic
             <input type="text" name="topic"
-                value={this.state.topic || ""} onChange={this.handleTopicChange} />
+                value={this.state.topic || ""} onChange={(e) => this.setState({ topic: e.target.value })} />
             </label>
 
             <label htmlFor="website">
               Website
-            <input type="url" name="website" value={this.state.website || ""} onChange={this.handleWebsiteChange} />
+            <input type="url" name="website" value={this.state.website || ""} onChange={(e) => this.setState({ website: e.target.value })} />
             </label>
           </div>
           <div className="buttons-wrapper">

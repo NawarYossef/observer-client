@@ -40,26 +40,6 @@ export class EditContact extends Component {
     this.props.history.push("/contacts");
   };
 
-  handleNameChange = e => {
-    this.setState({ name: e.target.value });
-  };
-
-  handleContactTitleChange = e => {
-    this.setState({ contactTitle: e.target.value });
-  };
-
-  handleCompanyNameChange = e => {
-    this.setState({ companyName: e.target.value });
-  };
-
-  handleEmailChange = e => {
-    this.setState({ email: e.target.value });
-  };
-
-  handleNotesChange = e => {
-    this.setState({ notes: e.target.value });
-  };
-
   render() {
     return (
       <section className="contact-container">
@@ -73,7 +53,7 @@ export class EditContact extends Component {
             <input type="text"
                 name="name"
                 value={this.state.name || ""}
-                onChange={this.handleNameChange}
+                onChange={(e) => this.setState({ name: e.target.value })}
               />
             </label>
             <label htmlFor="contact-title">
@@ -81,7 +61,7 @@ export class EditContact extends Component {
             <input type="text"
                 name="contactTitle"
                 value={this.state.contactTitle || ""}
-                onChange={this.handleContactTitleChange}
+                onChange={(e) => this.setState({ contactTitle: e.target.value })}
               />
             </label>
             <label htmlFor="company-name">
@@ -89,7 +69,7 @@ export class EditContact extends Component {
             <input type="text"
                 name="companyName"
                 value={this.state.companyName || ""}
-                onChange={this.handleCompanyNameChange}
+                onChange={(e) => this.setState({ companyName: e.target.value })}
               />
             </label>
             <label htmlFor="email">
@@ -97,14 +77,15 @@ export class EditContact extends Component {
             <input type="email"
                 name="email"
                 value={this.state.email || ""}
-                onChange={this.handleEmailChange}
+                onChange={(e) => this.setState({ email: e.target.value })}
               />
             </label>
             <label htmlFor="notes">
               Notes
-              <textarea rows="4" cols="50" 
-              value={this.state.notes || ""}
-              onChange={this.handleNotesChange} />
+              <textarea rows="4" cols="50"
+                value={this.state.notes || ""}
+                onChange={(e) => this.setState({ notes: e.target.value })}
+              />
             </label>
           </div>
           <div className="buttons-wrapper">

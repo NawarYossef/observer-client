@@ -24,26 +24,6 @@ export class NewContact extends Component {
     this.props.history.push("/contacts");
   };
 
-  handleNameChange = e => {
-    this.setState({ name: e.target.value });
-  };
-
-  handleContactTitleChange = e => {
-    this.setState({ contactTile: e.target.value });
-  };
-
-  handleCompanyNameChange = e => {
-    this.setState({ companyName: e.target.value });
-  };
-
-  handleEmailChange = e => {
-    this.setState({ email: e.target.value });
-  };
-
-  handleNotesChange = e => {
-    this.setState({ notes: e.target.value });
-  };
-
   render() {
     return (
       <section className="contact-container">
@@ -56,33 +36,33 @@ export class NewContact extends Component {
               Name
             <input type="text"
                 name="name"
-                onChange={this.handleNameChange}
+                onChange={(e) => this.setState({ name: e.target.value })}
               />
             </label>
             <label htmlFor="contact-title">
               Contact Title
             <input type="text"
                 name="contactTitle"
-                onChange={this.handleContactTitleChange}
+                onChange={(e) => this.setState({ contactTitle: e.target.value })}
               />
             </label>
             <label htmlFor="company-name">
               Company Name
             <input type="text"
                 name="companyName"
-                onChange={this.handleCompanyNameChange}
+                onChange={(e) => this.setState({ companyName: e.target.value })}
               />
             </label>
             <label htmlFor="email">
               Email
             <input type="email"
                 name="email"
-                onChange={this.handleEmailChange}
+                onChange={(e) => this.setState({ email: e.target.value })}
               />
             </label>
             <label htmlFor="notes">
               Notes
-              <textarea rows="4" cols="50" onChange={this.handleNotesChange} />
+              <textarea rows="4" cols="50" onChange={(e) => this.setState({ notes: e.target.value })} />
             </label>
           </div>
           <div className="buttons-wrapper">
