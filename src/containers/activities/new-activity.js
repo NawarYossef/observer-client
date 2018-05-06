@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-datepicker';
 import { connect } from "react-redux";
+import moment from 'moment';
 import { createNewActivity } from "../../actions/activities";
 
-// import "./styles/new-job.css";
+import 'react-datepicker/dist/react-datepicker.css';
 
 export class NewActivity extends Component {
   constructor(props) {
@@ -12,9 +13,9 @@ export class NewActivity extends Component {
     this.state = {
       title: "",
       type: "",
-      date: new Date(),
       topic: "",
-      website: ""
+      website: "",
+      date: moment()
     };
   }
 
@@ -27,22 +28,25 @@ export class NewActivity extends Component {
 
   render() {
     return (
-      <section className="activity-container">
+      <section className=" new-item-wrapper">
         <div className="h2-wrapper">
-          <h2>Edit Activity</h2>
+          <h2>New Activity</h2>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="details-container">
             <label htmlFor="title">
-              Title
-            <input type="text"
+              <div className={"field-text"}>Title</div>
+              <input type="text"
                 name="title"
+                placeholder={"The Atlanta Node.js Meetup"}
                 onChange={(e) => this.setState({ title: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="type">
-              Type
-            <select onChange={(e) => this.setState({ type: e.target.value })}>
+              <div className={"field-text"}>Type</div>
+              <select onChange={(e) => this.setState({ type: e.target.value })}
+                className={"input-text style2"}>
                 <option value="Networking" name="type">Networking</option>
                 <option value="Meetup" name="type">Meetup</option>
                 <option value="Conference" name="type">Conference</option>
@@ -51,21 +55,26 @@ export class NewActivity extends Component {
               </select>
             </label>
             <label htmlFor="date">
-              Date
+              <div className={"field-text"}>Date</div>
               <DatePicker
-              onChange={(e) => this.setState({ date: e.target.value })}
-                value={this.state.date}
+                selected={this.state.date}
+                onChange={(date) => this.setState({ date: date.format("MM-DD-YYYY") })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="topic">
-              Topic
-            <input type="text" name="topic"
-            onChange={(e) => this.setState({ topic: e.target.value })} />
+              <div className={"field-text"}>Topic</div>
+              <input type="text" name="topic"
+                placeholder={"GraphQL and Apollo"}
+                onChange={(e) => this.setState({ topic: e.target.value })}
+                className={"input-text style2"} />
             </label>
 
             <label htmlFor="website">
-              Website
-            <input type="url" name="website"onChange={(e) => this.setState({ website: e.target.value })} />
+              <div className={"field-text"}>Website</div>
+              <input type="url" name="website" onChange={(e) => this.setState({ website: e.target.value })}
+                placeholder={"www.event/meetup.com"}
+                className={"input-text style2"} />
             </label>
           </div>
           <div className="buttons-wrapper">

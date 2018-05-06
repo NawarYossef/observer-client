@@ -49,7 +49,9 @@ export class Activities extends Component {
     if (selectedActivities.length === 0) {
       selectedActivities = this.props.activities
     }
-
+    console.log('------------------------------------');
+    console.log(this.props.activities);
+    console.log('------------------------------------');
     return (
       <section className="main-wrapper">
         <h2 className={"current-date"}>{this.displayCurrentCalendarDate()}</h2>

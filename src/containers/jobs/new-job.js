@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createNewJob } from "../../actions/jobs";
 
-import "./styles/new-job.css";
-
 export class NewJob extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +28,7 @@ export class NewJob extends Component {
 
   render() {
     return (
-      <section className="new-job-container">
+      <section className=" new-item-wrapper">
         <div className="h2-wrapper">
           <h2>New Job</h2>
         </div>
@@ -48,7 +46,7 @@ export class NewJob extends Component {
               />
             </label>
             <label htmlFor="company-location">
-            <div className={"field-text"}>Company Location</div>
+            <div className={"field-text"}>Location</div>
               <input
                 type="text"
                 name="companyLocation"
@@ -58,7 +56,7 @@ export class NewJob extends Component {
               />
             </label>
             <label htmlFor="position">
-            <div className={"field-text"}>Position</div>
+            <div className={"field-text"}>Position Title</div>
               <input
                 type="text"
                 name="positionTitle"

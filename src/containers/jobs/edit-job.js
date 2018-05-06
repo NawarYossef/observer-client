@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { editJob, getSingleJob } from "../../actions/jobs";
 
-import "./styles/edit-job.css";
-
 export class EditJob extends Component {
   constructor(props) {
     super(props);
@@ -52,43 +50,50 @@ export class EditJob extends Component {
   render() {
     return (
 
-      <section className="new-job-container">
+      <section className="new-item-wrapper">
         <div className="h2-wrapper">
-          <h2>New Job</h2>
+          <h2>Edit Job</h2>
         </div>
         <form onSubmit={this.handleSubmit}>
-              <div className="company-info-section">
+          <div className="company-info-section">
             <label htmlFor="company-name">
-              Company Name
+              <div className={"field-text"}>Company Name</div>
               <input
                 type="text"
                 name="companyName"
+                placeholder={"Facebook"}
                 value={this.state.companyName || ""}
                 onChange={(e) => this.setState({ companyName: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="company-location">
-              Location
+              <div className={"field-text"}>Location</div>
               <input
                 type="text"
                 name="companyLocation"
+                placeholder={"1200 university Ave"}
                 value={this.state.companyLocation || ""}
                 onChange={(e) => this.setState({ companyLocation: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="position">
-              Position Title
+              <div className={"field-text"}>Position Title</div>
               <input
                 type="text"
                 name="positionTitle"
+                placeholder={"Software Developer"}
                 value={this.state.positionTitle || ""}
-                onChange={(e) => this.setState({ positionTitle:  e.target.value })}
+                onChange={(e) => this.setState({ positionTitle: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
 
             <label htmlFor="companyType">
-              Company Type
-              <select value={this.state.companyType} onChange={(e) => this.setState({ companyType: e.target.value })}>
+              <div className={"field-text"}>Company Type</div>
+              <select value={this.state.companyType} onChange={(e) => this.setState({ companyType: e.target.value })}
+              className={"input-text style2"}>
                 <option value="Startup" name="companyType">
                   Startup
                 </option>
@@ -101,36 +106,43 @@ export class EditJob extends Component {
               </select>
             </label>
             <label htmlFor="salary">
-              Salary
+              <div className={"field-text"}>Salary</div>
               <input
                 type="number"
                 name="salary"
                 value={this.state.salary || ""}
                 onChange={(e) => this.setState({ salary: e.target.value })}
+                lassName={"input-text style2"}
+                placeholder={"$90000"}
               />
             </label>
             <label htmlFor="website">
-              Company Website
+              <div className={"field-text"}>Company Website</div>
               <input
                 type="url"
                 name="companyWebsite"
                 value={this.state.companyWebsite || ""}
                 onChange={(e) => this.setState({ companyWebsite: e.target.value })}
+                className={"input-text style2"}
+                placeholder={"www.facebook.com"}
               />
             </label>
             <label htmlFor="description">
-              Link to Job Description
+              <div className={"field-text"}>Job Description Link</div>
               <input
                 type="url"
                 name="linkJobDescription"
                 value={this.state.linkJobDescription || ""}
                 onChange={(e) => this.setState({ linkJobDescription: e.target.value })}
+                className={"input-text style2"}
+                placeholder={"http://job.description"}
               />
             </label>
 
             <label htmlFor="jobStatus">
-              Job Status
-              <select value={this.state.jobStatus} onChange={(e) => this.setState({ jobStatus: e.target.value })}>
+              <div className={"field-text"}>Job Status</div>
+              <select value={this.state.jobStatus} onChange={(e) => this.setState({ jobStatus: e.target.value })}
+              className={"input-text style2"}>
                 <option value="Applied" name="jobStatus">
                   Applied
                 </option>
@@ -146,8 +158,11 @@ export class EditJob extends Component {
               </select>
             </label>
             <label htmlFor="notes">
-              Notes
-              <textarea rows="4" cols="50" value={this.state.notes || ""} onChange={(e) => this.setState({ notes: e.target.value })} />
+              <div className={"field-text textarea-field"}>Notes</div>
+              <textarea rows="4" cols="50" value={this.state.notes || ""} onChange={(e) => this.setState({ notes: e.target.value })}
+                className={"input-text style2 textarea"}
+                placeholder={"I applied for this job two weeks ago..."}
+              />
             </label>
           </div>
 
