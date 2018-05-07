@@ -49,14 +49,11 @@ export class Activities extends Component {
     if (selectedActivities.length === 0) {
       selectedActivities = this.props.activities
     }
-    console.log('------------------------------------');
-    console.log(this.props.activities);
-    console.log('------------------------------------');
     return (
       <section className="main-wrapper">
         <h2 className={"current-date"}>{this.displayCurrentCalendarDate()}</h2>
         <div className={"calendar-activities-wrapper"}>
-          <CalendarSection onChange={this.handleCalendarDateChange.bind(this)} currDate={this.state.date} activitiesCount={selectedActivities} activities={this.props.activities}/>
+          <CalendarSection onChange={this.handleCalendarDateChange.bind(this)} currDate={this.state.date} activitiesCount={selectedActivities} activities={this.props.activities} />
           <div className={"activities-wrapper"}>
             {selectedActivities.map((activity, idx) =>
               <SingleActivity key={idx} activity={activity} onClick={() => this.handleActivityDelete(activity, activity.id)} parseDate={this.parseActivityDate} />

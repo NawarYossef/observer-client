@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 import { editActivity, getSingleActivity } from "../../actions/activities";
 
-// import "./styles/edit-job.css";
+import 'react-datepicker/dist/react-datepicker.css';
 
 export class EditActivity extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class EditActivity extends Component {
     this.state = {
       title: "",
       type: "",
-      date: "",
+      date: moment(),
       topic: "",
       website: "",
     };
@@ -22,7 +23,7 @@ export class EditActivity extends Component {
     this.setState({
       title: nextProps.activity.title,
       type: nextProps.activity.type,
-      date: new Date(nextProps.activity.date),
+      date: moment(nextProps.activity.date),
       topic: nextProps.activity.topic,
       website: nextProps.activity.website
     });
@@ -42,47 +43,59 @@ export class EditActivity extends Component {
   };
 
   render() {
+    console.log('------------------------------------');
+    console.log(typeof this.state.date.format());
+    console.log('------------------------------------');
     return (
-      <section className="activity-container">
+      <section className="new-item-wrapper">
         <div className="h2-wrapper">
           <h2>Edit Activity</h2>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="details-container">
             <label htmlFor="title">
-              Title
-            <input type="text"
+              <div className={"field-text"}>Title</div>
+              <input type="text"
                 name="title"
-                value={this.state.title || ""}
+                value={this.state.title}
+                placeholder={"The Atlanta Node.js Meetup"}
                 onChange={(e) => this.setState({ title: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="type">
-              Type
-            <select value={this.state.type} onChange={(e) => this.setState({ type: e.target.value })}>
+              <div className={"field-text"}>Type</div>
+              <select value={this.state.type} onChange={(e) => this.setState({ type: e.target.value })}
+                className={"input-text style2"}>
                 <option value="Networking" name="type">Networking</option>
                 <option value="Meetup" name="type">Meetup</option>
                 <option value="Conference" name="type">Conference</option>
-                <option value="study" name="type">Study</option>
+                <option value="Study" name="type">Study</option>
                 <option value="Other" name="type">Other</option>
               </select>
             </label>
             <label htmlFor="date">
-              Date
+              <div className={"field-text"}>Date</div>
               <DatePicker
-                onChange={(e) => this.setState({ date: e.target.value })}
-                value={this.state.date}
+                selected={moment(this.state.date)}
+                onChange={(date) => this.setState({ date: moment(date) })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="topic">
-              Topic
-            <input type="text" name="topic"
-                value={this.state.topic || ""} onChange={(e) => this.setState({ topic: e.target.value })} />
+              <div className={"field-text"}>Topic</div>
+              <input type="text" name="topic"
+                placeholder={"GraphQL and Apollo"}
+                onChange={(e) => this.setState({ topic: e.target.value })}
+                className={"input-text style2"}
+                value={this.state.topic} />
             </label>
-
             <label htmlFor="website">
-              Website
-            <input type="url" name="website" value={this.state.website || ""} onChange={(e) => this.setState({ website: e.target.value })} />
+              <div className={"field-text"}>Website</div>
+              <input type="url" name="website" onChange={(e) => this.setState({ website: e.target.value })}
+                placeholder={"www.event/meetup.com"}
+                className={"input-text style2"}
+                value={this.state.website} />
             </label>
           </div>
           <div className="buttons-wrapper">

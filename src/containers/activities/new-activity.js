@@ -57,8 +57,8 @@ export class NewActivity extends Component {
             <label htmlFor="date">
               <div className={"field-text"}>Date</div>
               <DatePicker
-                selected={this.state.date}
-                onChange={(date) => this.setState({ date: date.format("MM-DD-YYYY") })}
+                selected={moment(this.state.date)}
+                onChange={(date) => this.setState({ date: moment(date) })}
                 className={"input-text style2"}
               />
             </label>
