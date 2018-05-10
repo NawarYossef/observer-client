@@ -19,11 +19,11 @@ export class EditContact extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      name: nextProps.contact["name"],
-      contactTitle: nextProps.contact["type"],
-      companyName: nextProps.contact["companyName"],
-      email: nextProps.contact["email"],
-      notes: nextProps.contact["notes"]
+      name: nextProps.contact.name,
+      contactTitle: nextProps.contactTitle,
+      companyName: nextProps.contact.companyName,
+      email: nextProps.contact.email,
+      notes: nextProps.contact.notes
     });
   }
 
@@ -41,51 +41,62 @@ export class EditContact extends Component {
   };
 
   render() {
+    console.log('------------------------------------');
+    console.log(this.state);
+    console.log('------------------------------------');
     return (
-      <section className="contact-container">
+      <section className="form-wrapper">
         <div className="h2-wrapper">
           <h2>Edit Contact</h2>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="details-container">
             <label htmlFor="name">
-              Name
-            <input type="text"
+              <div className={"field-text"}>Name</div>
+              <input type="text"
                 name="name"
                 value={this.state.name || ""}
+                placeholder={"David Coulter"}
                 onChange={(e) => this.setState({ name: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="contact-title">
-              Contact Title
-            <input type="text"
+              <div className={"field-text"}>Contact Title</div>
+              <input type="text"
                 name="contactTitle"
                 value={this.state.contactTitle || ""}
+                placeholder={"IT Recruiter"}
                 onChange={(e) => this.setState({ contactTitle: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="company-name">
-              Company Name
-            <input type="text"
+              <div className={"field-text"}>Company Name</div>
+              <input type="text"
                 name="companyName"
                 value={this.state.companyName || ""}
+                placeholder={"Uber"}
                 onChange={(e) => this.setState({ companyName: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="email">
-              Email
-            <input type="email"
+              <div className={"field-text"}>Email</div>
+              <input type="email"
                 name="email"
                 value={this.state.email || ""}
+                placeholder={"david.it@gmail.com"}
                 onChange={(e) => this.setState({ email: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="notes">
-              Notes
-              <textarea rows="4" cols="50"
-                value={this.state.notes || ""}
-                onChange={(e) => this.setState({ notes: e.target.value })}
-              />
+              <div className={"field-text"}>Notes</div>
+              <textarea rows="4" cols="50" onChange={(e) => this.setState({ notes: e.target.value })}
+                className={"input-text style2 textarea"}
+                placeholder={"I met David at a meetup..."} 
+                value={this.state.notes || ""}/>
             </label>
           </div>
           <div className="buttons-wrapper">

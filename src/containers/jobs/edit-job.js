@@ -50,7 +50,7 @@ export class EditJob extends Component {
   render() {
     return (
 
-      <section className="new-item-wrapper">
+      <section className="form-wrapper">
         <div className="h2-wrapper">
           <h2>Edit Job</h2>
         </div>

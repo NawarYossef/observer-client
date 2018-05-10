@@ -26,43 +26,55 @@ export class NewContact extends Component {
 
   render() {
     return (
-      <section className="contact-container">
+      <section className="form-wrapper">
         <div className="h2-wrapper">
           <h2>Edit Contact</h2>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="details-container">
             <label htmlFor="name">
-              Name
-            <input type="text"
+              <div className={"field-text"}>Name</div>
+              <input type="text"
                 name="name"
+                placeholder={"David Coulter"}
                 onChange={(e) => this.setState({ name: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
+
             <label htmlFor="contact-title">
-              Contact Title
-            <input type="text"
+              <div className={"field-text"}>Contact Title</div>
+              <input type="text"
                 name="contactTitle"
+                placeholder={"IT Recruiter"}
                 onChange={(e) => this.setState({ contactTitle: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
+
             <label htmlFor="company-name">
-              Company Name
-            <input type="text"
+              <div className={"field-text"}>Company Name</div>
+              <input type="text"
                 name="companyName"
+                placeholder={"Uber"}
                 onChange={(e) => this.setState({ companyName: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="email">
-              Email
-            <input type="email"
+              <div className={"field-text"}>Email</div>
+              <input type="email"
                 name="email"
+                placeholder={"david.it@gmail.com"}
                 onChange={(e) => this.setState({ email: e.target.value })}
+                className={"input-text style2"}
               />
             </label>
             <label htmlFor="notes">
-              Notes
-              <textarea rows="4" cols="50" onChange={(e) => this.setState({ notes: e.target.value })} />
+              <div className={"field-text"}>Notes</div>
+              <textarea rows="4" cols="50" onChange={(e) => this.setState({ notes: e.target.value })}
+                className={"input-text style2 textarea"}
+                placeholder={"I met David at a meetup..."} />
             </label>
           </div>
           <div className="buttons-wrapper">

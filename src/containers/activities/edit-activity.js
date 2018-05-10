@@ -47,7 +47,7 @@ export class EditActivity extends Component {
     console.log(typeof this.state.date.format());
     console.log('------------------------------------');
     return (
-      <section className="new-item-wrapper">
+      <section className="form-wrapper">
         <div className="h2-wrapper">
           <h2>Edit Activity</h2>
         </div>
