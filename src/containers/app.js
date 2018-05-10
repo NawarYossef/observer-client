@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { refreshAuthToken } from "../actions/auth";
 
 import Header from "./header"
 import LandingPage from "./landing-page/landing-page";
@@ -14,6 +15,7 @@ import Activities from "./activities/activities";
 import NewActivity from "./activities/new-activity";
 import EditActivity from "./activities/edit-activity";
 import ShowActivityDetails from "./activities/show-activity-details";
+import RegistrationPage from "./registration-page";
 
 import "./styles/app.css";
 
@@ -60,6 +62,7 @@ class AppRouter extends Component {
             <Route exact path="/contacts" component={Contacts} />
             <Route path="/contacts/new" component={NewContact} />
             <Route path="/contacts/edit/:id" component={EditContact} />
+            <Route exact path="/register" component={RegistrationPage} />
           </Switch>
         </div>
       </Router>

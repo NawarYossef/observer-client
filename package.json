@@ -10,6 +10,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "history": "^4.7.2",
+    "jwt-decode": "^2.2.0",
     "moment": "^2.22.1",
     "react": "^16.2.0",
     "react-calendar": "^2.14.0",
@@ -26,7 +27,8 @@
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0",
-    "scroll-into-view": "^1.9.3"
+    "scroll-into-view": "^1.9.3",
+    "validator": "^10.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
