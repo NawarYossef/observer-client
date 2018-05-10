@@ -15,4 +15,5 @@
 
 .search-bar-wrapper input {
   margin: 0 auto;
+  padding-left: 3px;
 }

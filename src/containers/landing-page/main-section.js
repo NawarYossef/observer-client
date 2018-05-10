@@ -1,3 +1,4 @@
+// main-section
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -44,14 +45,6 @@ export default function MainSection(props) {
             <img src={CalendarImg} className="calendar-img" alt="icon" />
           </div>
         </section>
-  {/*<hr className={"main-section-hr-line"} />*/}
-        {/*<section className="description-section-2">
-          <h6 className={"jobs-title"}>Keep track of your job applications</h6>
-          <p className="jobs-text">Use our calendar to save and access all your activities on any giving day save and access all your activities on any giving day</p>
-          <div className="img-wrapper jobs-img right">
-            <img src={JobsImg} className="job-img" alt="icon" />
-          </div>
-  </section>*/}
       </section>
 
       <section className="description-section join-us">
