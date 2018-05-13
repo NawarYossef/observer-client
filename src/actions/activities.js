@@ -1,6 +1,6 @@
 import { API_BASE_URL } from "../config";
 console.log('------------------------------------');
-console.log(process.env.REACT_APP_API_BASE_URL);
+console.log(API_BASE_URL);
 console.log('------------------------------------');
 // -------------- GET all activities --------------------
 export const getActivities = () => {
