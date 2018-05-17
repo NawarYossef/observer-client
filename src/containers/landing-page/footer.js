@@ -25,7 +25,7 @@ export default function Footer(props) {
             </a>
           </li>
           <li className="">
-            <a href="http://www.nawaryossef.com/" rel="noopener noreferrer" name="personal-website">
+            <a href="http://www.nawaryossef.com/" target="_blank" rel="noopener noreferrer" name="personal-website">
               <FontAwesome name="shopping-bag" />
             </a>
           </li>

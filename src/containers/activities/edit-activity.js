@@ -43,9 +43,6 @@ export class EditActivity extends Component {
   };
 
   render() {
-    console.log('------------------------------------');
-    console.log(typeof this.state.date.format());
-    console.log('------------------------------------');
     return (
       <section className="form-wrapper">
         <div className="h2-wrapper">

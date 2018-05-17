@@ -20,7 +20,7 @@ export class EditContact extends Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       name: nextProps.contact.name,
-      contactTitle: nextProps.contactTitle,
+      contactTitle: nextProps.contact.contactTitle,
       companyName: nextProps.contact.companyName,
       email: nextProps.contact.email,
       notes: nextProps.contact.notes

@@ -408,6 +408,9 @@ body .react-datepicker-popper {
   .img {
     width: 90%;
   }
+  .activities-wrapper {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 1024px) {

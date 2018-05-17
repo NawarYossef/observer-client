@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import moment from 'moment';
 import { getActivities, deleteActivity } from "../../actions/activities";
 import AddNewActivityButton from "../../components/activities/add-new-activity-button";
 import SingleActivity from "../../components/activities/single-activity";
@@ -43,12 +43,14 @@ export class Activities extends Component {
   parseActivityDate(IsoDate) {
     return new Date(IsoDate).toLocaleString().split(",")[0]
   }
-
+  
   render() {
-    let selectedActivities = this.props.activities.filter(activity => activity.date === new Date(this.state.date).toISOString());
+    let selectedActivities = this.props.activities.filter(activity => moment(activity.date).format('YYYY-MM-DD') === moment(new Date(this.state.date).toISOString()).format('YYYY-MM-DD'));
     if (selectedActivities.length === 0) {
       selectedActivities = this.props.activities
     }
+    
+   
     return (
       <section className="main-wrapper">
         <h2 className={"current-date"}>{this.displayCurrentCalendarDate()}</h2>

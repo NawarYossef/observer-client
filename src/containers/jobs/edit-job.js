@@ -112,7 +112,7 @@ export class EditJob extends Component {
                 name="salary"
                 value={this.state.salary || ""}
                 onChange={(e) => this.setState({ salary: e.target.value })}
-                lassName={"input-text style2"}
+                className={"input-text style2"}
                 placeholder={"$90000"}
               />
             </label>

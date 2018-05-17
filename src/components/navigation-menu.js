@@ -45,7 +45,7 @@ export default class NavigationMenu extends Component {
           <style>{'#root { background-color: #ffffff; } header{ background-color: #ffffff;}'}</style>
         </Helmet>
         <img src={headerIcon} alt="logo" />
-        <h1 className="App-title">OBSERVER</h1>
+        <h1 className="App-title"><Link to="/" className="app-title">OBSERVER</Link></h1>
         <nav className={this.handleSlideAnimation()}>
           <ul>
             {links.map((link, idx) => {
