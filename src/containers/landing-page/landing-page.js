@@ -31,6 +31,7 @@ export default class LandingPage extends Component {
   }
 
   componentDidMount() {
+    this.changeFooterPosition();
     window.addEventListener('scroll', this.handleHeaderBoxShadow);
     window.addEventListener('scroll', this.handleBackToTopBtn);
   }
@@ -38,6 +39,10 @@ export default class LandingPage extends Component {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleHeaderBoxShadow);
     window.removeEventListener('scroll', this.handleBackToTopBtn);
+  }
+
+  changeFooterPosition() {
+    document.querySelector("footer").setAttribute("style", "position:initial;");
   }
 
   render() {
@@ -48,7 +53,6 @@ export default class LandingPage extends Component {
         </Helmet>
         <HeaderContent onClick={this.scrollToMain} />
         <MainSection backToTop={this.backToTop} />
-        <Footer />
       </div>
     )
   }

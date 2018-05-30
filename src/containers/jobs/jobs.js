@@ -21,12 +21,17 @@ export class Jobs extends Component {
   }
 
   componentDidMount() {
+    this.changeFooterPosition();
     this.props.dispatch(getJobs());
   }
 
   handleJobDelete(job, id) {
     this.props.dispatch(deleteJob(job, id));
     this.props.history.push("/jobs")
+  }
+
+  changeFooterPosition() {
+    document.querySelector("footer").setAttribute("style", "position:absolute; bottom:0;");
   }
 
   render() {

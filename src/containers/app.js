@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 // import { refreshAuthToken } from "../actions/auth";
 
 import Header from "./header"
+import Footer from "./landing-page/footer";
 import LandingPage from "./landing-page/landing-page";
 import Contacts from "./contacts/contacts";
 import NewContact from "./contacts/new-contact";
@@ -62,6 +63,7 @@ class AppRouter extends Component {
             <Route path="/contacts/new" component={NewContact} />
             <Route path="/contacts/edit/:id" component={EditContact} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     );

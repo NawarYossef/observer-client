@@ -19,7 +19,12 @@ export class Activities extends Component {
   }
 
   componentDidMount() {
+    this.changeFooterPosition();
     this.props.dispatch(getActivities());
+  }
+
+  changeFooterPosition() {
+    document.querySelector("footer").setAttribute("style", "position:absolute; bottom:0;");
   }
 
   handleActivityDelete(activity, id) {

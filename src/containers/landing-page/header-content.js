@@ -13,7 +13,7 @@ export default function HeaderContent(props) {
           <h3>Finding a job can be simple with observer</h3>
           <div className="links-wrapper">
             <button className="link-to-signup" >
-              <Link to="/signup">
+              <Link to="/">
                 Get started for free!
             </Link>
             </button>

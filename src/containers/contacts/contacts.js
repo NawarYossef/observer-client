@@ -21,7 +21,12 @@ export class Contacts extends Component {
   }
 
   componentDidMount() {
+    this.changeFooterPosition();
     this.props.dispatch(getContacts());
+  }
+
+  changeFooterPosition() {
+    document.querySelector("footer").setAttribute("style", "position:absolute; bottom:0;");
   }
 
   handleContactDelete(contact, id) {
