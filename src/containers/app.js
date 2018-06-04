@@ -5,8 +5,8 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Header from "./header"
 import Footer from "./landing-page/footer";
 import LandingPage from "./landing-page/landing-page";
-import LogIn from "./registration/LogIn"
-import SignUp from "./registration/SignUp"
+import LogIn from "./registration/log-in"
+import SignUp from "./registration/sign-up"
 import Contacts from "./contacts/contacts";
 import NewContact from "./contacts/new-contact";
 import EditContact from "./contacts/edit-contact";
@@ -49,7 +49,7 @@ class AppRouter extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route exact path="/Log" component={SignUp} />
+            <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={LogIn} />
 
             <Route exact path="/activities" component={Activities} />

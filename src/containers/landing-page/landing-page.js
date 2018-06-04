@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 
 import HeaderContent from "./header-content";
 import MainSection from "./main-section";
-import Footer from "./footer";
 
 import ".././styles/landing-page.css";
 
